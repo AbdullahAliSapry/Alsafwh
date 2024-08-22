@@ -1,0 +1,242 @@
+.parent {
+  display: grid;
+  grid-template-columns: 330px auto;
+  /* justify-content: space-between; */
+}
+
+.StyleNotFound,
+.StyleNotFound2 {
+  padding: 20px;
+  text-align: center;
+  gap: 10px;
+  color: rgb(34, 139, 230);
+  font-size: 20px;
+}
+
+.StyleExamGrade {
+  background-color: #f5f5f5;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.StyleExamGrade > p {
+  text-align: center !important;
+  color: rgb(34, 139, 230);
+  width: 100%;
+}
+.styleBad, .styleGood {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.styleGood >svg{
+  color: green;
+  font-size: 50px;  
+}
+.styleBad >svg {
+  color: red;
+  font-size: 50px;
+}
+.StyleNotFound2 {
+  font-size: 30px;
+}
+.EditBtn,
+.deleteBtn {
+  background-color: transparent !important;
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.StyleFormEdit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  /* gap: -5/rem; */
+  cursor: pointer;
+  &[data-active] {
+    color: rgb(34, 139, 230);
+  }
+}
+
+.bgLessonLight {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+.StyleForm {
+  display: flex;
+  gap: 10px;
+}
+
+.bgLessonDark {
+  background-color: "";
+  color: white;
+}
+
+.colorComponentLight {
+  color: black;
+  padding: 0px 50px;
+}
+
+.styleLinkPdf {
+  color: rgb(34, 139, 230);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.colorComponentDark {
+  color: white;
+  padding: 0px 50px;
+}
+
+.titleLight {
+  color: #3e3e3e;
+}
+.titleDark {
+  color: white;
+}
+
+.styleTabsPanel {
+  background-color: rgba(34, 166, 241, 0.03);
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 10px 20px;
+}
+
+.containerImageEmail {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgb(209, 146, 153);
+  overflow: hidden;
+}
+
+.containerTabs {
+  display: grid;
+  grid-template-columns: auto 250px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.containerImage {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: end;
+  margin: 0px 60px;
+}
+
+.imageSize {
+  width: 350px;
+  height: 350px;
+}
+
+.startExam {
+  background-color: rgba(0, 208, 121, 1);
+  border-radius: 10px;
+  padding: 10px 35px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.inputCommentCourse {
+  outline: none;
+  border-radius: 8px;
+  border: 0px;
+  border-bottom: 1px solid rgba(67, 66, 66, 0.537);
+  padding: 5px 10px;
+}
+
+.evaluationBtn {
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: rgb(34, 139, 230);
+}
+
+@media (max-width: 1170px) {
+  .containerTabs {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 50px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1083px) {
+  .containerImage {
+    justify-content: center;
+    margin: 0px 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .parent {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    /* justify-content: space-between; */
+  }
+}
+.btnSend a {
+  color: #fff;
+  text-decoration: none;
+}
+@media (max-width: 751px) {
+  .containerImage {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 633px) {
+  .containerImage {
+    justify-content: center;
+    margin: 0px 0px;
+  }
+}
+
+@media (max-width: 501px) {
+  .btnSend {
+    width: 100%;
+  }
+  .inputCommentCourse {
+    width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  .imageSize {
+    width: 250px;
+    height: 250px;
+  }
+
+  .colorComponentLight {
+    padding: 0px 10px;
+  }
+
+  .colorComponentDark {
+    padding: 0px 10px;
+  }
+}

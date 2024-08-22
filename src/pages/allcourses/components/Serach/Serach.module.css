@@ -1,0 +1,169 @@
+.header {
+  background-color: white;
+  padding: 20px 10px;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: #3788fa51 0px 4px 12px;
+  margin: auto;
+}
+
+.StyleBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row !important;
+}
+
+.StyleBtns  >button{
+  margin: 0;
+}
+.headerDark {
+  background-color: rgb(36, 36, 36);
+  padding: 20px 10px;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: #3788fa51 0px 4px 12px;
+  margin: auto;
+  color: white;
+}
+
+.conSearch,
+.DeleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(9, 52, 145);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+.DeleteButton {
+  border: none;
+  background-color: rgb(179, 37, 37);
+}
+.formStyle > div {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formStyle > div > input {
+  border-radius: 8px;
+  outline: none;
+  border: 0px solid #408fff;
+  padding: 5px 10px;
+  box-shadow: #3788fa51 0px 4px 12px;
+}
+.formStyle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 70%;
+}
+
+.formStyle > div > select {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  outline: none;
+  border: 0px solid #408fff;
+  padding: 5px 10px;
+  box-shadow: #3788fa51 0px 4px 12px;
+}
+.formStyle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  gap:10px;
+  width: 80%;
+}
+@media (max-width: 1170px) {
+  .formStyle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+  }
+}
+
+@media (max-width: 1087px) {
+  .conSearch,
+  .DeleteButton {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    padding: 12px;
+  }
+  .formStyle > div > span {
+    font-size: 14px;
+  }
+  .formStyle > div > input {
+    font-size: 14px;
+  }
+}
+@media (max-width: 810px) {
+  .conSearch,
+  .DeleteButton {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    padding: 12px;
+  }
+  .formStyle > div > span {
+    font-size: 14px;
+  }
+  .formStyle {
+    width: 90%;
+  }
+}
+
+@media (max-width: 637px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+  }
+}
+@media (max-width: 580px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  .formStyle {
+    flex-direction: column;
+  }
+  .formStyle > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .formStyle > div > select {
+    width: 209px;
+  }
+}
+@media (max-width: 400px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+}

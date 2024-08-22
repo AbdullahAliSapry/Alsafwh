@@ -1,0 +1,25 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.parentNot {
+  display: flex;
+  flex-direction: column;
+}
+.parentNot > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btnReading {
+  border: none;
+  outline: none;
+  background-color: var(--second-main-color);
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}

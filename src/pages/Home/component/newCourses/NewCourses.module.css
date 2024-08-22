@@ -1,0 +1,160 @@
+.styleAllCard {
+  display: grid;
+  grid-template-columns: repeat(4, 330px);
+  justify-content: center;
+  gap: 2rem;
+  margin: 0px;
+  margin-right: 0px;
+}
+
+.positionImage,
+.positionImageFirstGirl,
+.positionImageSecondGirl,
+.positionImageSecondPersone {
+  display: flex;
+  border-radius: 35px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  height: 190px;
+}
+
+.positionImage {
+  background-color: rgb(118, 84, 182);
+}
+.position_Image {
+  position: absolute;
+  bottom: -29%;
+  right: 52%;
+  width: 173px;
+  height: 255px;
+  padding-left: 10px;
+}
+.positionImageOne {
+  position: absolute;
+  height: 188px;
+  width: 180px;
+  right: 7%;
+  bottom: -10%;
+}
+
+.positionImageFirstGirl {
+  background-color: rgb(255, 114, 94);
+}
+.positionImageFirstGirlOne {
+  position: absolute;
+  height: 139px;
+  width: 160px;
+  right: 10%;
+  bottom: -2%;
+}
+.position_ImageFirstGirl {
+  position: absolute;
+  bottom: -8%;
+  right: 28%;
+  width: 296px;
+  height: 197px;
+  padding-left: 10px;
+}
+
+.positionImageSecondGirl {
+  background-color: rgb(255, 129, 174);
+}
+.positionImageSecondGirlOne {
+  position: absolute;
+  height: 149px;
+  width: 160px;
+  right: 7%;
+  bottom: -6%;
+}
+.position_ImageSecondGirl {
+  position: absolute;
+  bottom: -8%;
+  right: 46%;
+  width: 296px;
+  height: 187px;
+  padding-left: 10px;
+}
+
+.positionImageSecondPersone {
+  background-color: rgb(198, 215, 255);
+}
+.positionImageSecondPersoneOne {
+  position: absolute;
+  height: 166px;
+  width: 160px;
+  right: 5%;
+  bottom: -6%;
+}
+.position_ImageSecondPersone {
+  position: absolute;
+  bottom: -36%;
+  right: 44%;
+  width: 246px;
+  height: 253px;
+  padding-left: 10px;
+}
+
+@media (max-width: 1250px) {
+  .styleAllCard {
+    display: grid;
+    grid-template-columns: repeat(2, 320px);
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .styleAllCard {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .styleAllCard {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .styleAllCard {
+    display: grid;
+    grid-template-columns: repeat(1, 350px);
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .styleAllCard {
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .styleAllCard {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.btnAllCourses {
+  text-decoration: none;
+  background-color: rgb(0, 62, 221);
+  font-size: 20px;
+  padding: 7px 43px 7px 23px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  border-radius: 8px;
+  font-weight: 700;
+}

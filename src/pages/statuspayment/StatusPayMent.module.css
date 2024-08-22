@@ -1,0 +1,30 @@
+.success,
+.failed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-auto-flow: 10px;
+  flex-direction: column;
+}
+.success > p {
+  font-size: 30px;
+  color: #28a745;
+}
+.success > svg {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+  color: #28a745;
+}
+
+.failed {
+  font-size: 30px;
+  color: #dc3545;
+}
+
+.failed > svg {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+  color: #dc3545;
+}

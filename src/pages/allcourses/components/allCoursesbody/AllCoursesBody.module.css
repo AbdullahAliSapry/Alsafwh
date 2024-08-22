@@ -1,0 +1,28 @@
+.parent {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+
+@media (min-width: 700px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 900px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

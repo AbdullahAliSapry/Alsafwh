@@ -1,0 +1,128 @@
+.parent {
+  background-color: var(--main-bg-color);
+  padding: 20px 20px;
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+.errorText{
+  color: red;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.header > h1 {
+  color: var(--second-main-color);
+}
+
+.header {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.parent > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent > form > div > label {
+  color: #a0a3aa;
+  padding: 5px;
+  display: inline-block;
+}
+.parent > form > div input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  width: 300px;
+  padding: 5px 10px;
+  /* color: #676060; */
+  background-color: transparent;
+  border: 2px solid #77a7ff;
+}
+.parent > form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.parent > form > button {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 5px 20px;
+  background-color: #22a6f1;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  width: 130px;
+  cursor: pointer;
+}
+
+.linksNext,
+.linksStud {
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.linksStud {
+  background-color: rgb(11, 60, 165);
+}
+.linksNext {
+  background-color: rgba(0, 208, 121, 1);
+}
+
+.containerBtn {
+  margin-bottom: 10px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: end;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.inputExamSelect {
+  width: 200px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(65, 130, 249);
+  padding: 10px 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.inputExamSelect:focus {
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+
+.parentSelect{
+
+  margin: 20px 0;
+}
+
+@media (max-width: 550px) {
+  .containerBtn {
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .parent > form > div input {
+    width: auto;
+  }
+}

@@ -1,0 +1,44 @@
+.parent {
+  padding: 20px 10px;
+}
+
+.lesson {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title {
+  color: rgb(65, 130, 249);
+  /* margin-bottom: 0px; */
+}
+
+.lesson button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: rgb(65, 130, 249);
+
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.activeButton {
+  cursor: pointer;
+}
+.LinkStyle {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 568px) {
+  .title {
+    /* color: rgb(65, 130, 249); */
+    margin-bottom: 0px;
+  }
+}

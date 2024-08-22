@@ -1,0 +1,60 @@
+.btnSave {
+  background: rgb(65, 130, 249);
+  outline: none;
+  border: 0px;
+  border-radius: 6px;
+  padding: 6px 20px;
+  color: white;
+  cursor: pointer;
+}
+.btnsend {
+  background: rgb(65, 130, 249);
+  outline: none;
+  border: 0px;
+  border-radius: 6px;
+  padding: 6px 20px;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.lapelImg {
+  background: rgb(65, 130, 249);
+  outline: none;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  bottom: 14px;
+  right: -10px;
+}
+.inputImg {
+  display: none;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.containerImage {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgb(209, 146, 153);
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.Img {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}

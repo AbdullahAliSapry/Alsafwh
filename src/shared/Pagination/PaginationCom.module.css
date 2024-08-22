@@ -1,0 +1,9 @@
+.parent{
+
+    width: 100%;
+    padding: 20px 10px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

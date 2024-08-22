@@ -1,0 +1,464 @@
+.sectionTeacher{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.parent{
+    margin-top: 150px;
+}
+
+.descrbtion{
+    font-size: 25px;
+}
+
+
+.teacher{
+    background-color:rgba(240, 248, 255, 0.615);
+    /* backdrop-filter: blur(10px); */
+    position: relative;
+    width: 680px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.imageOne{
+    width: 250px;
+    height: 190px;
+}
+.imageTwo{
+    width: 250px;
+    height: 190px;
+}
+.imageThree{
+    width: 190px;
+    height: 170px;
+}
+.imageFour{
+    width: 190px;
+    height: 130px;
+}
+.imageFive{
+    width: 270px;
+    height: 190px;
+}
+
+
+
+
+.points{
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    background-color: #eee;
+    border-top-right-radius:20px ;
+    border-top-left-radius: 20px;    
+}
+
+.pointOne , .pointTwo , .pointThree{
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+}
+
+.pointOne{
+    background-color: rgba(255, 0, 0, 0.705);
+}
+
+.pointTwo{
+    background-color: rgba(218, 165, 32, 0.678);
+}
+.pointThree{
+    background-color: rgba(113, 182, 8, 0.718);
+}
+
+.nameTeacher , .nameTeacherOne{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #eeeeee62;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-top: -40px;
+    width: fit-content;
+    margin-right: 100px;
+    padding: 0px 10px;
+    
+}
+
+.instructor{
+    color: white;
+    background-color: rgb(55, 147, 255);
+    padding: 0px 4px;
+    border-radius: 4px;
+    font-size: 8px;
+    margin-top: 7px;
+    margin-right: 6px;
+    margin-left:0px;
+
+}
+
+
+.imageTeacherOne{
+    position: absolute;
+    right: 56%;
+    bottom: 29%;
+    align-items: center;
+}
+
+.imageTeacherTwo{
+    position: absolute;
+    right: 15%;
+    bottom: 10%;
+}
+
+.imageTeacherThree{
+    position: absolute;
+    right: -14%;
+    bottom: 48%;
+}
+
+.imageTeacherFour{
+    position: absolute;
+    right: 22%;
+    bottom: 57%;
+}
+
+.imageTeacherFive{
+    position: absolute;
+    right: -22%;
+    bottom: -5%;
+}
+
+.pointBackTop,
+.pointBackBottom{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: red;
+    z-index: 10;
+}
+
+.pointBackTop{
+    background-color: rgb(91,97,235);
+    position: absolute;
+    right: 2%;
+    bottom: 58%;
+    z-index: -3;
+    height: 208px;
+    width: 208px;
+    border-radius: 154px;
+    z-index: -1;
+}
+
+.pointBackBottom{
+    background-color: rgb(51,239,160);
+    position: absolute;
+    z-index: -3;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    z-index: -1;
+    right: 86%;
+    bottom: -17%;
+}
+
+
+@media (max-width:1250px) {
+    .sectionTeacher{
+        display: grid;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    .teacher{
+        width: 600px;
+        height: 350px;
+    }
+    
+
+    .imageOne{
+        width: 200px;
+        height: 150px;
+    }
+    .imageTwo{
+        width: 200px;
+        height: 150px;
+    }
+    .imageThree{
+        width: 150px;
+        height: 140px;
+    }
+    .imageFour{
+        width: 150px;
+        height: 110px;
+    }
+    .imageFive{
+        width: 200px;
+        height: 140px;
+    }
+
+.imageTeacherFive{
+    position: absolute;
+    right: -18%;
+    bottom: -5%;
+}
+}
+
+
+/* @media (max-width:750px) {
+
+    .teacher{
+        width: 500px;
+        height: 350px;
+    }
+
+} */
+
+@media (max-width:750px) {
+
+
+    .teacher{
+        width: 400px;
+        height: 350px;
+       margin-right: 40px;
+    }
+
+
+
+    .imageOne{
+        width: 170px;
+        height: 130px;
+    }
+    .imageTwo{
+        width: 170px;
+        height: 130px;
+    }
+    .imageThree{
+        width: 150px;
+        height: 140px;
+    }
+    .imageFour{
+        width: 150px;
+        height: 110px;
+    }
+    .imageFive{
+        width: 180px;
+        height: 120px;
+    }
+
+    .imageTeacherOne{
+        position: absolute;
+        right: 50%;
+        bottom: 23%;
+        align-items: center;
+    }
+
+    .imageTeacherFive{
+        position: absolute;
+        right: -25%;
+        bottom: -5%;
+    }
+
+    .nameTeacherOne{
+     margin-right: 30px;
+    }
+
+}
+
+
+
+@media (max-width:550px) {
+
+
+    .teacher{
+        width: 400px;
+        height: 350px;
+       margin-right: 50px;
+    }
+
+    .parent{
+        margin-top: -77px;
+    }
+
+.imageTeacherOne{
+    position: absolute;
+    right: 56%;
+    bottom: 29%;
+    align-items: center;
+}
+
+.imageTeacherTwo{
+    position: absolute;
+    right: 25%;
+    bottom: 10%;
+}
+
+.imageTeacherThree{
+    position: absolute;
+    right: -7%;
+    bottom: 48%;
+}
+
+.imageTeacherFour{
+    position: absolute;
+    right: 28%;
+    bottom: 62%;
+}
+
+.imageTeacherFive{
+    position: absolute;
+    right: -15%;
+    bottom: 0%;
+}
+}
+
+
+
+@media (max-width:500px) {
+
+
+    .pointBackBottom{
+        right: 75%;
+        bottom: -17%;
+    }
+}
+
+@media (max-width:460px) {
+
+    .teacher{
+        margin:auto 20px;
+     }
+    .pointBackBottom{
+        right: 70%;
+        bottom: -17%;
+    }
+
+    
+
+    .imageTeacherOne{
+        position: absolute;
+        right: 56%;
+        bottom: 51%;
+        align-items: center;
+    }
+    
+    .imageTeacherTwo{
+        position: absolute;
+        right: 50%;
+        bottom: 15%;
+    }
+    
+    .imageTeacherThree{
+        position: absolute;
+        right: -2%;
+        bottom: 40%;
+    }
+    
+    .imageTeacherFour{
+        position: absolute;
+        right: 20%;
+        bottom: 58%;
+    }
+    
+    .imageTeacherFive{
+        position: absolute;
+        right: -5%;
+        bottom: 5%;
+    }
+}
+
+
+@media (max-width:440px) {
+
+
+    .teacher{
+        width: 350px;
+        height: 350px;
+       /* margin-right: 50px; */
+    }
+}
+
+@media (max-width:421px) {
+
+
+    .teacher{
+        width: 350px;
+        height: 350px;
+       margin:auto 30px;
+    }
+
+    .descrbtion{
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width:410px) {
+
+
+    .teacher{
+        width: auto;
+        height: 350px;
+       margin:auto 50px;
+       
+    }
+
+  
+    
+    .imageTeacherOne{
+        position: absolute;
+        right: 50%;
+        bottom: 47%;
+        align-items: center;
+    }
+    
+    .imageTeacherTwo{
+        position: absolute;
+        right: 30%;
+        bottom: 15%;
+    }
+    
+    .imageTeacherThree{
+        position: absolute;
+        right: -12%;
+        bottom: 40%;
+    }
+    
+    .imageTeacherFour{
+        position: absolute;
+        right: 17%;
+        bottom: 62%;
+    }
+    
+    .imageTeacherFive{
+        position: absolute;
+        right: -15%;
+        bottom: 5%;
+    }
+
+    
+    .nameTeacherOne{
+        margin-right: 20px;
+       }
+}
+
+@media (max-width:380px) {
+
+
+   
+    .imageTeacherThree{
+        position: absolute;
+        right: -15%;
+        bottom: 40%;
+    }
+
+    .imageTeacherFive{
+        position: absolute;
+        right: -25%;
+        bottom: 5%;
+    }
+
+}

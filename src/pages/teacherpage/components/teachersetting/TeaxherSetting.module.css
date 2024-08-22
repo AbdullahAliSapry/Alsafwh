@@ -1,0 +1,146 @@
+.parent {
+  padding: 20px 10px;
+}
+
+.headerPageTeacher {
+  background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
+  padding: 50px 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.containerLight {
+  background-color: rgb(234, 241, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.containerDark {
+  background-color: rgb(41, 41, 42);
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(252, 251, 251, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+.containerImageEmail {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgb(209, 146, 153);
+  overflow: hidden;
+}
+
+.inputFiled {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.inputFiledSelect {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.emailStyle {
+  gap: 1rem;
+}
+
+.addEmailLight {
+  background-color: rgb(217, 230, 254);
+  padding: 0px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgb(34, 166, 241);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.addEmailDark {
+  background-color: rgb(60, 60, 60);
+  padding: 0px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgb(34, 166, 241);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.btnSave {
+  background: rgb(65, 130, 249);
+  outline: none;
+  border: 0px;
+  border-radius: 6px;
+  padding: 6px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+
+.description {
+  margin: 20px 3px;
+  font-weight: 500;
+}
+
+.LinkCourses {
+  text-decoration: none;
+  color: black;
+}
+
+.numberOfCourses {
+  background-color: #4182f9;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.numberOfCourses > p {
+  color: white !important;
+  font-size: 16px !important;
+}
+
+@media (max-width: 790px) {
+  .containerStudentDate {
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .numberOfCourses {
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+
+  .containerFiled {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 410px) {
+  .parentPhone {
+    order: -1;
+    margin-bottom: -10px;
+  }
+  .emailStyle {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 460px) {
+  .headerPageTeacher {
+    padding: 40px 20px;
+
+    background-size: auto 100%;
+  }
+}

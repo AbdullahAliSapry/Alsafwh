@@ -1,0 +1,226 @@
+.topParentLight {
+  background-color: rgba(234, 241, 255, 1);
+  border-radius: 15px;
+  padding: 50px;
+}
+.topParentDark {
+  background-color: "";
+  padding: 50px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.112);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: white;
+}
+.parentPersonData {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.NotFoundStyle {
+  margin-top: 50px;
+  font-size: 30px;
+  color: rgb(34, 139, 230);
+  text-align: center;
+}
+.conToImage {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+  align-items: center;
+}
+.conToImage > img {
+  width: 100px;
+  object-fit: contain;
+  height: 100px;
+  border-radius: 50%;
+}
+.titleLight {
+  color: black;
+}
+.titleDark {
+  color: white;
+}
+
+.parent {
+  height: 80px;
+  padding: 10px 20px;
+}
+
+.styleBackLight {
+  width: fit-content;
+  position: relative;
+}
+
+.styleBackDark {
+  width: fit-content;
+  position: relative;
+}
+
+.styleBackLight::before {
+  content: "";
+  width: 60%;
+  display: inline-block;
+  background-color: rgb(115 205 255 / 42%);
+  height: 43px;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  border-radius: 5px;
+}
+.styleBackDark::before {
+  content: "";
+  width: 60%;
+  display: inline-block;
+  background-color: rgba(25, 15, 207, 0.244);
+  height: 43px;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  border-radius: 5px;
+}
+
+.containerForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.styleImage {
+  width: 450px;
+  height: 450px;
+
+}
+
+.inputComment {
+  border: 0px;
+  outline: none;
+  border-bottom: 1px solid rgba(60, 59, 59, 0.301);
+  margin: 20px 0px;
+  padding: 10px 5px 5px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.styleForm {
+  padding: 0px 70px;
+}
+
+.backToCourse {
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: rgb(34, 139, 230);
+}
+
+@media (max-width: 891px) {
+  .styleImage {
+    width: 350px;
+    height: 350px;
+    margin-left: 0px;
+    /* margin-right: -150px; */
+    margin-top: -20px;
+  }
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 761px) {
+  .styleImage {
+    width: 350px;
+    height: 350px;
+    margin-left: 0px;
+    /* margin-right: -150px; */
+    margin-top: -20px;
+  }
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .NotFoundStyle {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 733px) {
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .styleImage {
+    width: 250px;
+    height: 250px;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+
+  .NotFoundStyle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 610px) {
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .styleImage {
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 551px) {
+  .styleImage {
+    display: none;
+  }
+  .containerForm {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+  }
+  .styleForm {
+    padding: 0px 20px;
+  }
+
+  .topParentLight {
+    padding: 50px 20px;
+  }
+  .topParentDark {
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 501px) {
+  .styleSize {
+    margin: 40px 40px;
+  }
+}
+
+@media (max-width: 401px) {
+  .styleSize {
+    margin: 40px 0px;
+  }
+  .NotFoundStyle {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,52 @@
+.parent {
+  height: 80px;
+  padding: 10px 20px;
+}
+.titleStyleAr,.titleStyleEn{
+  font-weight: 600;
+  font-size: 35px ;
+  line-height: 65%;
+  text-align: start;
+}
+
+.titleLight {
+  color: black;
+
+}
+.titleDark {
+  color: white;
+}
+.styleBackLight {
+  width: fit-content;
+  position: relative;
+}
+
+.styleBackDark {
+  width: fit-content;
+  position: relative;
+}
+
+.styleBackLight::before {
+  content: "";
+  width: 60%;
+  display: inline-block;
+  background-color: rgb(115 205 255 / 42%);
+  height: 43px;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  border-radius: 5px;
+}
+.styleBackDark::before {
+  content: "";
+  width: 60%;
+  display: inline-block;
+  background-color: rgba(25, 15, 207, 0.244);
+  height: 43px;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  border-radius: 5px;
+}

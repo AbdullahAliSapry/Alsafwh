@@ -1,0 +1,362 @@
+{
+  "header": {
+    "startHeader": "Want to learn?",
+    "headerTitle": "This is the best place.",
+    "SubTitle": "With Al Safwa, distance learning has become easier.",
+    "ButtonHider": "About Us",
+    "ButtonJoin": "Join us now"
+  },
+
+  "NavBar": {
+    "home": "Home",
+    "courses": "Courses",
+    "contact": "Contact Us",
+    "About": "About Us"
+  },
+
+  "Menu": {
+    "label": "Al Safwa",
+    "settings": "Settings",
+    "messages": "Messages",
+    "photos": "Photos",
+    "courses": "Courses",
+    "deleteAccount": "Delete Account",
+    "logout": "Logout",
+    "confirmLogout": "Are you sure you want to log out?",
+    "confirmButton": "Logout",
+    "cancelButton": "Cancel"
+  },
+
+  "SecondeSection": {
+    "title": "What Makes the Al Safwa Unique",
+    "previousExams": "Previous Exams and Solutions",
+    "previousExamsDesc": "A database containing past exams organized by years and subjects, along with model answers.",
+    "comprehensiveLibrary": "Comprehensive Library",
+    "comprehensiveLibraryDesc": "High-quality educational videos covering all high school subjects with access to content anytime and anywhere.",
+    "secure": "100% Secure",
+    "secureDesc": "A robust security system to protect student data and educational content with a privacy policy that ensures information confidentiality.",
+    "technicalSupport": "Technical and Educational Support",
+    "technicalSupportDesc": "A technical support system to assist students with any technical issues and interactive sessions with teachers to answer questions and queries."
+  },
+
+  "NewCourses": {
+    "title": "Latest",
+    "courses": "Courses",
+    "addition": "Addition",
+    "allCourses": "All Courses"
+  },
+
+  "Announcement": {
+    "titlePart1": "You are",
+    "titlePart2": "the future",
+    "titlePart3": "and we are the way!",
+    "subtitle": "Track your progress anytime",
+    "subscribeButton": "Subscribe Now",
+    "offersTextPart1": "Get",
+    "offersTextPart2": "offers and discounts"
+  },
+  "Courses": {
+    "title": "Courses",
+    "noData": "No data available to display",
+    "allCoursesButton": "All Courses"
+  },
+  "Status": {
+    "browse": "Browse",
+    "materials": "Materials",
+    "registeredStudents": "Registered Students",
+    "expertTeachers": "Expert Teachers",
+    "onlineCourses": "Online Courses",
+    "allMaterialsButton": "All Materials"
+  },
+  "Teachers": {
+    "title": "Teachers",
+    "noTeachers": "No teachers added yet...",
+    "bestTeachers": "The best teachers",
+    "selected": "selected",
+    "forStudents": "for students",
+    "pathToSuccess": "With our teachers, the path to success is ahead of you.",
+    "instructor": "Instructor",
+    "defaultName": "Ahmad Kamel",
+    "allTeachersButton": "All Teachers"
+  },
+  "FeedBack": {
+    "title": "Feedback about the Al Safwa",
+    "profileAlt": "Profile",
+    "noFeedbacks": "No feedbacks have been added.",
+    "allFeedbackButton": "All Feedbacks"
+  },
+  "Footer": {
+    "paymopAlt": "Paymob logo",
+    "phoneAlt": "Phone icon",
+    "more": "More",
+    "about": "About Us",
+    "team": "The Team",
+    "contact": "Contact Us",
+    "helpCenter": "Help Center",
+    "terms": "Terms",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "language": "Language",
+    "arabic": "Arabic",
+    "english": "English"
+  },
+  "Subscription": {
+    "title": "Subscriptions",
+    "noPlans": "No subscriptions available at the moment.",
+    "Button": "All Subscriptions"
+  },
+  "SubscriptionCard": {
+    "loginPrompt": "Please log in first.",
+    "recommended": "Recommended",
+    "educationalVideos": "Educational Videos",
+    "previousExams": "Previous Exams and Solutions",
+    "topTeachers": "Top-Level Teachers",
+    "subscribe": "Subscribe",
+    "Coin": "EG",
+    "Month": "Monthly",
+    "Year": "Yearly",
+    "Mid": "Semi-Annually"
+  },
+  "subscriptionsPage": {
+    "title": "Subscription Information",
+    "knowMore": "Please know the following information about subscriptions",
+    "amount": "Amount: "
+  },
+  "aboutUs": {
+    "whoWeAre": "Who We Are",
+    "description1": "Al-Safwa Educational Platform is an online platform dedicated to high school students.",
+    "description2": "The platform allows users to access lessons and tutorials in all subjects through a monthly subscription.",
+    "description3": "The platform offers multiple features aimed at enhancing the e-learning experience and facilitating exam preparation.",
+    "ourTeachers": "Our Teachers",
+    "teachersDescription1": "We have saved you time and worked on selecting the best teachers after a long evaluation process to ensure the quality of our lessons.",
+    "teachersDescription2": "Our teachers are elite and have strong experience in teaching.",
+    "ourMission": "Our Mission",
+    "missionDescription": "We aim for our academic content to reach the largest number of students in the Arab Republic of Egypt.",
+    "ourVision": "Our Vision",
+    "visionDescription": "We strive to provide educational content that takes into account the different learning styles of students."
+  },
+  "contactUs": {
+    "viaWhatsapp": "via WhatsApp",
+    "callPhone": "Call via Phone",
+    "or": "Or"
+  },
+  "contactForm": {
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "phone": "Phone Number",
+    "phonePlaceholder": "01280365214",
+    "description": "Your Problem",
+    "descriptionPlaceholder": "Please describe your problem and we will contact you as soon as possible",
+    "submitButton": "Submit Problem",
+    "validation": {
+      "nameRequired": "Name is required",
+      "invalidEmail": "Invalid email address",
+      "emailRequired": "Email is required",
+      "descriptionRequired": "Description is required",
+      "descriptionMax": "Description must not exceed 500 characters",
+      "phoneRequired": "Phone number is required",
+      "invalidPhone": "Please enter a valid phone number"
+    }
+  },
+  "courses": {
+    "notFoundFiltered": "No results found for this search",
+    "notFound": "No courses available at the moment"
+  },
+  "coursesHeader": {
+    "heading": "Achieve Excellence with the Elite",
+    "subheading": "One of the largest and most comprehensive platforms in Egypt. What are you waiting for?",
+    "welcome": "Welcome, {{firstName}} {{lastName}}",
+    "joinNow": "Join us now"
+  },
+  "search": {
+    "emptyFields": "All fields are empty",
+    "noFilter": "No filters to clear",
+    "filterCleared": "Filters cleared",
+    "yearLabel": "Year",
+    "yearPlaceholder": "Select year",
+    "specializationLabel": "Specialization",
+    "specializationPlaceholder": "Select specialization",
+    "literary": "Literary",
+    "science": "Science",
+    "mathematical": "Mathematical",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Enter subject"
+  },
+  "login": {
+    "title": "Login",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "forgotPassword": "Forgot Password?",
+    "submitButton": "Login",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create an account"
+  },
+  "validationLogin": {
+    "email": {
+      "invalid": "Email must be valid",
+      "required": "Email is required"
+    },
+    "password": {
+      "min": "Password must be at least 8 characters",
+      "required": "Password is required"
+    }
+  },
+
+  "signin": {
+    "title": "Create Account",
+    "firstNamePlaceholder": "First Name",
+    "lastNamePlaceholder": "Last Name",
+    "phonePlaceholder": "Phone Number",
+    "fatherPhonePlaceholder": "Parent's Phone Number",
+    "emailPlaceholder": "Email",
+    "locationPlaceholder": "Location",
+    "yearPlaceholder": "Select Year",
+    "specializationPlaceholder": "Select Specialization",
+    "genderPlaceholder": "Select Gender",
+    "imgIdentityLabel": "Upload Identity Image",
+    "imgLabel": "Upload Profile Picture",
+    "passwordPlaceholder": "Password",
+    "confirmPasswordPlaceholder": "Confirm Password",
+    "submitButton": "Create Account",
+    "loginLink": "Login",
+    "alreadyHaveAccount": "Already have an account?",
+    "departments": [
+      {
+        "name": "Not Selected",
+        "value": "لم يتم اختيار الشعبه بعد"
+      },
+      {
+        "name": "Literary",
+        "value": "ادبي"
+      },
+      {
+        "name": "Science",
+        "value": "علم علوم"
+      },
+      {
+        "name": "Math",
+        "value": "علم رياضه"
+      }
+    ],
+    "Gender": {
+      "male": "male",
+      "female": "female"
+    },
+    "BtnConfirm": "Confirm",
+    "BtnCancel": "Cancel"
+  },
+  "validationRegister": {
+    "YearIdRequired": "Year is required",
+    "ImgIdentityRequired": "Birth certificate is required",
+    "SpecializationRequired": "Specialization is required",
+    "LocationRequired": "Location is required",
+    "GenderRequired": "Gender is required",
+    "EmailInvalid": "Email must be valid",
+    "EmailRequired": "Email is required",
+    "FatherPhoneLength": "Father's phone number must be 11 digits",
+    "FatherPhoneRequired": "Father's phone number is required",
+    "FatherPhoneNotMatch": "Father's phone number cannot be the same as phone number",
+    "PhoneLength": "Phone number must be 11 digits",
+    "PhoneRequired": "Phone number is required",
+    "ImgRequired": "Profile picture is required",
+    "FirstNameLength": "First name must be between 3 and 20 characters",
+    "FirstNameRequired": "First name is required",
+    "LastNameLength": "Last name must be between 3 and 20 characters",
+    "LastNameRequired": "Last name is required",
+    "PasswordLength": "Password must be at least 8 characters",
+    "PasswordRequired": "Password is required",
+    "ConfirmPasswordMatch": "Passwords must match",
+    "ConfirmPasswordRequired": "Password confirmation is required",
+    "PasswordComplexity": "Password must include at least one lowercase letter, one uppercase letter, one digit, and one special character."
+  },
+  "Vodafone": {
+    "subscriptions": "Subscriptions",
+    "subscriptionPlan": "Subscription Plan",
+    "subscriptionMonth": "Subscription Month",
+    "amountDue": "Amount Due",
+    "coupon": "Discount Coupon",
+    "vodafone": "Vodafone",
+    "transferNumber": "You can transfer to the following number",
+    "receiptInfo": "Then send a picture of the receipt to technical support to confirm your subscription"
+  },
+  "student": {
+    "title": "Students",
+    "subtitle": "They are the hope for progress and the key to the future",
+    "male": "Male Student",
+    "female": "Female Student",
+    "registeredCourses": "Registered Courses",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Your first name",
+    "secondName": "Second Name",
+    "secondNamePlaceholder": "Your second name",
+    "class": "Class",
+    "department": "Department",
+    "changePassword": "Change Password",
+    "changePasswordPlaceholder": "New password",
+    "confirmChangePassword": "Confirm Change of Password",
+    "confirmChangePasswordPlaceholder": "Confirm new password",
+    "email": "Email",
+    "phone": "Phone Number",
+    "fatherPhone": "Parent's Phone Number",
+    "Button1": "change",
+    "Button2": "save",
+    "oldPassword": "Current Password",
+    "newPassword": "New Password",
+    "ConfirmNewPassword": "Confirm new password",
+    "BtnPassword": "Change Password",
+    "oldPasswordRequire": "Current Password Require",
+    "BtnSubmit": "Submit",
+    "TitleConfirm": "Change Password",
+    "DescriptionConfirm": "Are you sure you want to change the password?"
+  },
+  "HeaderTeacher": {
+    "btn": "update image"
+  },
+  "notifications": {
+    "noNotifications": "No notifications available"
+  },
+  "feedBackCourse": {
+    "validation": {
+      "idRequired": "ID is required.",
+      "courseIdRequired": "Course ID is required.",
+      "userIdRequired": "User ID is required.",
+      "descriptionRequired": "Description is required.",
+      "descriptionMax": "Description must be at most 500 characters.",
+      "isConfirmedRequired": "Confirmation status is required.",
+      "rateRequired": "Rate is required.",
+      "rateMin": "Rate must be at least 1.",
+      "rateMax": "Rate must be at most 5."
+    }
+  },
+
+  "coursesForStudent": {
+    "userNotFound": "This user does not exist",
+    "maleStudent": "Student",
+    "femaleStudent": "Student",
+    "registeredCourses": "Registered Courses",
+    "noCourses": "You have no courses"
+  },
+  "courseCard": {
+    "totalProgress": "Total Progress",
+    "next": "Next",
+    "continueLearning": "Continue Learning"
+  },
+  "feedbackCourse": {
+    "allOpinions": "All Opinions",
+    "noOpinions": "No opinions currently",
+    "shareOpinion": "Share your opinion about the course",
+    "notesPlaceholder": "Notes",
+    "ratingPlaceholder": "Rating",
+    "submit": "Submit",
+    "thankYou": "Thank you for sharing your feedback with us",
+    "loginFirst": "Please log in first",
+    "registerFirst": "You need to register for the course first to give an honest opinion",
+    "improvementMessage": "We always strive to improve our services based on your valuable feedback. Please take some time to provide us with your feedback and experience with our services.",
+    "anotherImprovementMessage": "We always strive to improve our services based on your valuable feedback. Please take some",
+    "backToCourse": "Back to the course",
+    "Message": "Thank you, your evaluation has been sent successfully."
+  }
+}

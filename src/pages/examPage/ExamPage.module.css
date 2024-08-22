@@ -1,0 +1,26 @@
+.inputRadio{
+    box-shadow: none;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.inputRadio:focus{
+    box-shadow: none;
+}
+
+.styleContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+@media (max-width:610px) {
+    .styleContainer{
+        flex-wrap: wrap;
+        justify-content: center;
+    }   
+    
+}
+
+.color{
+    color: red;
+}

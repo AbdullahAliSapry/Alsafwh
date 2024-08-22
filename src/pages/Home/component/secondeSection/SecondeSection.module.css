@@ -1,0 +1,141 @@
+
+
+.descLight{
+    color: #828282;
+}
+
+.desckDark{
+    color: white;
+}
+
+.styleCardLight{
+    box-shadow: rgba(0, 0, 0, 0.51) 0px 4px 5px;;
+    padding: 15px 10px 20px;
+    position: relative;
+   border-radius: 10px;
+}
+
+.styleCardLight:hover{
+    box-shadow: rgba(0, 0, 0, 0.697) 0px 4px 5px;;
+    transform: translate(0px , -20px);
+    transition-duration: 0.2s;
+}
+
+.styleCardDark{
+    /* box-shadow: rgba(255, 255, 255, 0.203) 0px 4px 5px;; */
+    padding: 15px 10px 20px;
+    position: relative;
+   border-radius: 10px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 5px;
+}
+
+.styleCardDark:hover{
+    box-shadow: rgba(255, 255, 255, 0.319) 0px 4px 5px;;
+    transform: translate(0px , -20px);
+    transition-duration: 0.2s;
+}
+
+
+
+.positionImage{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 55%;
+    right:25%;
+}
+
+@media (max-width:1200px) {
+    .positionImage{
+    right:33%;
+    }
+}
+
+
+.styleAllCard{
+
+display: grid;
+grid-template-columns: repeat(4 ,300px);
+justify-content: center;
+gap: 2rem;
+margin: 20px;
+}
+
+
+@media (max-width:1250px) {
+    .styleAllCard{
+
+        display: grid;
+        grid-template-columns: repeat(2 ,350px);
+        justify-content: center;
+        gap: 3rem;
+        }
+
+        .positionImage{
+            right:30%;
+        }
+
+        .styleBackLight{
+            margin-right: 25px;
+            margin-bottom: 70px;
+        }
+
+        .styleBackDark{
+            margin-right: 25px;
+            margin-bottom: 70px;
+        }
+        
+}
+
+
+@media (max-width:850px) {
+    .styleAllCard{
+        gap: 2rem;
+        }
+
+        .styleCardLight{
+           margin: 10px;
+        }
+}
+
+@media (max-width:800px) {
+    .styleAllCard{
+        display: grid;
+        grid-template-columns: repeat(1 ,500px);
+        justify-content: center;
+        gap: 3rem;
+        margin: 0px;
+
+        }
+
+        
+        .positionImage{
+            right:35%;
+        }
+}
+
+@media (max-width:510px) {
+    .styleAllCard{
+        display: grid;
+        grid-template-columns: repeat(1 ,auto);
+        justify-content: center;
+        gap: 3rem;
+        }
+
+        
+        .positionImage{
+            right:30%;
+        }
+
+        .styleBackLight{
+           
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+
+        .styleBackDark{
+           
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+}

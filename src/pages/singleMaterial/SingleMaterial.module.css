@@ -1,0 +1,48 @@
+
+.headerPage{
+    background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
+    padding: 40px 80px;
+    background-size: 100% ;
+    background-repeat: no-repeat;
+}
+
+
+.parent {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    width: 100%;
+  }
+  
+  @media (min-width: 700px) {
+    .parent {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .parent {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .parent {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+
+
+@media (max-width:460px) {
+
+
+    .headerPage{
+        padding: 40px 20px;
+
+        background-size:auto 100% ;
+    }
+}

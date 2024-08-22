@@ -1,0 +1,96 @@
+.headerPageTeacher {
+  background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
+  padding: 50px 100px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.containerLight {
+  background-color: rgb(234, 241, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.containerDark {
+  background-color: rgb(41, 41, 42);
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(252, 251, 251, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.containerImage {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.containerImage > img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.courseCard {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.236);
+}
+
+.withSlider {
+  width: 50%;
+}
+.titleStyle {
+  font-size: 30px;
+}
+.btnLearn {
+  background: rgb(34, 166, 241);
+  border: 0px;
+  border-radius: 4px;
+  padding: 8px 15px;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.endContainer {
+  margin-right: 20px;
+}
+
+@media (max-width: 861px) {
+  .withSlider {
+    width: 50%;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .endContainer {
+    text-align: center;
+
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 401px) {
+  .withSlider {
+    width: 100%;
+  }
+  .titleStyle {
+    font-size: 16px;
+  }
+  .pag {
+    size: "sm";
+  }
+}

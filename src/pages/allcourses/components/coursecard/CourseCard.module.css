@@ -1,0 +1,134 @@
+.card {
+  background-color: #fff;
+  width: 375px;
+  min-width: 300px;
+  height: 500px;
+  box-shadow: 0 5px 20px rgba(1, 1, 1, 0.35);
+  border-radius: 10px;
+  margin: 30px 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+
+
+.teacherImage {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.teacherInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  padding: 10px;
+  position: absolute;
+  bottom: 148px;
+  right: 6px;
+}
+
+.teacherInfo > span {
+  font-weight: 600;
+  color: black;
+  font-size: 17px;
+  line-height: 24px;
+}
+.teacherInfo > p {
+  margin: 0;
+  font-weight: 400;
+  color: black;
+  font-size: 14px;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.buttonDetails,
+.buttonRegister {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.buttonDetails {
+  background-color: #d6e4ff;
+  color: #000;
+}
+
+.buttonRegister {
+  background-color: #002766;
+  color: #fff;
+}
+
+.discussionImage {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: rgb(255, 114, 94);
+  clip-path: polygon(
+    20% 0%,
+    80% 0%,
+    100% 0,
+    100% 86%,
+    82% 90%,
+    31% 100%,
+    0 100%,
+    0 0
+  );
+}
+
+.discussionImage img {
+  width: 100%;
+  height: 280px;
+  display: block;
+  object-fit: contain;
+}
+
+.StyleInfoCourse {
+  margin-right: auto;
+  width: fit-content;
+  padding: 10px 5px;
+}
+.StyleInfoCourse > p {
+  margin: 0;
+}
+.StyleInfoCourse > p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+}
+.StyleInfoCourse > p:nth-child(2) {
+  font-size: 14px;
+}
+
+.StyleDescription {
+  text-align: right;
+  margin: 10px 15px;
+}
+
+
+@media (max-width: 880px) {
+  .card {
+    margin: 30px 0px;
+  }
+}
+@media (max-width: 880px) {
+  .card {
+    margin: 30px 0px;
+  }
+}
+@media (max-width: 400px) {
+  .card {
+    margin: 30px 0px;
+    width: 300px;
+  }
+}

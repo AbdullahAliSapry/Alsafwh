@@ -1,0 +1,79 @@
+/* src/pages/Home/component/courses/Courses.module.css */
+.card {
+  background-color: #1a2b42; /* Dark background color */
+  color: #fff; /* White text color */
+  border-radius: 10px;
+  padding: 0 20px;
+  width: 422px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: start;
+  margin: 10px 0;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.price {
+  font-size: 2em;
+  color: #00bfff; /* Blue text color */
+  margin: 10px 0;
+  text-align: center;
+}
+
+.description {
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.features li {
+  margin-bottom: 10px;
+}
+
+.subscribeButton {
+  background-color: #00bfff; /* Blue background color */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.subscribeButton:hover {
+  background-color: #008fcc; /* Darker blue on hover */
+}
+.subscribeButton > a{
+  text-decoration: none;
+  color: white;
+}
+.icon {
+  color: #00bfff; /* Blue icon color */
+  font-size: 1.2em;
+}
+
+
+@media (max-width:450px) {
+  .card {
+    
+    width: 350px;
+  
+  }
+  
+  
+}

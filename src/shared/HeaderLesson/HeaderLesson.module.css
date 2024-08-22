@@ -1,0 +1,39 @@
+.parent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+
+.conInfo {
+  /* width: 250px; */
+  /* position: relative; */
+
+}
+.conInfo > img {
+  width: 250px;
+}
+
+.conInfo span {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%);
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 500;
+  color: black;
+  font-size: 18px;
+}
+.parent > p {
+  font-size: 20px;
+  color: rgb(65, 130, 249);
+  font-weight: 600;
+}
+
+
+@media (max-width: 560px) {
+  .numberOfCourses {
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+}

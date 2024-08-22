@@ -1,0 +1,191 @@
+.headerPageTeacher {
+  background-image: url("./../../assets/Alsafwa/students.png");
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 500px;
+  background-position: center;
+  background-size: 45%;
+  border-radius: 10px;
+  margin: 30px auto;
+  position: relative;
+  border: 2px solid #beb9b9;
+  border-radius: 20px;
+}
+.headerPageTeacherbg {
+  background-image: url("./../../assets/Alsafwa/student2.png");
+}
+
+.parentChangePassword{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto; 
+}
+.StyleChangePassword{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+.StyleChangePassword>div{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.StyleText {
+  width: 30%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #478df6;
+  border-radius: 18px;
+  padding: 10px;
+}
+.headerPageTeacher > img {
+  width: 500px;
+}
+.containerLight {
+  background-color: rgb(234, 241, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.containerDark {
+  background-color: rgb(41, 41, 42);
+  color: white;
+  border-radius: 10px;
+  box-shadow: rgba(252, 251, 251, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.containerImage {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgb(209, 146, 153);
+  overflow: hidden;
+}
+
+.containerImageEmail {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgb(209, 146, 153);
+  overflow: hidden;
+}
+
+.inputFiled {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.inputFiledSelect {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.emailStyle {
+  gap: 1rem;
+}
+
+.addEmailLight {
+  background-color: rgb(217, 230, 254);
+  padding: 0px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgb(34, 166, 241);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.addEmailDark {
+  background-color: rgb(60, 60, 60);
+  padding: 0px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  color: rgb(34, 166, 241);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.btnSave {
+  background: rgb(65, 130, 249);
+  outline: none;
+  border: 0px;
+  border-radius: 6px;
+  padding: 6px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.description {
+  font-size: 25px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+@media (max-width: 790px) {
+  .containerStudentDate {
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .numberOfCourses {
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+
+  .containerFiled {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 410px) {
+  .parentPhone {
+    order: -1;
+    margin-bottom: -10px;
+  }
+  .emailStyle {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 460px) {
+  .headerPageTeacher {
+    background-size: auto 80%;
+    flex-direction: column;
+    background-position: center bottom;
+  }
+  .StyleText {
+    width: 100%;
+    height: fit-content;
+  }
+  .description {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

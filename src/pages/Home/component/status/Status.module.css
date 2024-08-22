@@ -1,0 +1,194 @@
+.statusUp {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.parent{
+  margin-top: 200px;
+}
+
+.titleStatus{
+  margin-right: 50px;
+}
+
+.cards {
+  display: flex;
+  position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.pointOne,
+.pointTwo,
+.pointThree {
+  position: absolute;
+  right: 43%;
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  z-index: -4;
+}
+
+.pointOne {
+  bottom: 90%;
+  background-color: #2eff2e;
+}
+
+.pointTwo {
+  bottom: 58%;
+  background-color: #ff7800;
+}
+
+.pointThree {
+  bottom: 26%;
+  background-color: #862effde;
+}
+
+.styleFirstCard {
+  background-color: rgb(26, 188, 156);
+  padding: 10px 30px;
+}
+
+.styleThreeCard {
+  background-color: rgb(198, 215, 255);
+
+  padding: 10px 30px;
+}
+
+.styleSecondCard {
+  background-color: rgb(155, 89, 182);
+  padding: 10px 30px;
+}
+
+.styleFourCard {
+  background-color: rgb(255, 142, 1);
+  padding: 10px 30px;
+}
+
+.styleFirstCard,
+.styleSecondCard,
+.styleThreeCard,
+.styleFourCard {
+  border-radius: 40px;
+}
+
+.containerBtn {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.btnAllCourses {
+  text-decoration: none;
+  background-color: rgb(0, 62, 221);
+  font-size: 20px;
+  padding: 7px 43px 7px 23px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .statusUp {
+    display: grid;
+    justify-content: center;
+  }
+  .parent{
+    margin-top: 150px;
+  }
+
+  .titleStatus{
+    margin-right: 30px;
+  }
+  .containerBtn {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cards {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+.containerOne {
+  display: grid;
+  gap: 6rem;
+}
+
+.containerTwo {
+  display: grid;
+  gap: 6rem;
+}
+
+@media (max-width: 600px) {
+  .cards {
+    margin-top: 0px;
+    display: grid;
+    justify-content: center;
+    position: relative;
+    gap: 150px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .containerOne {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .containerTwo {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .pointOne {
+    right: 43%;
+    bottom: 75%;
+    background-color: #2eff2e;
+  }
+
+  .pointTwo {
+    right: 43%;
+    bottom: 53%;
+    background-color: #ff7800;
+  }
+
+  .pointThree {
+    right: 43%;
+    bottom: 31%;
+    background-color: #862effde;
+  }
+}
+
+@media (max-width: 450px) {
+  .pointOne {
+    right: 37%;
+    bottom: 75%;
+    background-color: #2eff2e;
+  }
+
+  .titleStatus{
+    margin-right: 0px;
+  }
+
+  .pointTwo {
+    right: 37%;
+    bottom: 53%;
+    background-color: #ff7800;
+  }
+
+  .pointThree {
+    right: 37%;
+    bottom: 31%;
+    background-color: #862effde;
+  }
+}

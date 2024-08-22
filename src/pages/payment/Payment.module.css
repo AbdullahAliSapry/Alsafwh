@@ -1,0 +1,234 @@
+.navbar {
+    width: fit-content;
+    height: auto;
+    /* padding: var(--mantine-spacing-md); */
+    /* padding: auto 50px; */
+    display: grid;
+    
+    /* flex-direction: column; */
+    padding: 200px 50px 0px 0px;
+    /* align-items: ; */
+    justify-content: center;
+    border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    background-color: rgba(255, 109, 109, 1);
+  }
+
+  .navbarDark {
+    width: fit-content;
+    height: auto;
+    /* padding: var(--mantine-spacing-md); */
+    /* padding: auto 50px; */
+    display: grid;
+    /* flex-direction: column; */
+    padding: 200px 50px 0px 0px;
+    /* align-items: center; */
+    justify-content: center;
+    border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    background-color: rgb(255, 0, 0);
+  }
+
+  .secondNavbar{
+    width: fit-content;
+    height: auto;
+    /* padding: var(--mantine-spacing-md); */
+    /* padding: auto 50px; */
+    display: grid;
+    padding: 200px 50px 0px 0px;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    border-right: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    background-color: rgba(93, 170, 255, 1) ;
+  }
+  
+  .navbarMain {
+    flex: 1;
+    /* margin-top: rem(50px); */
+    /* padding: auto auto auto 200px; */
+
+  }
+  
+  .link {
+    color: white;
+    width: 101%;
+    height: fit-content;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-top-right-radius:50px ;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
+  
+    /* &:hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+    } */
+  
+    &[data-active] {
+      &,
+      &:hover {
+        /* background-color: var(--mantine-color-blue-light); */
+        background-color: white;
+        color: red;
+        transition-delay: 0.5s; 
+        transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);; 
+      }
+    }
+  }
+  .linkDark {
+    color: white;
+    width: 101%;
+    height: fit-content;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-top-right-radius:50px ;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
+  
+    /* &:hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+    } */
+  
+    &[data-active] {
+      &,
+      &:hover {
+        /* background-color: var(--mantine-color-blue-light); */
+        background-color: rgb(36,36,36);
+        color: white ;
+        transition-delay: 0.5s; 
+        transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);; 
+      }
+    }
+  }
+
+
+
+  .linkPayment {
+    color: white;
+    width: 101%;
+    height: fit-content;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-top-right-radius:50px ;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
+  
+    /* &:hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+    } */
+  
+    &[data-active] {
+      &,
+      &:hover {
+        /* background-color: var(--mantine-color-blue-light); */
+        background-color: white;
+        color: rgb(71, 160, 255) ;
+        transition-delay: 0.5s; 
+        transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);; 
+      }
+    }
+  }
+
+  .linkPaymentDark {
+    color: white;
+    width: 101%;
+    height: fit-content;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-top-right-radius:50px ;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    /* color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)); */
+  
+    /* &:hover {
+      background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+    } */
+  
+    &[data-active] {
+      &,
+      &:hover {
+        /* background-color: var(--mantine-color-blue-light); */
+        background-color: rgb(36,36,36);
+        color: white ;
+        transition-delay: 0.5s; 
+        transition: all 0.8s cubic-bezier(0.25, 0.4, 0.45, 1.4);; 
+      }
+    }
+  }
+
+
+
+  .parent{
+    display: flex;
+  }
+
+  @media (max-width:701px) {
+
+    .parent{
+      display: grid;
+    }
+    .navbar , .secondNavbar , .navbarDark {
+      width: auto;
+      height: auto;
+      padding: 0px;
+      display: flex;
+      flex-direction: none;
+      border-right: 0px;
+      margin: 0px;
+    }
+    .styleStack{
+      display: ruby-text;
+      text-align: center;
+      /* margin-left: 15px; */
+    }
+
+    .link , .linkPayment ,.linkDark , .linkPaymentDark {
+      width: fit-content;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border-radius: 50px;
+        /* margin-right: 10px; */
+        /* margin-bottom: 0px; */
+    }
+    .linkPayment , .linkPaymentDark{
+      margin-right: 10px;
+    }
+
+    .linkDark {
+    
+      &[data-active] {
+        &,
+        &:hover {
+          background-color: white;
+        color: red;
+        }
+      }
+    }
+
+    
+  .linkPaymentDark {
+  
+    &[data-active] {
+      &,
+      &:hover {
+        background-color: white;
+        color: rgb(71, 160, 255) ;
+      }
+    }
+  }
+  }

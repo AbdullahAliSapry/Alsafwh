@@ -1,0 +1,361 @@
+{
+  "header": {
+    "startHeader": "تريد التعلم؟",
+    "headerTitle": "هذا هو أفضل مكان",
+    "SubTitle": "مع الصفوه الأن التعلم عن بعد اصبح اسهل ",
+    "ButtonHider": "نبذة عننا",
+    "ButtonJoin": "انضم لنا الان"
+  },
+  "NavBar": {
+    "home": "الرئيسيه",
+    "courses": "الكورسات",
+    "contact": "تواصل معنا",
+    "About": "معلومات عنا"
+  },
+
+  "Menu": {
+    "label": "الصفوه",
+    "settings": "الاعدادات",
+    "messages": "الرسائل",
+    "photos": "الصور",
+    "courses": "الكورسات",
+    "deleteAccount": "حذف الاكونت",
+    "logout": "تسجيل الخروج",
+    "confirmLogout": "هل تريد تسجيل الخروج؟",
+    "confirmButton": "تسجيل الخروج",
+    "cancelButton": "إلغاء"
+  },
+
+  "SecondeSection": {
+    "title": "ما يُميز المنصة",
+    "previousExams": "امتحانات سابقة وحلول",
+    "previousExamsDesc": "قاعدة بيانات تحتوى على امتحانات سابقة مرتبة حسب السنوات والمواد بالإضافة الى حلول نموذجية.",
+    "comprehensiveLibrary": "مكتبة شاملة",
+    "comprehensiveLibraryDesc": "فيديوهات تعليمية عالية الجودة تشمل جميع مواد الثانوية العامة وإمكانية الوصول الى المحتوى فى أى وقت وأى مكان.",
+    "secure": "أمن 100%",
+    "secureDesc": "نظام أمنى قوى لحماية بيانات الطالب والمحتوى التعليمى وسياسة خصوصية تضمن سرية المعلومات.",
+    "technicalSupport": "دعم فنى وتعليمى",
+    "technicalSupportDesc": "نظام دعم فنى لمساعدة الطلاب فى حل اي مشكلات تقنية وجلسات تفاعلية مع المعلمين للإجابة على الأسئلة والاستفسارات."
+  },
+
+  "NewCourses": {
+    "title": "أحدث",
+    "courses": "الكورسات",
+    "addition": "إضافة",
+    "allCourses": "جميع الكورسات"
+  },
+
+  "Announcement": {
+    "titlePart1": "انت",
+    "titlePart2": "المستقبل",
+    "titlePart3": "و نحن السبيل!",
+    "subtitle": "تابع تقدمك في اي وقت",
+    "subscribeButton": "اشترك الان",
+    "offersTextPart1": "يمكنك الحصول علي",
+    "offersTextPart2": "العروض و الخصومات"
+  },
+  "Courses": {
+    "title": "الكورسات",
+    "noData": "لا توجد داتا لعرض",
+    "allCoursesButton": "جميع الكورسات"
+  },
+  "Status": {
+    "browse": "تصفح",
+    "materials": "مواد",
+    "registeredStudents": "الطلاب المسجلين",
+    "expertTeachers": "الاساتذه الخبراء",
+    "onlineCourses": "الكورسات الاونلاين",
+    "allMaterialsButton": "جميع المواد"
+  },
+  "Teachers": {
+    "title": "الأساتذة",
+    "noTeachers": "لم يتم اضافه اساتذه بعد...",
+    "bestTeachers": "يتم اختيار",
+    "selected": "افضل الأساتذة",
+    "forStudents": "لتعليم الطلاب",
+    "pathToSuccess": "مع اساتذتنا الطريق الى التفوق امامك",
+    "instructor": "مدرس",
+    "defaultName": "احمد كامل",
+    "allTeachersButton": "جميع المدرسين"
+  },
+  "FeedBack": {
+    "title": "آراء عن الصفوه",
+    "profileAlt": "الملف الشخصي",
+    "noFeedbacks": "لم يتم اضافه اي اراء",
+    "allFeedbackButton": "جميع الاراء"
+  },
+  "Footer": {
+    "paymopAlt": "شعار باي موب",
+    "phoneAlt": "رمز الهاتف",
+    "more": "المزيد",
+    "about": "عنا",
+    "team": "الفريق",
+    "contact": "تواصل معنا",
+    "helpCenter": "مركز المساعدة",
+    "terms": "الاحكام",
+    "termsOfUse": "شروط الاستخدام",
+    "privacyPolicy": "اتفاقية الخصوصية",
+    "cookiePolicy": "سياسة ملفات تعريف الارتباط",
+    "language": "اللغة",
+    "arabic": "عربي",
+    "english": "English"
+  },
+  "Subscription": {
+    "title": "الاشتراكات",
+    "noPlans": "لا يوجد اشتراكات حتى الان.",
+    "Button": "جميع الاشتراكات"
+  },
+  "SubscriptionCard": {
+    "loginPrompt": "من فضلك سجل الدخول اولا",
+    "recommended": "مقترح",
+    "educationalVideos": "فيديوهات تعليمية",
+    "previousExams": "امتحانات سابقة وحلها",
+    "topTeachers": "أساتذة على أعلى مستوى",
+    "subscribe": "اشترك",
+    "Coin": "ج م",
+    "Month": "شهري",
+    "Year": "سنوي",
+    "Mid": "نصف سنوي"
+  },
+  "subscriptionsPage": {
+    "title": "معلومات عن الاشتراكات",
+    "knowMore": "يرجى معرفتها المعلومات التالية عن الاشتراكات",
+    "amount": "المبلغ: "
+  },
+  "aboutUs": {
+    "whoWeAre": "من نحن",
+    "description1": "منصه الصفوه التعليميه هي منصه تعليميه عبر الانترنت مخصصه لطلاب الثانويه العامه.",
+    "description2": "تتيح المنصه للمستخدمين الوصول الي دروس و شروحات في جميع المواد الدراسيه من خلال اشتراك شهري.",
+    "description3": "توفر المنصه ميزات متعدده تهدف الي تحسين تجربه التعليم الالكتروني و تسهيل التحضير للامتحانات النهائيه.",
+    "ourTeachers": "معلمينا",
+    "teachersDescription1": "لقد قمنا باختصار الوقت عليك وعملنا على اختيار أفضل المعلمين بعد عملية تقييم طويلة لضمان جودة دروسنا.",
+    "teachersDescription2": "معلمينا هم من النخبة وذوي خبرة قوية في مجال التدريس.",
+    "ourMission": "مهمتنا",
+    "missionDescription": "نطمح لأن يصل محتوانا الأكاديمي لأكبر عدد من الطلاب في جمهوريه مصر العربيه.",
+    "ourVision": "رؤيتنا",
+    "visionDescription": "نسعى لتقديم محتوى تعليمي يراعى طرق التعلم المختلفة للطلاب."
+  },
+  "contactUs": {
+    "viaWhatsapp": "عبر واتساب",
+    "callPhone": "الاتصال عبر الهاتف",
+    "or": "او"
+  },
+  "contactForm": {
+    "email": "الايميل",
+    "emailPlaceholder": "your@email.com",
+    "name": "الاسم",
+    "namePlaceholder": "ادخل اسمك من فضلك",
+    "phone": "رقم الهاتف",
+    "phonePlaceholder": "01280365214",
+    "description": "مشكلتك",
+    "descriptionPlaceholder": "من فضلك اكتب مشكلتك وسيتم التواصل معك في اقرب وقت",
+    "submitButton": "ارسال المشكله",
+    "validation": {
+      "nameRequired": "الاسم مطلوب",
+      "invalidEmail": "البريد الاكتروني غير صالح",
+      "emailRequired": "البريد الاكتروني مطلوب",
+      "descriptionRequired": "الموضوع مطلوب",
+      "descriptionMax": "الموضوع يجب أن لا يتجاوز 500 حرف",
+      "phoneRequired": "رقم الهاتف مطلوب",
+      "invalidPhone": "ادخل رقم هاتف صالح"
+    }
+  },
+  "courses": {
+    "notFoundFiltered": "لا توجد نتائج لهذا البحث",
+    "notFound": "لا توجد كورسات حاليا"
+  },
+  "coursesHeader": {
+    "heading": "يمكنك الوصول للتفوق مع الصفوه",
+    "subheading": "من أكبر وأشمل المنصات على مستوى مصر، ماذا تنتظر؟",
+    "welcome": "اهلا بك، {{firstName}} {{lastName}}",
+    "joinNow": "انضم لنا الآن"
+  },
+
+  "search": {
+    "emptyFields": "كل القيم فارغه",
+    "noFilter": "البحث فارغ",
+    "filterCleared": "تم مسح البحث",
+    "yearLabel": "الصف الدراسي",
+    "yearPlaceholder": "اختر الصف الدراسي",
+    "specializationLabel": "الشعبة",
+    "specializationPlaceholder": "اختر الشعبة",
+    "literary": "ادبي",
+    "science": "علم علوم",
+    "mathematical": "علم رياضه",
+    "subjectLabel": "المادة الدراسية",
+    "subjectPlaceholder": "ادخل اسم المادة"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "emailPlaceholder": "البريد الالكتروني",
+    "passwordPlaceholder": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة السر؟",
+    "submitButton": "تسجيل الدخول",
+    "noAccount": "ليس لديك حساب؟",
+    "createAccount": "انشاء حساب"
+  },
+  "validationLogin": {
+    "email": {
+      "invalid": "البريد الالكتروني يجب ان يكون صالحاً",
+      "required": "البريد الالكتروني مطلوب"
+    },
+    "password": {
+      "min": "كلمة المرور يجب أن تتكون من 8 أحرف على الأقل",
+      "required": "كلمة المرور مطلوبة"
+    }
+  },
+
+  "signin": {
+    "title": "انشاء حساب",
+    "firstNamePlaceholder": "الاسم الاول",
+    "lastNamePlaceholder": "الاسم الثاني",
+    "phonePlaceholder": "رقم الهاتف",
+    "fatherPhonePlaceholder": "رقم هاتف ولي الامر",
+    "emailPlaceholder": "البريد الالكتروني",
+    "locationPlaceholder": "المكان",
+    "yearPlaceholder": "اختر السنة",
+    "specializationPlaceholder": "اختر التخصص",
+    "genderPlaceholder": "اختر الجنس",
+    "imgIdentityLabel": "ارفق صورة الهوية",
+    "imgLabel": "ارفق صورة البروفايل",
+    "passwordPlaceholder": "كلمة المرور",
+    "confirmPasswordPlaceholder": "تأكيد كلمة المرور",
+    "submitButton": "انشاء حساب",
+    "loginLink": "تسجيل الدخول",
+    "alreadyHaveAccount": "لديك حساب ؟",
+    "departments": [
+      {
+        "name": "لم اختر شعبه بعد",
+        "value": "لم يتم اختيار الشعبه بعد"
+      },
+      {
+        "name": "ادبي",
+        "value": "ادبي"
+      },
+      {
+        "name": "علم علوم",
+        "value": "علم علوم"
+      },
+      {
+        "name": "علم رياضه",
+        "value": "علم رياضه"
+      }
+    ],
+    "Gender": {
+      "male": "ذكر",
+      "female": "أنثى"
+    },
+    "BtnConfirm": "تأكيد",
+    "BtnCancel": "الغاء"
+  },
+  "validationRegister": {
+    "YearIdRequired": "الصف مطلوب",
+    "ImgIdentityRequired": "شهادة الميلاد مطلوبة",
+    "SpecializationRequired": "التخصص مطلوب",
+    "LocationRequired": "المكان مطلوب",
+    "GenderRequired": "الجنس مطلوب",
+    "EmailInvalid": "البريد الإلكتروني يجب أن يكون صالحاً",
+    "EmailRequired": "البريد الإلكتروني مطلوب",
+    "FatherPhoneLength": "رقم هاتف ولي الأمر يجب أن يكون 11 رقماً",
+    "FatherPhoneRequired": "رقم هاتف ولي الأمر مطلوب",
+    "FatherPhoneNotMatch": "رقم هاتف ولي الأمر لا يمكن أن يكون نفس رقم الهاتف",
+    "PhoneLength": "رقم الهاتف يجب أن يكون 11 رقماً",
+    "PhoneRequired": "رقم الهاتف مطلوب",
+    "ImgRequired": "الصورة مطلوبة",
+    "FirstNameLength": "الاسم الأول يجب أن يكون بين 3 و 20 حرفاً",
+    "FirstNameRequired": "الاسم الأول مطلوب",
+    "LastNameLength": "الاسم الثاني يجب أن يكون بين 3 و 20 حرفاً",
+    "LastNameRequired": "الاسم الثاني مطلوب",
+    "PasswordLength": "كلمة المرور يجب أن تتكون من 8 أحرف على الأقل",
+    "PasswordRequired": "كلمة المرور مطلوبة",
+    "ConfirmPasswordMatch": "يجب أن تتطابق كلمات المرور",
+    "ConfirmPasswordRequired": "تأكيد كلمة المرور مطلوب",
+    "PasswordComplexity": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد على الأقل، ورقم واحد على الأقل، ورمز خاص واحد على الأقل."
+  },
+  "Vodafone": {
+    "subscriptions": "الاشتراكات",
+    "subscriptionPlan": "خطة الاشتراك",
+    "subscriptionMonth": "شهر الاشتراك",
+    "amountDue": "المبلغ المراد سداده",
+    "coupon": "كوبون خصم",
+    "vodafone": "فودافون",
+    "transferNumber": "يمكنك التحويل على الرقم التالى",
+    "receiptInfo": "ثم ارسل صوره الإيصال للدعم الفنى لتأكيد الاشتراك"
+  },
+  "student": {
+    "title": "الطلاب",
+    "subtitle": "هم أمل التقدم ومفتاح المستقبل",
+    "male": "طالب",
+    "female": "طالبة",
+    "registeredCourses": "الكورسات المسجل بها",
+    "firstName": "الأسم الأول",
+    "firstNamePlaceholder": "اسمك الأول",
+    "secondName": "الأسم الثاني",
+    "secondNamePlaceholder": "اسمك الثاني",
+    "class": "الصف الدراسي",
+    "department": "القسم",
+    "changePassword": "تغيير كلمة المرور",
+    "changePasswordPlaceholder": "كلمة المرور الجديدة",
+    "confirmChangePassword": "تأكيد تغيير كلمة المرور",
+    "confirmChangePasswordPlaceholder": "تأكيد كلمة المرور الجديدة",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "fatherPhone": "رقم هاتف ولى الأمر",
+    "Button1": "تعديل",
+    "Button2": "حفظ",
+    "oldPassword": "كلمة السر الحاليه",
+    "newPassword": "كلمة السر الجديده",
+    "ConfirmNewPassword": "تأكيد كلمة السر الجديدة",
+    "BtnPassword": "تغير كلمة السر",
+    "oldPasswordRequire": "كلمه السر الحاليه مطلوبه",
+    "BtnSubmit": "تغيير",
+    "TitleConfirm": "تغير كلمه المرور",
+    "DescriptionConfirm": "هل انت متأكد من تغيير كلمه المرور"
+  },
+  "HeaderTeacher": {
+    "btn": "تحديث الصورة"
+  },
+  "notifications": {
+    "noNotifications": "لا توجد تنبيهات حتى الآن"
+  },
+  "feedBackCourse": {
+    "validation": {
+      "idRequired": "المعرف مطلوب.",
+      "courseIdRequired": "معرف الدورة مطلوب.",
+      "userIdRequired": "معرف المستخدم مطلوب.",
+      "descriptionRequired": "الوصف مطلوب.",
+      "descriptionMax": "يجب أن يكون الوصف بحد أقصى 500 حرف.",
+      "isConfirmedRequired": "حالة التأكيد مطلوبة.",
+      "rateRequired": "التقييم مطلوب.",
+      "rateMin": "يجب أن يكون التقييم على الأقل 1.",
+      "rateMax": "يجب أن يكون التقييم بحد أقصى 5."
+    }
+  },
+  "coursesForStudent": {
+    "userNotFound": "هذا المستخدم غير موجود",
+    "maleStudent": "طالب",
+    "femaleStudent": "طالبة",
+    "registeredCourses": "الكورسات المسجل بها",
+    "noCourses": "لا توجد لديك اي كورسات"
+  },
+  "courseCard": {
+    "totalProgress": "التقدم الكلي",
+    "next": "التالي",
+    "continueLearning": "تابع التعلم"
+  },
+  "feedbackCourse": {
+    "allOpinions": "كل الاراء",
+    "noOpinions": "لا توجد اي اراء حاليا",
+    "shareOpinion": "شاركنا رأيك عن الكورس",
+    "notesPlaceholder": "الملاحظات",
+    "ratingPlaceholder": "التقييم",
+    "submit": "ارسال",
+    "thankYou": "شكراً لمشاركتك ملاحظاتك معنا",
+    "loginFirst": "من فضلك قم بتسجيل الدخول اولاً",
+    "registerFirst": "يجب عليك التسجيل في الكورس اولاً لتتمكن من ابداء رايك الصادق",
+    "improvementMessage": "نحن نسعى دائماً لتحسين خدماتنا بناءً على ملاحظاتكم القيمة. يرجى تخصيص بعض الوقت لتزويدنا بتعليقاتك وتجربتك مع خدماتنا.",
+    "anotherImprovementMessage": "نحن نسعى دائماً لتحسين خدماتنا بناءً على ملاحظاتكم القيمة. يرجى تخصيص",
+    "backToCourse": "العودة إلى الدورة",
+    "Message": "شكرا لك تم ارسال تقييمك بنجاح"
+  }
+}

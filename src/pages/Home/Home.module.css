@@ -1,0 +1,8 @@
+
+@media (min-width:1250px) {
+    .container{
+        display: grid;
+        justify-content: center;
+    }
+    
+}

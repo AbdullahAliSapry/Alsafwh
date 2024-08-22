@@ -1,0 +1,192 @@
+.headerPageTeacher{
+    background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
+    padding: 50px 100px;
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  }
+
+
+  
+.containerLight {
+    background-color: rgb(234, 241, 255);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  
+  .containerDark {
+    background-color: rgb(41, 41, 42);
+    color: white;
+    border-radius: 10px;
+    box-shadow: rgba(252, 251, 251, 0.15) 1.95px 1.95px 2.6px;
+  }
+  
+  .containerImage {
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: rgb(209, 146, 153);
+    overflow: hidden;
+  }
+  
+  .containerImageEmail {
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: rgb(209, 146, 153);
+    overflow: hidden;
+  }
+  
+  .inputFiled {
+    outline: none;
+    border: 0px;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .inputFiledSelect {
+    outline: none;
+    border: 0px;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin-top: 10px;
+    width: 100%;
+    /* background-color: red; */
+  }
+  
+  .emailStyle {
+    gap: 1rem;
+  }
+  
+  .addEmailLight {
+    background-color: rgb(217, 230, 254);
+    padding: 0px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: rgb(34, 166, 241);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  }
+  
+  .addEmailDark {
+    background-color: rgb(60, 60, 60);
+    padding: 0px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: rgb(34, 166, 241);
+    display: flex;
+    align-items: center;
+    width: fit-content;
+  }
+  
+  .btnSave {
+    background: rgb(65, 130, 249);
+    outline: none;
+    border: 0px;
+    border-radius: 6px;
+    padding: 6px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 790px) {
+    .containerStudentDate {
+      flex-wrap: wrap;
+      gap: 5rem;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .numberOfCourses {
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+  
+    .containerFiled {
+      flex-wrap: wrap;
+    }
+  }
+  
+  @media (max-width: 410px) {
+    .parentPhone {
+      order: -1;
+      margin-bottom: -10px;
+    }
+    .emailStyle {
+      gap: 5px;
+    }
+  }
+  
+  
+  @media (max-width:460px) {
+  
+    .headerPageTeacher{
+        padding: 40px 20px;
+    
+        background-size:auto 100% ;
+    }
+    }
+
+
+    
+
+.header_title {
+    margin-top: 20px;
+    border-top: 2px solid transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .card {
+    border: none;
+    text-align: center;
+    }
+    
+    .card_img_top {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+    margin-bottom: -7px;
+    }
+    
+    .card_titleLight {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: black;
+    }
+    .card_titleDark {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: white;
+    }
+    
+    .card_textLight {
+    font-size: 1rem;
+    color:black;
+    }
+    
+    .card_textDark {
+    font-size: 1rem;
+    color: white;
+    }
+    
+    
+    @media (max-width:550px) {
+    
+        .select{
+            margin-right: 30px;
+        }
+        }
+    
+    @media (max-width:460px) {
+    
+    .headerPageTeacher{
+        padding: 40px 20px;
+    
+        background-size:auto 100% ;
+    }
+    }

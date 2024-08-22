@@ -1,0 +1,28 @@
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  
+  .centerCard {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    height: 620px;
+  }
+  
+  
+  @media (max-width:1250px) {
+    .parent {
+      gap: 5rem;
+    }
+    
+  .centerCard {
+    margin-bottom: 0px;
+    height: 600px;
+  }
+    
+  }

@@ -1,0 +1,259 @@
+/* General Styles */
+.topParentLight {
+  background-color: rgba(234, 241, 255, 1);
+  border-radius: 15px;
+  padding: 50px;
+  box-sizing: border-box;
+}
+.topParentDark {
+  background-color: "";
+  padding: 50px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.112);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.styleSize {
+  margin: 50px 50px;
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 87%,
+    47% 87%,
+    22% 96%,
+    29% 87%,
+    0 87%
+  );
+  height: 250px;
+}
+
+.parent {
+  height: 80px;
+  padding: 10px 20px;
+}
+
+.titleStyle {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 65%;
+}
+
+.titleLight {
+  color: black;
+}
+.titleDark {
+  color: white;
+}
+
+.styleBackLight {
+  width: fit-content;
+  position: relative;
+}
+
+.styleBackDark {
+  width: fit-content;
+  position: relative;
+}
+
+.styleBackLight::before {
+  content: "";
+  width: 60%;
+  display: inline-block;
+  background-color: rgb(115 205 255 / 42%);
+  height: 43px;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  border-radius: 5px;
+}
+.styleBackDark::before {
+  content: "";
+  width: 60%;
+  display: inline-block;
+  background-color: rgba(25, 15, 207, 0.244);
+  height: 43px;
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  transform: translateY(50%);
+  border-radius: 5px;
+}
+
+.slideLight {
+  position: relative;
+}
+
+.slideLight::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 33px;
+  background: rgb(234, 241, 255);
+  bottom: 81px;
+  left: 16%;
+  z-index: 100;
+  clip-path: circle(59% at 50% 173%);
+}
+
+.slideDark {
+  position: relative;
+}
+
+.slideDark::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 33px;
+  background: rgb(36, 36, 36);
+  bottom: 81px;
+  left: 16%;
+  z-index: 100;
+  clip-path: circle(59% at 50% 173%);
+}
+
+.info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 23px;
+  left: 15%;
+  z-index: 1000;
+}
+
+.inputComment {
+  border: 0px;
+  outline: none;
+  border-bottom: 1px solid rgba(60, 59, 59, 0.301);
+  margin: 20px 0px;
+  padding: 10px 5px 5px;
+  width: 100%;
+  border-radius: 8px;
+}
+.ConImgOk{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.styleImageOk{
+
+  width: 150px;
+}
+
+.containerForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.styleImage {
+  width: 450px;
+  height: 450px;
+  margin-left: -150px;
+  margin-top: -50px;
+}
+
+.styleForm {
+  padding: 0px 70px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 961px) {
+  .topParentLight,
+  .topParentDark {
+    width: 700px;
+    padding: 50px;
+  }
+}
+
+@media (max-width: 761px) {
+  .styleImage {
+    width: 350px;
+    height: 350px;
+    margin-left: 0px;
+    margin-top: -20px;
+  }
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 733px) {
+  .containerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .styleImage {
+    width: 250px;
+    height: 250px;
+    margin-left: -100px;
+    margin-top: -50px;
+  }
+}
+
+@media (max-width: 701px) {
+  .topParentLight,
+  .topParentDark {
+    width: 500px;
+    padding: 50px;
+  }
+}
+
+@media (max-width: 551px) {
+  .styleImage {
+    display: none;
+  }
+  .containerForm {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+  }
+  .styleForm {
+    padding: 0px 20px;
+  }
+}
+
+@media (max-width: 501px) {
+  .topParentLight,
+  .topParentDark {
+    padding: 40px 20px;
+    width: 400px;
+  }
+  .styleSize {
+    margin: 40px 40px;
+  }
+}
+
+@media (max-width: 401px) {
+  .topParentLight,
+  .topParentDark {
+    padding: 40px 10px;
+    width: 350px;
+  }
+  .styleSize {
+    margin: 40px 0px;
+    padding: 0 !important;
+  }
+  .slideLight::before {
+    bottom: 72px;
+    left: 0%;
+  }
+
+  .info p {
+    font-size: 10px !important;
+  }
+  .info {
+    bottom: 23px;
+    left: 0%;
+    z-index: 200;
+  }
+}
