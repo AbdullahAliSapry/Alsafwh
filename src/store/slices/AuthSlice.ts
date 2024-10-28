@@ -8,6 +8,7 @@ export interface StateInterface {
   MessageConfirmed: string | null;
   AuthModel: IAuthModel | null;
   isChanged: boolean;
+  isSending: boolean ;
 }
 
 const cookies = new Cookies();
@@ -20,6 +21,7 @@ const initialState: StateInterface = {
   MessageConfirmed: null,
   AuthModel: AuthModelStored ? AuthModelStored : null,
   isChanged: false,
+  isSending: false,
 };
 
 const AuthSlice = createSlice({
@@ -44,15 +46,24 @@ const AuthSlice = createSlice({
     },
     changePassword: (
       state,
-      action: PayloadAction<{ IsLoading: boolean; isChanged:boolean }>
+      action: PayloadAction<{ IsLoading: boolean; isChanged: boolean }>
     ) => {
       state.isChanged = action.payload.isChanged;
       state.IsLoading = action.payload.IsLoading;
     },
+    setIsSending: (state, action:PayloadAction<boolean>) => {
+      state.isSending = action.payload;
+    }
   },
 });
 
-export const { SignIn, ConfirmEmail, ResetConfirmEmail, LogIn, changePassword } =
-  AuthSlice.actions;
+export const {
+  SignIn,
+  ConfirmEmail,
+  ResetConfirmEmail,
+  setIsSending,
+  LogIn,
+  changePassword,
+} = AuthSlice.actions;
 
 export default AuthSlice.reducer;

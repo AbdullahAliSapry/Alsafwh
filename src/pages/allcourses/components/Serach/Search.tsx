@@ -42,7 +42,7 @@ export default function Search() {
     validateOnChange: true,
     onSubmit: (values: IFilter) => {
       if (!values.Specialization && !values.subject && !values.Year) {
-        toast.warning(t("search.emptyFields")); // Use translation
+        toast.warning(t("search.emptyFields")); 
         return;
       }
       dispatch(GetAllCoursesApi(1, count, values));
@@ -55,10 +55,10 @@ export default function Search() {
       !formik.values.subject &&
       !formik.values.Year
     ) {
-      toast.warning(t("search.noFilter")); // Use translation
+      toast.warning(t("search.noFilter"));
       return;
     }
-    toast.info(t("search.filterCleared")); // Use translation
+    toast.info(t("search.filterCleared"));
     formik.resetForm();
     dispatch(ClearFilter());
   };
@@ -99,10 +99,16 @@ export default function Search() {
             <option value="" disabled>
               {t("search.specializationPlaceholder")}
             </option>
-            <option value="Literary">{t("search.literary")}</option>
-            <option value="Science">{t("search.science")}</option>
-            <option value="Mathematical">{t("search.mathematical")}</option>
+            <option value="ادبي">{t("search.literary")}</option>
+            <option value="علمي">{t("search.science")}</option>
+            <option value="علم رياضه">{t("search.mathematical")}</option>
+            <option value="علم علوم">{t("search.sinceBranch")}</option>
+            <option value="مشتركه">{t("search.shared")}</option>
+            <option value="لم اختر شعبه بعد">
+              {t("search.noSpecialization")}
+            </option>
           </select>
+
           {formik.touched.Specialization && formik.errors.Specialization && (
             <Text c="red">{formik.errors.Specialization}</Text>
           )}

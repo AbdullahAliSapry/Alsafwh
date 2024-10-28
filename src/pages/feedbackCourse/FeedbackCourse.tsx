@@ -33,7 +33,9 @@ export default function FeedbackCourse() {
   const { CourseId } = useParams();
   const { AuthModel } = useSelector((state: RootState) => state.Auth);
   const navigate = useNavigate();
-  const { studentCourses } = useSelector((state: RootState) => state.Student);
+  const { studentCourses, studentCourseSingle } = useSelector(
+    (state: RootState) => state.Student
+  );
   const { loading, CoursesFeedBacks } = useSelector(
     (state: RootState) => state.FeedBackCourses
   );
@@ -44,7 +46,11 @@ export default function FeedbackCourse() {
     description: "",
     userId: AuthModel?.userId as string,
   };
-  const course = studentCourses.find((e) => e.id === CourseId);
+
+  const course =
+    studentCourses.find((e) => e.id === CourseId) ||
+    studentCourseSingle.find((e) => e.id === CourseId);
+
   const formik = useFormik({
     initialValues,
     validationSchema: FeedBackCourseSchema(),
@@ -52,7 +58,7 @@ export default function FeedbackCourse() {
     validateOnChange: true,
     onSubmit: (values) => {
       if (!AuthModel) {
-        toast.success(t("feedbackCourse.loginFirst"));
+        toast.info(t("feedbackCourse.loginFirst"));
         navigate("/login");
         return;
       }
@@ -71,11 +77,13 @@ export default function FeedbackCourse() {
   }, [CourseId, dispatch]);
 
   useEffect(() => {
-    if (AuthModel?.userId && studentCourses.length === 0) {
+    if (AuthModel?.roles[0]==="Student"&&AuthModel?.userId && studentCourses.length === 0) {
       dispatch(GetCoursesToStudentApi(AuthModel?.userId));
     }
-  }, [AuthModel?.userId, dispatch, studentCourses]);
-
+  }, [AuthModel?.roles, AuthModel?.userId, dispatch, studentCourses]);
+ useEffect(() => {
+   window.scrollTo(0, 0);
+ }, []);
   return (
     <>
       {loading && <Spinner />}
@@ -202,30 +210,15 @@ export default function FeedbackCourse() {
             </Text>
           </Box>
         </Container>
-        <Box ta={"end"} mt={50}>
-          <Link
-            to={`/content-course/${CourseId}`}
-            className={classes.backToCourse}>
-            {t("feedbackCourse.backToCourse")}
-          </Link>
-        </Box>
-        {/* <Box>
-          <Modal
-            styles={{
-              header: { paddingBottom: "0px", paddingTop: "0px" },
-              content: {
-                color: computedColorScheme === "light" ? "black" : "white",
-              },
-            }}
-            centered
-            opened={opened}
-            onClose={close}
-            title="">
-            <Text ta={"center"} fw={700}>
-              {t("feedbackCourse.thankYou")}
-            </Text>
-          </Modal>
-        </Box> */}
+        {AuthModel && (
+          <Box ta={"end"} mt={50}>
+            <Link
+              to={`/content-course/${CourseId}`}
+              className={classes.backToCourse}>
+              {t("feedbackCourse.backToCourse")}
+            </Link>
+          </Box>
+        )}
       </Container>
     </>
   );

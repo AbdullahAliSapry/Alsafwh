@@ -8,9 +8,9 @@ import {
 } from "@mantine/core";
 import classes from "./TeachersStudent.module.css";
 import image from "@assets/Alsafwa/RetratoTwo.png";
-import material from "@assets/Alsafwa/Mathematics-bro.png";
+import material from "@assets/Alsafwa/teacheravatart.png";
 import { Link } from "react-router-dom";
-import teacher from "@assets/Alsafwa/Retrato Corporativo _ Foto para LinkedIn _ Perfil Profissional _ São Paulo_BR.png";
+import teacher from "@assets/Alsafwa/teacheravatart.png";
 
 const color = "rgb(34,166,241)";
 

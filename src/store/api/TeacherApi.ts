@@ -4,6 +4,7 @@ import {
   getAllTeacher,
   getCoursesTeacher,
   GetOneTeacher,
+  setCountSubscriptions,
   setLoading,
   updateImg,
 } from "@store/slices/TeahcerSlice";
@@ -18,7 +19,7 @@ export const GetAllTeacherApi = () => {
       const { data } = await Api.get("Teacher/getteachers");
       dispatch(getAllTeacher(data));
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+      console.log(error?.response?.data);
     }
   };
 };
@@ -55,7 +56,7 @@ export const UpdateImgApiTeacher = (
       toast.success(data.result.statusMessage);
     } catch (error: any) {
       dispatch(setLoading(false));
-      toast.error("Failed to fetch teacher!");
+      toast.error(error.response.data.message || "فشل في تحديث الصوره");
     }
   };
 };
@@ -65,6 +66,18 @@ export const GetTeacherCoursesApi = (UserId: string) => {
     try {
       const { data } = await Api.get(`Course/getCoursesToTeacher/${UserId}`);
       dispatch(getCoursesTeacher(data));
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+    }
+  };
+};
+
+
+export const GetCountToTeacher = (teacherId: string) => {
+  return async (dispatch: Dispatch<PayloadAction<number>>) => {
+    try {
+      const { data } = await Api.get(`Teacher/getsubscription/${teacherId}`);
+      dispatch(setCountSubscriptions(data.count));
     } catch (error: any) {
       toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
     }

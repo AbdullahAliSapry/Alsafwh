@@ -7,6 +7,7 @@ export interface IStartState {
   student: IStudent | null;
   loading: boolean;
   studentCourses: ICourse[];
+  studentCourseSingle:ICourse[];
 }
 
 const storedData = localStorage.getItem("student");
@@ -15,6 +16,7 @@ const initialState: IStartState = {
   student: storedData ? JSON.parse(storedData) : null,
   loading: false,
   studentCourses: [],
+  studentCourseSingle: [],
 };
 
 const StudentSlice = createSlice({
@@ -35,10 +37,18 @@ const StudentSlice = createSlice({
     getCoursesStudent: (state, action: PayloadAction<ICourse[]>) => {
       state.studentCourses = action.payload;
     },
+    getCoursesStudentSingleSub: (state, action: PayloadAction<ICourse[]>) => {
+      state.studentCourseSingle = action.payload;
+    },
   },
 });
 
-export const { getStudent, updateImg, setLoading, getCoursesStudent } =
-  StudentSlice.actions;
+export const {
+  getStudent,
+  updateImg,
+  setLoading,
+  getCoursesStudent,
+  getCoursesStudentSingleSub,
+} = StudentSlice.actions;
 
 export default StudentSlice.reducer;

@@ -13,7 +13,7 @@
   border: none;
   background-color: transparent;
   text-align: center;
-  width: 60%;
+  width: 40%;
   border: 1px solid rgb(34, 139, 230);
   margin: 10px auto;
   border-radius: 10px;
@@ -44,9 +44,7 @@
   height: 190px;
 }
 
-.positionImage {
-  background-color: rgb(118, 84, 182);
-}
+
 .position_Image {
   position: absolute;
   bottom: -29%;

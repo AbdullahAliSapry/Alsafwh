@@ -1,16 +1,29 @@
-.headerPageTeacher{
-    background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
-    padding: 50px 100px;
-background-size: 100% ;
-background-repeat: no-repeat;
+.headerPageTeacher {
+  background-image: url("../../assets/Alsafwa/222.jpg");
+  padding: 50px 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
+}
+
+@media (max-width: 460px) {
+  .headerPageTeacher {
+    padding: 40px 20px;
+
+    background-size: auto 100%;
+  }
+}
+
+.Titile {
+  padding-top: 88px;
+}
+
+.Titile > p {
+  color: #22a6f1 !important;
 }
 
 
-@media (max-width:460px) {
-
-    .headerPageTeacher{
-        padding: 40px 20px;
-    
-        background-size:auto 100% ;
-    }
-    }
+.Titile > p:last-child{
+  font-size: 18px !important;
+}

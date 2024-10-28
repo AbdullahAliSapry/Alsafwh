@@ -8,6 +8,7 @@ export interface IStateCourse {
   isAvilable: boolean | null;
   isCompleted: boolean;
   isLimited: boolean;
+  Count:number;
 }
 
 const initialState: IStateCourse = {
@@ -17,6 +18,7 @@ const initialState: IStateCourse = {
   isAvilable: true,
   isCompleted: false,
   isLimited: false,
+  Count: 0,
 };
 
 const LessonSlice = createSlice({
@@ -44,13 +46,19 @@ const LessonSlice = createSlice({
     },
     editOnAvailability: (
       state,
-      action: PayloadAction<{ isCompleted: boolean; isAvilable: boolean,isLimited:boolean }>
+      action: PayloadAction<{
+        isCompleted: boolean;
+        isAvilable: boolean;
+        isLimited: boolean;
+        Count:number;
+      }>
     ) => {
       state.isAvilable = action.payload.isAvilable;
       state.isCompleted = action.payload.isCompleted;
       state.isLimited = action.payload.isLimited;
+      state.Count = action.payload.Count;
     },
-    makeCompleted: (state, action:PayloadAction<boolean>) => {
+    makeCompleted: (state, action: PayloadAction<boolean>) => {
       state.isCompleted = action.payload;
     },
   },

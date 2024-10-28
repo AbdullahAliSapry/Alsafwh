@@ -1,10 +1,4 @@
-import {
-  Box,
-  Container,
-  Pagination,
-  Text,
-  useComputedColorScheme,
-} from "@mantine/core";
+import { Box, Container, Text, useComputedColorScheme } from "@mantine/core";
 import classes from "./SingleMaterial.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
@@ -23,7 +17,7 @@ export default function SingleMaterial() {
   useEffect(() => {
     if (id == null || id == "") return;
     dispatch(GetSubjectByIdApi(id));
-  }, []);
+  }, [dispatch, id]);
 
   console.log(subject);
 
@@ -45,7 +39,8 @@ export default function SingleMaterial() {
         </Text>
 
         <Text mb={20} c={"white"}>
-          الشعبة الدراسية :<span style={{ color: "#003EDD" }}>ادبي</span>
+          الشعبة الدراسية :
+          <span style={{ color: "#003EDD" }}>{subject?.branch}</span>
         </Text>
       </Box>
       <Container mb={50}>
@@ -54,18 +49,28 @@ export default function SingleMaterial() {
           mt={100}
           mb={30}
           fw={700}
-          fz={25}>
+          fz={25}
+          style={{ textAlign: "center" }}>
           الكورسات المتاحة لمادة{" "}
           <span style={{ color: "#003EDD" }}>{subject?.name}</span>
         </Text>
         <Box className={classes.parent}>
-          {subject?.courses?.map((course) => (
-            <CourseCard course={course} key={course.id} />
-          ))}
+          {subject?.courses && subject?.courses.length > 0 && (
+            <>
+              {" "}
+              {subject?.courses?.map((course) => (
+                <div key={course?.id}>
+                  <CourseCard course={course}  />
+                </div>
+              ))}
+            </>
+          )}
         </Box>
-        <Box mt={50} display={"flex"} style={{ justifyContent: "center" }}>
-          <Pagination total={5} siblings={1} defaultValue={1} />
-        </Box>{" "}
+        {subject?.courses && subject?.courses.length === 0 && (
+          <h1 className="NotFoundStyle" style={{ textAlign: "center" }}>
+            لا توجد اي كورسات لهذه الماده
+          </h1>
+        )}
       </Container>
     </Box>
   );

@@ -21,6 +21,9 @@ export interface ICourse {
   teacher: ITeacher;
   learningOutcomes: string;
   createAt: string;
+  subTitle: string;
+  price: number;
   studentCourseProgress?: IStudentCourseProgressDto;
-  coursesFeedBacks?:IFeedBackCourse[];
+  coursesFeedBacks?: IFeedBackCourse[];
+  branch:string;
 }

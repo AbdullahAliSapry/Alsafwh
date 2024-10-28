@@ -1,10 +1,26 @@
 .headerPageTeacher {
-  background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
-  padding: 50px 100px;
-  background-size: 100%;
+  background-image: url("../../assets/Alsafwa/teacherpage.png");
+  background-size: contain;
   background-repeat: no-repeat;
+  height: 400px;
+  background-position: center;
+  border: 2px solid var(--second-main-color);
+  width: 80%;
+  margin: auto;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
-
+.Description {
+  color: var(--second-main-color);
+  font-size: 20px;
+  font-weight: 500;
+}
+.headerPageTeacher > p:last-child {
+  font-size: 24px;
+}
 .header_title {
   margin-top: 20px;
   border-top: 2px solid transparent;
@@ -24,6 +40,7 @@
   height: 250px;
   border-radius: 5%;
   margin-bottom: -7px;
+  object-fit: contain;
 }
 
 .card_titleLight {
@@ -55,8 +72,10 @@
 
 @media (max-width: 460px) {
   .headerPageTeacher {
-    padding: 40px 20px;
-
-    background-size: auto 100%;
+    padding: 5px 20px;
+    background-size: contain;
+  }
+  .headerPageTeacher p {
+    font-size: 16px !important;
   }
 }

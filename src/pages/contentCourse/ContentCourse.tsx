@@ -9,6 +9,10 @@ import { GetLessonsStudentApi } from "@store/api/LessionApi";
 import Lesson from "./lesson/Lesson";
 import Stars from "@shared/Stars/Stars";
 import { GetSingleCourse } from "@store/api/CourseApi";
+import {
+  GetCoursesToStudentApi,
+  GetCoursesToStudentSingleApi,
+} from "@store/api/StudentApi";
 
 export default function ContentCourse() {
   const computedColorScheme = useComputedColorScheme("light", {
@@ -19,20 +23,29 @@ export default function ContentCourse() {
   const location = useLocation();
   const dispatch = useDispatch<AppDispatch>();
   const { Lessons } = useSelector((state: RootState) => state.Lesson);
-  const { course, rateToCourse } = useSelector(
-    (state: RootState) => state.Course
+  const { studentCourses, studentCourseSingle } = useSelector(
+    (state: RootState) => state.Student
   );
+  const { rateToCourse } = useSelector((state: RootState) => state.Course);
   const navigate = useNavigate();
-  useEffect(() => {
-    if (CourseId) {
-      dispatch(GetLessonsStudentApi(CourseId));
-      dispatch(GetSingleCourse(CourseId));
-    }
-  }, [CourseId, dispatch]);
+  const { AuthModel } = useSelector((state: RootState) => state.Auth);
 
   const activeLesson = new URLSearchParams(location.search);
+  const isSingle = activeLesson.get("isSingle");
   const initialLesson = parseInt(activeLesson.get("Lesson") || "1", 10);
   const [active, setActive] = useState<number>(initialLesson);
+  const isExist =
+    isSingle !== "true"
+      ? studentCourses.find((e) => e.id === CourseId)
+      : studentCourseSingle.find((e) => e.id === CourseId);
+  useEffect(() => {
+    if (CourseId && AuthModel?.userId && isExist && isSingle) {
+      dispatch(
+        GetLessonsStudentApi(CourseId, AuthModel.userId, isSingle === "true")
+      );
+      dispatch(GetSingleCourse(CourseId));
+    }
+  }, [AuthModel?.userId, CourseId, dispatch, isExist, isSingle, navigate]);
 
   useEffect(() => {
     if (Lessons.length > 0 && initialLesson > Lessons.length) {
@@ -41,12 +54,36 @@ export default function ContentCourse() {
       setActive(initialLesson);
     }
   }, [Lessons.length, initialLesson]);
+
+  useEffect(() => {
+    if (
+      studentCourses.length === 0 &&
+      AuthModel?.userId &&
+      isSingle === "false"
+    ) {
+      dispatch(GetCoursesToStudentApi(AuthModel?.userId));
+    }
+  }, [AuthModel?.userId, dispatch, isSingle, studentCourses.length]);
+
+  useEffect(() => {
+    if (
+      studentCourseSingle.length === 0 &&
+      AuthModel?.userId &&
+      isSingle === "true"
+    ) {
+      dispatch(GetCoursesToStudentSingleApi(AuthModel?.userId));
+    }
+  }, [AuthModel?.userId, dispatch, isSingle, studentCourseSingle.length]);
+
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set("Lesson", String(active));
     navigate({ search: searchParams.toString() });
   }, [active, navigate]);
-
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   if (Lessons.length === 0)
     return <h1 className={classes.StyleNotFound2}>لا يوجد محتوي</h1>;
 
@@ -69,12 +106,12 @@ export default function ContentCourse() {
       my={20}
       className={classes.container}>
       <Text
-        style={{ border: "2px solid", borderRadius: "50px" }}
+        style={{ border: "2px solid", borderRadius: "50%",width:"30px",height:"30px"  }}
         py={1}
         px={10}>
         {item.index}
       </Text>
-      <Text fw={500} fz={15}>
+      <Text fw={500} fz={15} className={classes.StyleTitle}>
         {item.title}
       </Text>
       <Box>
@@ -105,16 +142,15 @@ export default function ContentCourse() {
             <Box
               style={{ alignContent: "space-between" }}
               className={classes.containerLesson}>
-              <Box>
-                <Text mb={50} ta={"center"} fz={20} fw={700}>
-                  مادة التاريخ
-                </Text>
-                {door}
-              </Box>
+              <Box>{door}</Box>
             </Box>
             <Box ta={"center"}>
               <Text c={"gold"} fw={700} fz={50}>
-                {rateToCourse > 0 ? rateToCourse : <>لا يوجد تقييم</>}
+                {rateToCourse > 0 ? (
+                  rateToCourse.toFixed(3 )
+                )  : (
+                  <span style={{ fontSize: "16px" }}>لا يوجد تقييم</span>
+                )}
               </Text>
               <div
                 style={{

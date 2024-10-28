@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICoupon } from "@utilities/interfaces/PublicInterfce";
 
 export interface IYearState {
-  authTokenPayMent: string;
+  authTokenPayMent: string | null;
   status: boolean | null;
+  authTokenSingleCourse: string | null;
 }
 
 const initialState: IYearState = {
-  authTokenPayMent: "",
+  authTokenPayMent: null,
   status: null,
+  authTokenSingleCourse: null,
 };
 
 const PayMentSlice = createSlice({
@@ -21,9 +22,15 @@ const PayMentSlice = createSlice({
     getResultPayMent: (state, action: PayloadAction<boolean>) => {
       state.status = action.payload;
     },
-
+    getTokenSingleCourse: (state, action: PayloadAction<string>) => {
+      state.authTokenSingleCourse = action.payload;
+    },
+    setTokenPlan: (state, action: PayloadAction<null>) => {
+      state.authTokenPayMent = action.payload;
+    },
   },
 });
 
-export const { getAuthToken, getResultPayMent } = PayMentSlice.actions;
+export const { getAuthToken, getResultPayMent, getTokenSingleCourse } =
+  PayMentSlice.actions;
 export default PayMentSlice.reducer;

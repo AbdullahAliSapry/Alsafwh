@@ -1,0 +1,49 @@
+.headerPageTeacher {
+  background-image: url("../../assets/Alsafwa/teacherpage.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  background-position: center;
+  border: 2px solid var(--second-main-color);
+  width: 80%;
+  margin: auto;
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.headerPageTeacher > p:last-child {
+  font-size: 24px;
+}
+
+.Description {
+  color: var(--second-main-color);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 460px) {
+  .headerPageTeacher {
+    padding: 5px 20px;
+    background-size: contain;
+  }
+  .headerPageTeacher p {
+    font-size: 16px !important;
+  }
+}
+
+.styleAllCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 80% ;
+  margin: auto;
+  
+}
+
+.nameStyle{
+  text-align: center;
+}

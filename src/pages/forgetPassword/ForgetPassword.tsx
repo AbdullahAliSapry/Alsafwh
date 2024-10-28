@@ -2,11 +2,12 @@ import { Box, Container, Text } from "@mantine/core";
 import classes from "./ForgetPassword.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "@store/Store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@store/Store";
 import { ForgetPasswordApi } from "@store/api/AuthApi";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const SchemaReset = Yup.object({
   email: Yup.string()
@@ -16,6 +17,7 @@ const SchemaReset = Yup.object({
 
 export default function ForgetPassword() {
   const dispatch = useDispatch<AppDispatch>();
+  const { isSending } = useSelector((state: RootState) => state.Auth);
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
@@ -26,7 +28,11 @@ export default function ForgetPassword() {
     validateOnBlur: true,
     onSubmit: (values) => {
       dispatch(ForgetPasswordApi(values.email));
+    },
+  });
 
+  useEffect(() => {
+    if (isSending) {
       let timerInterval: number;
       Swal.fire({
         title: "سيتم تحويلك لصفحه تغير كلمه المرور",
@@ -52,9 +58,8 @@ export default function ForgetPassword() {
           navigate("/reset-password");
         }
       });
-    },
-  });
-
+    }
+  }, [isSending, navigate]);
   return (
     <Box display={"grid"} style={{ justifyContent: "center" }}>
       <Container my={50} display={"grid"} style={{ gap: "1rem" }}>

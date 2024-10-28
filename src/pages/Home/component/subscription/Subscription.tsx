@@ -16,7 +16,7 @@ export default function Subscription({
     <Box mb={100} dir={i18n.language === "ar" ? "rtl" : "ltr"}>
       <TitleSection title={t("Subscription.title")} />
       {plans.length === 0 ? (
-        <h1>{t("Subscription.noPlans")}</h1>
+        <h1 style={{ textAlign: "center" }}>{t("Subscription.noPlans")}</h1>
       ) : (
         <Box className={classes.parent}>
           {plans.map((plan) => (

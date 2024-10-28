@@ -1,50 +1,44 @@
-.containerUp{
-    /* display: flex;
-    justify-content: center;
-    width: fit-content;
-    border-radius:50px ; */
-    height: 650px;
-    width: 100%;
-    background-image: url("../../../../assets/Alsafwa/smartmockups_ly6ttx59.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    /* border-radius: 50px; */
-    /* background-position: 10% 90%; */
+.containerUp {
+  height: 650px;
+  width: 100%;
+  background-image: url("../../../../assets/Alsafwa/smartmockups_ly6ttx59.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.popup{
-    background-color:  rgba(24, 38, 77, 0.951);
-    /* background-color: linear-gradient(100px , rgba(24, 38, 77, 0.926) ,  rgba(24, 38, 77, 0.926)); */
+.popup {
+  background-color: rgba(24, 38, 77, 0.951);
+  backdrop-filter: blur(1px);
+  margin: 120px -8px 0px 0px;
+  width: 320px;
+  border-radius: 15px;
+  padding: 40px 20px 20px 10px;
+}
+
+.btnSubscribe {
+  color: black;
+  background-color: #eee;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 0px 20px;
+}
+
+@media (max-width: 550px) {
+  .containerUp {
+    height: 400px;
+    width: 600px;
+    border-radius: 10px;
+  }
+
+  .popup {
+    background-color: rgba(24, 38, 77, 0.889);
     backdrop-filter: blur(1px);
-    margin: 120px -8px 0px 0px;
-    width: 320px;
+    margin: 38px -8px 0px 0px;
+    width: fit-content;
     border-radius: 15px;
-    padding: 40px 20px 20px 10px;
-}
-
-.btnSubscribe{
-    color: black;
-    background-color: #eee;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    margin: 0px 20px;
-}
-
-@media (max-width:550px) {
-    .containerUp{
-        height: 400px;
-        width: 600px;
-    }
-
-    .popup{
-        background-color:  rgba(24, 38, 77, 0.889);
-        backdrop-filter: blur(1px);
-        margin: 100px -8px 0px 0px;
-        width: fit-content;
-        border-radius: 15px;
-        padding: 20px 20px 20px 10px;
-        width: 250px;
-        height: 350px;
-    }
+    padding: 20px 20px 20px 10px;
+    width: 250px;
+    height: 350px;
+  }
 }

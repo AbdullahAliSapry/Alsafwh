@@ -1,11 +1,73 @@
-
-.styleTop{
-    margin-top:0px;
+.styleTop {
+  margin-top: 0px;
 }
 
 .image {
   width: 650px;
   height: 650px;
+}
+
+.containerFirstSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.TypWriterSvg {
+  font-family: "Akaya Telivigala" sans-serif !important;
+  width: 100%;
+  height: 100%;
+}
+.TypWriterSvg text {
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #003edd;
+  font-size: 30px;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 0.15em solid rgba(0, 62, 221, 1);
+  white-space: nowrap;
+  margin: 0 auto;
+  color: rgba(0, 62, 221, 1);
+  animation: typing 6.5s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite;
+  font-weight: 700 !important;
+  font-size: 23px !important;
+}
+.containerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+.containerBtn a {
+  width: 200px !important;
+  display: inline-block;
+  text-align: center;
+  word-break: keep-all;
+}
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(0, 62, 221, 1);
+  }
 }
 
 .font {
@@ -21,6 +83,7 @@
   text-decoration: none;
   padding: 10px 30px;
 }
+
 .linkOne {
   background-color: #093491;
   color: white;
@@ -34,6 +97,12 @@
   gap: 35px;
 }
 
+@media (max-width: 1350px) {
+  .image {
+    width: 620px;
+    object-fit: contain;
+  }
+}
 
 @media (max-width: 1250px) {
   .image {
@@ -41,7 +110,6 @@
     height: 500px;
   }
 }
-
 @media (max-width: 1111px) {
   .image {
     width: 500px;
@@ -56,20 +124,55 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 1050px) {
+  .subParent {
+    max-width: 320px;
+  }
+  .typewriter {
+    font-size: 16px !important;
+  }
+  .font {
+    font-size: 25px;
+  }
+  .linkOne,
+  .linkTwo {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .containerFirstSection {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 500px) {
   .image {
     width: 300px;
     height: 300px;
   }
-
+  .subParent {
+    max-width: 320px;
+  }
   .font {
     font-size: 30px;
     font-weight: 700;
   }
-
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .TypWriterSvg text {
+    font-size: 15px;
+  }
   .linkOne,
   .linkTwo {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     border-radius: 25px;
     text-decoration: none;
@@ -77,5 +180,11 @@
   }
   .gap {
     gap: 15px;
+  }
+  .typewriter {
+    font-size: 15px !important;
+  }
+  .en {
+    font-size: 13px !important;
   }
 }

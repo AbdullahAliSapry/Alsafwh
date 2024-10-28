@@ -121,11 +121,10 @@ export default function FeedBack({ feedbacks }: { feedbacks: IFeedBack[] }) {
         </>
       ) : (
         <>
-          {t("FeedBack.noFeedbacks")}
-          <Button
-            route="/all-feedback"
-            text={t("FeedBack.allFeedbackButton")}
-          />
+          <h1 className="NotFoundStyle" style={{ textAlign: "center" }}>
+            {t("FeedBack.noFeedbacks")}
+          </h1>
+          <Button route="/all-feedback" text={t("FeedBack.AddFeedback")} />
         </>
       )}
     </>

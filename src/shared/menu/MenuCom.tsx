@@ -1,10 +1,5 @@
 import { Badge, Menu, rem } from "@mantine/core";
-import {
-  IconSettings,
-  IconPhoto,
-  IconMessageCircle,
-  IconTrash,
-} from "@tabler/icons-react";
+import { IconSettings, IconMessageCircle } from "@tabler/icons-react";
 import Styles from "./MenuCom.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,15 +16,15 @@ export default function MenuCom({ img }: { img: string }) {
   const teacherData = useSelector((state: RootState) => state.Teacher);
 
   const student =
-    AuthModel?.roles[0] === "Student" ? studentData?.student : null;
+    AuthModel?.roles?.[0] === "Student" ? studentData?.student : null;
   const teacher =
-    AuthModel?.roles[0] !== "Student" ? teacherData?.teacher : null;
+    AuthModel?.roles?.[0] !== "Student" ? teacherData?.teacher : null;
 
   const { numNotReadings } = useSelector(
     (state: RootState) => state.Notification
   );
 
-  const { t,i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
@@ -59,7 +54,8 @@ export default function MenuCom({ img }: { img: string }) {
     <Menu
       shadow="md"
       width={200}
-      transitionProps={{ transition: "rotate-right", duration: 150 }}>
+      transitionProps={{ transition: "rotate-right", duration: 150 }}
+      zIndex={100000000}>
       <Menu.Target>
         <div className={Styles.conImg}>
           <img src={imageUrl} alt="" />
@@ -74,7 +70,7 @@ export default function MenuCom({ img }: { img: string }) {
           }>
           <Link
             to={
-              AuthModel?.roles[0] === "Student"
+              AuthModel?.roles?.[0] === "Student"
                 ? `/student-page/${AuthModel?.userId}`
                 : `/teacher-profile/${AuthModel?.userId}`
             }
@@ -97,21 +93,28 @@ export default function MenuCom({ img }: { img: string }) {
             </Badge>
           </div>
         </Menu.Item>
-        <Menu.Item
-          leftSection={
-            <IconPhoto style={{ width: rem(14), height: rem(14) }} />
-          }>
-          {t("Menu.photos")}
-        </Menu.Item>
-        {AuthModel?.roles[0] === "Student" && (
+
+        {AuthModel?.roles?.[0] === "Student" && (
           <Menu.Item
             leftSection={
               <PiStudentFill style={{ width: rem(14), height: rem(14) }} />
             }>
             <Link
-              to={`/courses-student/${AuthModel?.userId}`}
+              to={`/courses-student/plans-courses/${AuthModel?.userId}`}
               className={Styles.LinkStyle}>
               {t("Menu.courses")}
+            </Link>
+          </Menu.Item>
+        )}
+        {AuthModel?.roles?.[0] === "Student" && (
+          <Menu.Item
+            leftSection={
+              <PiStudentFill style={{ width: rem(14), height: rem(14) }} />
+            }>
+            <Link
+              to={`/courses-student/Individual-courses/${AuthModel?.userId}`}
+              className={Styles.LinkStyle}>
+              {t("Menu.SingleCourse")}
             </Link>
           </Menu.Item>
         )}
@@ -119,16 +122,7 @@ export default function MenuCom({ img }: { img: string }) {
         <Menu.Label>{t("Menu.label")}</Menu.Label>
         <Menu.Item
           color="red"
-          leftSection={
-            <IconTrash style={{ width: rem(14), height: rem(14) }} />
-          }>
-          {t("Menu.deleteAccount")}
-        </Menu.Item>
-        <Menu.Item
-          color="red"
-          onClick={() => {
-            handleLogout();
-          }}
+          onClick={handleLogout}
           leftSection={
             <RiLogoutCircleLine style={{ width: rem(14), height: rem(14) }} />
           }>

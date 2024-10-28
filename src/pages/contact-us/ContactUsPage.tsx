@@ -1,7 +1,6 @@
 import {
   IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandTwitter,
   IconBrandWhatsapp,
   IconPhone,
 } from "@tabler/icons-react";
@@ -10,33 +9,35 @@ import { Link } from "react-router-dom";
 import ContactForm from "./components/contactform/ContactForm";
 import { useComputedColorScheme } from "@mantine/core";
 import { useTranslation } from "react-i18next";
+import { FaYoutube } from "react-icons/fa";
+import { useEffect } from "react";
 
 const links = [
   {
-    icon: IconBrandTwitter,
-    link: "https://twitter.com/your_twitter_handle",
+    icon: FaYoutube,
+    link: "https://www.youtube.com/@minasatalsafwa",
   },
   {
     icon: IconBrandFacebook,
-    link: "https://www.facebook.com/profile.php?id=61560580450930&mibextid=ZbWKwL",
+    link: "https://www.facebook.com/profile.php?id=61560580450930",
   },
   {
     icon: IconBrandInstagram,
-    link: "https://www.instagram.com/your_instagram_handle",
+    link: "https://www.instagram.com/alsafwacompany24",
   },
 ];
 const social = [
   {
     icon: IconBrandWhatsapp,
-    link: "https://wa.me/201014786438",
+    link: "https://wa.me/201119776787",
     textKey: "contactUs.viaWhatsapp", // Use translation key
-    phoneNumber: "201014786438",
+    phoneNumber: "01119776787",
   },
   {
     icon: IconPhone,
-    link: "tel:201014786438",
+    link: "tel:201550459604",
     textKey: "contactUs.callPhone", // Use translation key
-    phoneNumber: "201014786438",
+    phoneNumber: "201550459604",
   },
 ];
 
@@ -46,6 +47,9 @@ export default function ContactUsPage() {
     getInitialValueInEffect: true,
   });
 
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className={classes.parent}>
       <div className={classes.Handler}></div>
@@ -81,6 +85,7 @@ export default function ContactUsPage() {
               key={item.link}
               to={item.link}
               target="_blank"
+              
               rel="noopener noreferrer">
               <div>
                 <item.icon />

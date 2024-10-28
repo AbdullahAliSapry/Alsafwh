@@ -14,6 +14,9 @@ export default function AllSubjects() {
     if (subjects.length > 0) return;
     dispatch(GetAllSubjectApi());
   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Box className={classes.cards}>

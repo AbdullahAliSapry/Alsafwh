@@ -12,7 +12,11 @@
   background-color: rgb(34, 139, 230);
   transition: width 0.4s ease;
 }
-
+.StyleInMd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .link:hover::before {
   width: 100%;
 }
@@ -94,32 +98,56 @@
   margin-left: -75px;
   text-align: center;
 }
-.StyleBurger{
+.StyleBurger {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin: auto;
 }
 .reponsHeader {
-  justify-content: space-evenly;
   flex-wrap: nowrap;
   gap: 0;
+  justify-content: space-around;
 }
-.styleMobile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    
+.styleMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
-@media (max-width: 992px) {
-  .reponsHeader {
-    justify-content: space-around;
-    flex-wrap: nowrap;
+
+@media(max-width:1024px){
+  .itemHeader{
+    gap: 1rem;
+  }
+  .parentSelect{
+    width: 150px !important;
   }
 }
 
+@media(max-width:1050px){
+  .parentSelect{
+    width: 150px !important;
+  }
+}
+@media (max-width: 400px) {
+  .reponsHeader {
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+  }
+  .StyleMenuSection{
+    gap: 10px;
+  }
+  .StyleImg {
+    width: 100px;
+  }
+  .StyleImg img {
+    width: 100px;
+  }
+}
 .icon {
   width: rem(22px);
   height: rem(22px);
@@ -148,4 +176,8 @@
 .Handler {
   width: 100%;
   height: 70px;
+}
+
+.styleLangInMD {
+  width: 70px;
 }

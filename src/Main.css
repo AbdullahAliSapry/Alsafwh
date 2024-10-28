@@ -2,7 +2,7 @@
 
 :root {
   --second-main-color: rgb(65, 130, 249);
-  --main-bg-color:#eaf1ff;
+  --main-bg-color: #eaf1ff;
 }
 
 * {
@@ -16,7 +16,6 @@
   width: 100%;
 }
 
-
 *::-webkit-scrollbar {
   height: 13px;
   width: 13px;
@@ -24,25 +23,48 @@
 *::-webkit-scrollbar-track {
   border-radius: 5px;
   background-color: transparent;
-
 }
 *::-webkit-scrollbar-track:hover {
-  background-color: #B8C0C2;
+  background-color: #b8c0c2;
 }
 
 *::-webkit-scrollbar-track:active {
-  background-color: #B8C0C2;
+  background-color: #b8c0c2;
 }
 
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background-color: #4182F9;
+  background-color: #4182f9;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #4182F9;
+  background-color: #4182f9;
 }
 
-*::-webkit-scrollbar-thumb:active {
-  background-color: #4182F9;
+.NotFoundStyle{
+  font-size: 25px;
 }
+*::-webkit-scrollbar-thumb:active {
+  background-color: #4182f9;
+}
+@media (max-width: 950px) {
+  .mantine-Popover-dropdown span {
+    font-size: 8px !important;
+  }
+  .mantine-Popover-dropdown svg{
+    width: 8px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .mantine-Popover-dropdown span {
+    font-size: 8px !important;
+  }
+  .mantine-Popover-dropdown svg{
+    width: 8px !important;
+  }
+  .NotFoundStyle{
+    font-size: 18px;
+  }
+}
+

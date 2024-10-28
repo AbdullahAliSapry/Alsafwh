@@ -1,9 +1,7 @@
-import Courses from "./component/courses/Courses";
 import FeedBack from "./component/feedbacks/FeedBack";
 import FristSection from "./component/fristSection/FristSection";
 import NewCourses from "./component/newCourses/NewCourses";
 import SecondeSection from "./component/secondeSection/SecondeSection";
-import Announcement from "./component/sectionAnnouncement/Announcement";
 import Status from "./component/status/Status";
 import { motion } from "framer-motion";
 import Subscription from "./component/subscription/Subscription";
@@ -28,6 +26,7 @@ export default function Home() {
   const dispatch = useDispatch<AppDispatch>();
   const { AuthModel } = useSelector((state: RootState) => state.Auth);
   const { courseModern } = useSelector((state: RootState) => state.Course);
+
   useEffect(() => {
     if (!AuthModel?.userId) return;
     if (AuthModel.roles[0] === "Student") {
@@ -59,8 +58,8 @@ export default function Home() {
         <FristSection />
         <SecondeSection />
         <NewCourses courses={courseModern} />
-        <Announcement />
-        <Courses />
+        {/* <Announcement /> */}
+        {/* <Courses /> */}
         <Status />
         <Teachers />
         <FeedBack feedbacks={feedbacks} />

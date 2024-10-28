@@ -5,9 +5,7 @@
 
 .mapContainer {
   position: relative;
-  /* background: url("./../../../../assets/Alsafwa/word-removebg-preview.png"),
-    linear-gradient(rgba(208, 208, 208, 0.2), #ffffff); */
-    background-image: url("../../../../assets/Alsafwa/word-removebg-preview.png");
+  background-image: url("../../../../assets/Alsafwa/word-removebg-preview.png");
 
   background-repeat: no-repeat;
   background-position: top;
@@ -33,6 +31,7 @@
   width: 100%;
   height: 100%;
   background-color: #007bff;
+  object-fit: scale-down;
 }
 
 .cardContainer {
@@ -55,11 +54,13 @@
   align-items: center;
 }
 
-
 .cardText {
   font-size: 16px;
   color: #333;
   margin-bottom: 20px;
+  max-width: 300px;
+  word-wrap: break-word;
+  overflow: hidden;
 }
 
 .cardProfile {
@@ -77,6 +78,8 @@
   border-radius: 50%;
   border: 3px solid #007bff;
   background-color: #007bff;
+  object-fit: fill;
+  object-fit: scale-down;
 }
 
 .cardProfileName {
@@ -141,6 +144,9 @@
   }
   .cardText {
     font-size: 12px;
+    max-width: 220px;
+    word-wrap: break-word;
+    text-align: center;
   }
   .profilePic:nth-child(3) {
     margin: -30px;
@@ -152,13 +158,12 @@
   width: 100%;
 }
 
-
-@media (max-width:550px) {
-
+@media (max-width: 550px) {
   .cardContainer {
-     margin-bottom: -80px; 
+    margin-bottom: 10px;
+    width: 265px;
   }
-  .parentDiv{
+  .parentDiv {
     margin-bottom: 150px;
   }
 }

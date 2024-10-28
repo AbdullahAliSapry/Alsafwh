@@ -1,133 +1,156 @@
-
-.headerPage{
-    background-image: url("../../assets/Alsafwa/virtual-classroom-study-space.jpg");
-    padding: 40px 80px;
-    background-size: 100% ;
-    background-repeat: no-repeat;
+.headerPage {
+  background-image: url("../../assets/Alsafwa/4444.jpg");
+  padding: 40px 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
+.outCome {
+  font-size: 28px;
+}
+.styleImgCard {
+  background-color: black;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 10px;
+}
+.styleImgCard img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+.parentCards {
+  display: grid;
+  grid-template-columns: 800px 400px;
+  justify-content: space-evenly;
+  gap: 3rem;
+}
+.cardDescription {
+  padding: 20px 40px 10px;
+  margin-bottom: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.buttonRegisterAreadey a {
+  text-decoration: none;
+  color: white;
+}
+.evaluation {
+  font-size: 50px;
+  font-weight: 700;
+  margin: 0px 0px -20px;
+  text-align: center;
+  color: gold;
+}
 
-.parentCards{
+.cardVedio {
+  position: sticky;
+  top: 100px;
+  margin-top: -100px;
+  margin-bottom: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.allEvaluationStars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.evaluationStars {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+@media (max-width: 1250px) {
+  .parentCards {
+    margin: 0px 20px;
     display: grid;
-    grid-template-columns: 800px 400px;
-    justify-content: space-evenly;
+    grid-template-columns: none;
+    /* justify-content: center; */
     gap: 3rem;
-}
-.cardDescription{
-    padding: 20px 40px 10px;
-    margin-bottom: 20px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.evaluation{
-    font-size: 50px;
-    font-weight: 700;
-    margin: 0px 0px -20px;
-    text-align: center;
-    color: gold;
-}
-
-.cardVedio{
-    position: sticky;
-    top: 100px;
-    margin-top: -100px;
-    margin-bottom: 20px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.allEvaluationStars{
+  }
+  .cardVedio {
+    position: relative;
+    margin-bottom: 100px;
+    width: fit-content;
+  }
+  .container {
+    order: -1;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+  }
 }
 
-.evaluationStars{
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
+@media (max-width: 600px) {
+  .cardDescription {
+    width: fit-content;
+  }
+
+  .allEvaluationStars {
+    display: grid;
+    justify-content: center;
+  }
+
+  .evaluationStars {
+    display: grid;
+    justify-content: center;
+    gap: 0rem;
+    margin-top: 15px;
+  }
+  .outCome {
+    font-size: 20px;
+  }
 }
 
-@media (max-width:1250px) {
+@media (max-width: 460px) {
+  .headerPage {
+    padding: 40px 20px;
 
-    .parentCards{
-       margin: 0px 20px;
-        display: grid;
-        grid-template-columns:none ;
-        /* justify-content: center; */
-        gap: 3rem;
-    }
-    .cardVedio{
-        position: relative;
-        margin-bottom: 100px;
-        width: fit-content;
-    }
-    .container{
-        order: -1;
-        display: flex;
-        justify-content: center;
-    }
+    background-size: auto 100%;
+  }
+  .styleImgCard {
+    width: 60px;
+    height: 60px;
+  }
+  .styleImgCard img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  .cardDescription {
+    width: fit-content;
+  }
 
-}
-
-
-
-@media (max-width:600px) {
-
-    .cardDescription{
-        
-        width: fit-content;
-    }
-
-    .allEvaluationStars{
-        display: grid;
-        justify-content: center;
-    }
-
-    .evaluationStars{
-        display: grid;
-        justify-content: center;
-        gap: 0rem;
-        margin-top: 15px;
-    }
-
-}
-
-
-@media (max-width:460px) {
-
-
-    .headerPage{
-        padding: 40px 20px;
-
-        background-size:auto 100% ;
-    }
-    
-
-    .cardDescription{
-        
-        width:fit-content;
-    }
-
-    .evaluationStars{
-        display: grid;
-        justify-content: center;
-        gap: 0rem;
-        margin-top: 15px;
-    }
-
+  .evaluationStars {
+    display: grid;
+    justify-content: center;
+    gap: 0rem;
+    margin-top: 15px;
+  }
+  .outCome {
+    font-size: 16px;
+  }
+  .StyleModel {
+  }
 }
 
 .btnSub {
-    text-decoration: none;
-    background-color: rgb(0, 62, 221);
-    font-size: 15px;
-    padding: 7px 20px 7px 20px;
-    color: white;
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    /* margin-top: 0px; */
-  }
-  
+  text-decoration: none;
+  background-color: rgb(0, 62, 221);
+  font-size: 15px;
+  padding: 7px 20px 7px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  /* margin-top: 0px; */
+}

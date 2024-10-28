@@ -21,7 +21,7 @@ import {
 } from "@utilities/imports/ImportsHeader";
 import { NavLink } from "react-router-dom";
 import MainLogo from "@assets/Alsafwa/11.png";
-import ImgPerson from "@assets/Alsafwa/person.png";
+import ImgPerson from "@assets/Alsafwa/RetratoTwo.png";
 import MenuCom from "@shared/menu/MenuCom";
 import { useSelector } from "react-redux";
 import { RootState } from "@store/Store";
@@ -78,11 +78,7 @@ export default function Header() {
         <header
           className={classes.header}
           dir={i18n.language === "ar" ? "rtl" : "ltr"}>
-          <Group
-            justify="space-evenly"
-            className={classes.reponsHeader}
-            style={{ justifyItems: "center" }}
-            h="100%">
+          <Group justify="center" className={classes.reponsHeader} h="100%">
             <div className={classes.StyleImg}>
               <Link to="/">
                 <img
@@ -109,9 +105,9 @@ export default function Header() {
                 </NavLink>
               ))}
             </Group>
-
             <Group visibleFrom="md">
-              <Box style={{ marginRight: "-20px" }}>
+              <Box>{AuthModel && <MenuCom img={ImgPerson} />}</Box>
+              <Box className={classes.parentSelect} >
                 <Select
                   styles={{
                     section: {},
@@ -164,12 +160,69 @@ export default function Header() {
                     </ActionIcon>
                   </Box>
                 </Box>
-                <Box>{AuthModel && <MenuCom img={ImgPerson} />}</Box>
               </div>
             </Group>
             <Box hiddenFrom="md" className={classes.StyleBurger}>
-              <Box>{AuthModel && <MenuCom img={ImgPerson} />}</Box>
-              <Burger opened={drawerOpened} onClick={toggleDrawer} />
+              <div className={classes.StyleInMd}>
+                <div className={classes.StyleMenuSection}>
+                  <Select
+                    className={classes.styleLangInMD}
+                    styles={{
+                      section: {},
+                      input: {
+                        border: "1px solid rgb(0, 0, 0 / 0.3)",
+                        borderRadius: "20px",
+                        fontSize: "12px",
+                      },
+                      wrapper: {
+                        width: "100%",
+                      },
+                      dropdown: {
+                        zIndex: 10000,
+                      },
+                    }}
+                    data={["العربية", "English"]}
+                    onChange={(value) => {
+                      const newLang = value === "العربية" ? "ar" : "en";
+                      setLang(newLang);
+                      changeLanguage(newLang);
+                    }}
+                    value={lang === "ar" ? "العربية" : "English"}
+                    leftSection={<IconLanguage color="rgb(34,139,230)" />}
+                    rightSection={<IconChevronDown color="rgb(34,139,230)" />}
+                    allowDeselect={false}
+                  />
+
+                  {AuthModel && (
+                    <Box>
+                      <MenuCom img={ImgPerson} />
+                    </Box>
+                  )}
+                  <Box>
+                    <Box>
+                      <ActionIcon
+                        onClick={() =>
+                          setColorScheme(
+                            computedColorScheme === "light" ? "dark" : "light"
+                          )
+                        }
+                        variant="default"
+                        size="xl"
+                        aria-label="Toggle color scheme">
+                        <IconSun
+                          className={cx(classes.icon, classes.light)}
+                          stroke={1.5}
+                        />
+                        <IconMoon
+                          className={cx(classes.icon, classes.dark)}
+                          stroke={1.5}
+                        />
+                      </ActionIcon>
+                    </Box>
+                  </Box>
+                </div>
+                <Burger opened={drawerOpened} onClick={toggleDrawer} />
+              </div>
             </Box>
           </Group>
         </header>
@@ -179,10 +232,9 @@ export default function Header() {
           onClose={closeDrawer}
           size="100%"
           padding="md"
-          title="Navigation"
+          title={t("Logo")}
           hiddenFrom="md"
-          zIndex={1000000}
-          style={{ direction: "rtl" }}>
+          zIndex={10000}>
           <ScrollArea
             h={`calc(100vh - ${rem(80)})`}
             mx="-md"
@@ -193,7 +245,8 @@ export default function Header() {
                 <Link
                   key={index}
                   to={link.path}
-                  className={`LinkActiveInMain ${classes.link}`}>
+                  className={`LinkActiveInMain ${classes.link}`}
+                  onClick={closeDrawer}>
                   {link.title}
                 </Link>
               ))}

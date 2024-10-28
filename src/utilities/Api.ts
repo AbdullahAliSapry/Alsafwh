@@ -3,7 +3,7 @@ import { Cookies } from "react-cookie";
 import { toast } from "react-toastify";
 const cookies = new Cookies();
 export const Api = axios.create({
-  baseURL: import.meta.env.VITE_SEVER_LINK,
+  baseURL: import.meta.env.VITE_SEVER_LINK_DEV,
   withCredentials: true,
 });
 
@@ -28,7 +28,7 @@ Api.interceptors.response.use(
       try {
         const refreshToken = cookies.get("RefreashToken");
         const { data } = await axios.get(
-          `${import.meta.env.VITE_SEVER_LINK}Auth/refreshToken`,
+          `${import.meta.env.VITE_SEVER_LINK_DEV}/Auth/refreshToken`,
           {
             headers: {
               Cookie: `refreshToken=${encodeURIComponent(refreshToken)}`,
@@ -53,6 +53,7 @@ Api.interceptors.response.use(
       } catch (refreshError) {
         cookies.remove("authModel");
         cookies.remove("refreshToken");
+        cookies.remove("RefreashToken");
         window.location.href = "/login";
         toast.warn("انتهت صلاحيه الجلسه من فضلك سجل الدخول من الاول");
         console.error("Error refreshing token:", refreshError);

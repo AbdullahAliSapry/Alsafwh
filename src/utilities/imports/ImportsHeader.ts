@@ -10,7 +10,6 @@ import {
   rem,
   Select,
 } from "@mantine/core";
-import Image from "@assets/Alsafwa/logo-search-grid-2x-5preview.png";
 
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown, IconLanguage } from "@tabler/icons-react";
@@ -47,5 +46,4 @@ export {
   cx,
   Link,
   classes,
-  Image,
 };

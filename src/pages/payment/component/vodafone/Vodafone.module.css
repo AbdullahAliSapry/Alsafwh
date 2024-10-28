@@ -1,65 +1,62 @@
 .inputFiledSelect {
-    outline: none;
-    border: 0px;
-    border-radius: 7px;
-    padding: 6px 10px;
-    margin-top: 10px;
-    width: 100%;
-    /* background-color: red; */
-  }
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+  /* background-color: red; */
+}
+.StyleCode{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputFiled {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+}
 
+.labelFelid {
+  font-weight: 700;
+}
+.imageHandel {
+  width: 400px;
+}
+
+@media (max-width: 901px) {
+  .firstFiled {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 751px) {
+  .handelFlex {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 551px) {
+  .imageHandel {
+    width: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .firstFiled {
+    width: fit-content;
+    justify-content: center;
+  }
   .inputFiled {
-    outline: none;
-    border: 0px;
-    border-radius: 7px;
-    padding: 6px 10px;
-    margin-top: 10px;
-    width: 100%;
+    width: auto;
   }
-
-  .labelFelid{
-
-    font-weight: 700;
+  .imageHandel {
+    width: 275px;
   }
-  .imageHandel{
-    width: 400px;
-}
-
-  @media (max-width:901px) {
-
-      .firstFiled{
-            flex-wrap: wrap;
-      }
-    
-  }
-
-  @media (max-width:751px) {
-
-    .handelFlex{
-          flex-wrap: wrap;
-    }
-  
-}
-
-@media (max-width:551px) {
-
-    .imageHandel{
-        width: auto;
-    }
-  
-}
-
-@media (max-width:380px) {
-
-    .firstFiled{
-        width: fit-content;
-        justify-content: center;
-    }
-    .inputFiled{
-        width: auto;
-    }
-    .imageHandel{
-        width: 275px;
-    }
-  
 }

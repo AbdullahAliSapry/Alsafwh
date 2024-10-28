@@ -1,4 +1,4 @@
-import image from "../../assets/Alsafwa/person.png";
+import image from "../../assets/Alsafwa/teacher.png";
 import classes from "./FeedbackCourse.module.css";
 export default function DataPerson({
   ImgUrl,

@@ -1,5 +1,11 @@
-.NotFoundStyle{
+.NotFoundStyle {
+  text-align: center;
+  margin: 70px 10px;
+}
 
-    text-align: center;
-    margin: 70px 10px;
+@media (max-width: 764px) {
+  .NotFoundStyle {
+    padding-top: 50px;
+    font-size: 20px;
+  }
 }

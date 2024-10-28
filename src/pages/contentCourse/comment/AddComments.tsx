@@ -15,17 +15,20 @@ export default function AddComments({ LessonId }: { LessonId: string }) {
   const dispatch = useDispatch<AppDispatch>();
   const { AuthModel } = useSelector((state: RootState) => state.Auth);
   const { student } = useSelector((state: RootState) => state.Student);
+  const { teacher } = useSelector((state: RootState) => state.Teacher);
+
   const formik = useFormik({
     initialValues,
     validationSchema: CommentSchema,
     validateOnChange: true,
     validateOnBlur: true,
     onSubmit: (values) => {
-      if (!student?.user) {
+      const user = student?.user || teacher?.user; 
+     if (!user) {
         toast.error("من فضلك سجل الدخول اولا ");
-
         return;
       }
+
       dispatch(
         AddCommentApi(
           {
@@ -34,7 +37,7 @@ export default function AddComments({ LessonId }: { LessonId: string }) {
             userId: AuthModel?.userId,
             lessionId: LessonId,
           } as IAddComment,
-          student?.user
+          user 
         )
       );
       formik.resetForm();
@@ -54,10 +57,15 @@ export default function AddComments({ LessonId }: { LessonId: string }) {
             justifyContent: "center",
             overflow: "hidden",
           }}>
-          <img src={student?.user.fileUploads.url} width={"50px"} height={"50px"} />
+          <img
+            src={
+              student?.user?.fileUploads?.url || teacher?.user?.fileUploads?.url
+            } 
+            width={"50px"}
+            height={"50px"}
+          />
         </Box>
         <form onSubmit={formik.handleSubmit} className={classes.StyleForm}>
-          {" "}
           <input
             className={classes.inputCommentCourse}
             value={formik.values.Text}

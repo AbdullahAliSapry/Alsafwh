@@ -11,19 +11,24 @@ import { useFormik } from "formik";
 
 import { useNavigate, useParams } from "react-router-dom";
 import { AppDispatch, RootState } from "@store/Store";
-import { GetExamToLessonApi, SendExamToStudent } from "@store/api/ExamApi";
+import {
+  CheckExaminedApi,
+  GetExamToLessonApi,
+  SendExamToStudent,
+} from "@store/api/ExamApi";
 import { IAnswer, IQuizSubmit } from "@utilities/interfaces/PublicInterfce";
 import TimerDown from "./Timer/TimerDown";
 import classes from "./ExamPage.module.css";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 interface FormValues {
   answers: Record<string, string>;
 }
 
 export default function ExamPage() {
-  const [generalError, setGeneralError] = useState<string>("");
+  const [generalError] = useState<string>("");
   const [selectedAnswers, setSelectedAnswers] = useState<
     Record<string, string>
   >({});
@@ -52,7 +57,6 @@ export default function ExamPage() {
 
   const { student } = useSelector((state: RootState) => state.Student);
   const { examAttemp } = useSelector((state: RootState) => state.Exam);
-  console.log(examAttemp);
 
   const navigate = useNavigate();
   const formik = useFormik<FormValues>({
@@ -88,6 +92,7 @@ export default function ExamPage() {
           if (!exam?.id || !student?.id) return;
           dispatch(SendExamToStudent(submissionData, exam?.id, student?.id));
           formik.resetForm();
+          localStorage.removeItem("remainingTime");
         }
       });
     },
@@ -105,9 +110,19 @@ export default function ExamPage() {
     }
   }, [examAttemp, navigate]);
 
+  useEffect(() => {
+    if (exam && student && !examAttemp)
+      dispatch(CheckExaminedApi(exam?.id, student.id));
+  }, [dispatch, exam, examAttemp, student]);
+  useEffect(() => {
+    if (examAttemp) {
+      toast.info("لقد قمت بالفعل بامتحان بالامتحان");
+      navigate("/");
+    }
+  }, [exam, examAttemp, navigate, student]);
+
   const handleTimerEnd = () => {
     if (!isSubmitted) {
-      // Submit only if not already submitted
       formik.handleSubmit();
     }
   };

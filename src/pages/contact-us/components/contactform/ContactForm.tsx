@@ -60,7 +60,10 @@ export default function ContactForm() {
         onSubmit={formik.handleSubmit}
         dir={i18n.language === "ar" ? "rtl" : "ltr"}>
         <SimpleGrid cols={{ base: 1, sm: 1 }} spacing={50}>
-          <Box className={classes.form}>
+          <Box
+            className={`${classes.form} ${
+              computedColorScheme === "dark" ? classes.formDark : ""
+            }`}>
             <div className={classes.ParentToInputs}>
               <div>
                 <TextInput

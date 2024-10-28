@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
 import { toast } from "react-toastify";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { UpdateImgApi } from "@store/api/StudentApi";
 import { IoImages } from "react-icons/io5";
 import Spinner from "@shared/spineer/Spinner";
@@ -47,56 +47,61 @@ export default function HeaderTeacher({
     },
   });
 
+  useEffect(() => {}, []);
 
   const { t, i18n } = useTranslation();
   return (
-    <div>
+    <>
       {loading && <Spinner />}
-      <div
-        className={Styles.mainInfo}
-        dir={i18n.language === "ar" ? "rtl" : "ltr"}>
-        <form className={Styles.ConInputs} onSubmit={formik.handleSubmit}>
-          <div>
-            <Box style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-              <div className={Styles.containerImage}>
-                <img
-                  className={Styles.Img}
-                  src={
-                    formik.values.image
-                      ? URL.createObjectURL(formik.values.image)
-                      : image
-                  }
-                  alt=""
-                />
-                <label htmlFor="ImgEdit" className={Styles.lapelImg}>
-                  <IoImages />
-                </label>
-              </div>
-              <Box>
-                <Text fw={700} fz={18} style={{ color }}>
-                  {name}
-                </Text>
-                <Text fz={15} fw={400} mt={8}>
-                  {subject}
-                </Text>
+
+      <div>
+        <div
+          className={Styles.mainInfo}
+          dir={i18n.language === "ar" ? "rtl" : "ltr"}>
+          <form className={Styles.ConInputs} onSubmit={formik.handleSubmit}>
+            <div>
+              <Box
+                style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                <div className={Styles.containerImage}>
+                  <img
+                    className={Styles.Img}
+                    src={
+                      formik.values.image
+                        ? URL.createObjectURL(formik.values.image)
+                        : image
+                    }
+                    alt=""
+                  />
+                  <label htmlFor="ImgEdit" className={Styles.lapelImg}>
+                    <IoImages />
+                  </label>
+                </div>
+                <Box>
+                  <Text fw={700} fz={18} style={{ color }}>
+                    {name}
+                  </Text>
+                  <Text fz={15} fw={400} mt={8}>
+                    {subject}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
-          </div>
-          <input
-            type="file"
-            id="ImgEdit"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => {
-              if (e.target.files) {
-                formik.setFieldValue("image", e.target.files[0]);
-              }
-            }}
-            className={Styles.inputImg}
-          />
-          <button type="submit" className={Styles.btnsend}>
-            {t("HeaderTeacher.btn")}
-          </button>
-        </form>
+            </div>
+            <input
+              type="file"
+              id="ImgEdit"
+              onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                if (e.target.files) {
+                  formik.setFieldValue("image", e.target.files[0]);
+                }
+              }}
+              className={Styles.inputImg}
+            />
+            <button type="submit" className={Styles.btnsend}>
+              {t("HeaderTeacher.btn")}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

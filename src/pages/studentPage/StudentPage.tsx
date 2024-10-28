@@ -15,7 +15,7 @@ import {
   IconSchool,
   IconUserFilled,
 } from "@tabler/icons-react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
 import HeaderTeacher from "@pages/teacherpage/components/headerteacher/HeaderTeacher";
@@ -40,7 +40,7 @@ export default function StudentPage() {
     }
   };
 
-  const { student } = useSelector((state: RootState) => state.Student);
+  const { student,studentCourseSingle,studentCourses } = useSelector((state: RootState) => state.Student);
   const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams();
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function StudentPage() {
           <HeaderTeacher
             name={student?.user.firstName + " " + student?.user.lastName}
             image={
-              student?.user.fileUploads.url
+              student?.user.fileUploads?.url
                 ? student?.user.fileUploads.url
                 : image
             }
@@ -101,7 +101,7 @@ export default function StudentPage() {
             />
             <Text fz={17}> {t("student.registeredCourses")} :</Text>
             <Text mr={10} fz={25} fw={700} c={color}>
-              0
+              {studentCourseSingle?.length + studentCourses?.length}
             </Text>
           </Box>
         </Box>
@@ -266,8 +266,8 @@ export default function StudentPage() {
                 <Box className={classes.containerImageEmail} h={70} w={70}>
                   <img
                     src={
-                      student?.user.fileUploads.url
-                        ? student?.user.fileUploads.url
+                      student?.user?.fileUploads?.url
+                        ? student?.user?.fileUploads.url
                         : image
                     }
                     width={"150px"}
@@ -322,19 +322,6 @@ export default function StudentPage() {
               </Box>
             </Box>
           </Box>
-        </Box>
-        <Box
-          mt={50}
-          mb={30}
-          ml={30}
-          display={"flex"}
-          style={{ justifyContent: "space-between" }}>
-          <Link to={"/"} className={classes.btnSave}>
-            {t("student.Button1")}
-          </Link>
-          <Link to={"/"} className={classes.btnSave}>
-            {t("student.Button2")}
-          </Link>
         </Box>
       </Container>
     </Box>

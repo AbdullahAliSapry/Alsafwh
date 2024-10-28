@@ -35,7 +35,6 @@ export const GetExamToLessonApi = (lessonId: string) => {
       dispatch(GetExamToLesson(data));
     } catch (error: any) {
       console.log(error.response);
-
       toast.error(error?.response?.data?.message || "حدث خطأ ا��نا�� التحميل");
     }
   };
@@ -44,7 +43,7 @@ export const GetExamToLessonApi = (lessonId: string) => {
 export const MakePublishedApi = (quizeId: string) => {
   return async (dispatch: Dispatch<PayloadAction<string>>) => {
     try {
-      const { data } = await Api.patch(`Quize/makepublish/${quizeId}`);
+      await Api.patch(`Quize/makepublish/${quizeId}`);
       dispatch(editOnExamPublished(quizeId));
       toast.success("تم نشر الامتحان بنجاح");
     } catch (error: any) {
@@ -58,7 +57,7 @@ export const SendExamToStudent = (
   examId: string,
   studentId: number
 ) => {
-  return async (dispatch: Dispatch<PayloadAction<IExamAttemp>>) => {
+  return async (dispatch: Dispatch<PayloadAction<IExamAttemp | null>>) => {
     try {
       const { data } = await Api.post(
         `StudentAnswer/addstudentanswer/${examId}/${studentId}`,
@@ -69,14 +68,13 @@ export const SendExamToStudent = (
       dispatch(submitExam(data.attemp));
     } catch (error: any) {
       console.log(error);
-
       toast.error(error?.response?.data?.message || "حدث خطأ ا��نا�� التحميل");
     }
   };
 };
 
 export const CheckExaminedApi = (examId: string, studentId: number) => {
-  return async (dispatch: Dispatch<PayloadAction<IExamAttemp>>) => {
+  return async (dispatch: Dispatch<PayloadAction<IExamAttemp | null>>) => {
     try {
       const { data } = await Api.get(
         `StudentAnswer/check/${examId}/${studentId}`

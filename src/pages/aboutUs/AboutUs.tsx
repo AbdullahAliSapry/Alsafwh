@@ -3,6 +3,7 @@ import classes from "./AboutUs.module.css";
 import logo from "@assets/Alsafwa/11.png";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 export default function AboutUs() {
   const { t, i18n } = useTranslation();
@@ -10,6 +11,9 @@ export default function AboutUs() {
     getInitialValueInEffect: true,
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,64 +23,84 @@ export default function AboutUs() {
         display={"grid"}
         dir={i18n.language === "ar" ? "rtl" : "ltr"}
         mx={20}
+        className={classes.parent}
         style={{ justifyContent: "center" }}
         c={computedColorScheme === "light" ? "black" : "white"}>
-        <Box mt={50}>
-          <Text fz={20} fw={700} c={"#003EDD"}>
-            {t("aboutUs.whoWeAre")}
-          </Text>
-          <Text mt={10} mr={20}>
-            {t("aboutUs.description1")}
-          </Text>
-          <Text mt={20} mr={20}>
-            {t("aboutUs.description2")}
-          </Text>
-          <Text mt={20} mr={20}>
-            {t("aboutUs.description3")}
-          </Text>
-        </Box>
+        {/* Who We Are Section */}
+        <div className={classes.ContainerData1}>
+          <Box mt={50}>
+            <Text fz={20} fw={700} c={"#003EDD"} className={classes.title}>
+              {t("aboutUs.whoWeAre")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.description1")}
+            </Text>
+          </Box>
 
-        <Box mt={30}>
-          <Text fz={20} fw={700} c={"#003EDD"}>
-            {t("aboutUs.ourTeachers")}
-          </Text>
-          <Text mt={10} mr={20}>
-            {t("aboutUs.teachersDescription1")}
-          </Text>
-          <Text mt={20} mr={20}>
-            {t("aboutUs.teachersDescription2")}
-          </Text>
-        </Box>
+          {/* What We Offer Section */}
+          <Box mt={30}>
+            <Text fz={20} fw={700} c={"#003EDD"} className={classes.title}>
+              {t("aboutUs.whatWeOffer")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.description2")}
+            </Text>
+          </Box>
 
-        <Box mt={30}>
-          <Text fz={20} fw={700} c={"#003EDD"}>
-            {t("aboutUs.ourMission")}
-          </Text>
-          <Text mt={20} mr={20}>
-            {t("aboutUs.missionDescription")}
-          </Text>
-        </Box>
-
-        <Box className={classes.endSection}>
-          <Box>
-            <Text fz={20} fw={700} c={"#003EDD"}>
+          {/* Our Vision Section */}
+          <Box mt={30}>
+            <Text fz={20} fw={700} c={"#003EDD"} className={classes.title}>
               {t("aboutUs.ourVision")}
             </Text>
             <Text mt={20} mr={20}>
               {t("aboutUs.visionDescription")}
             </Text>
           </Box>
-
-          <Box className={classes.decoration}>
-            <img
-              src={logo}
-              alt=""
-              className={classes.imageLogo}
-              width={"500px"}
-              height={"275px"}
-            />
+        </div>
+        <div className={classes.ContainerData}>
+          <Box mt={30}>
+            <Text fz={20} fw={700} c={"#003EDD"} className={classes.title}>
+              {t("aboutUs.privacyPolicy")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy1")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy2")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy3")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy4")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy5")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy6")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy7")}
+            </Text>
+            <Text mt={10} mr={20}>
+              {t("aboutUs.privacyPolicyDetails.policy8")}
+            </Text>
           </Box>
-        </Box>
+
+          {/* Logo and End Section */}
+          <Box className={classes.endSection}>
+            <Box>
+              <img
+                src={logo}
+                alt=""
+                className={classes.imageLogo}
+                width={"500px"}
+                height={"275px"}
+              />
+            </Box>
+          </Box>
+        </div>
       </Box>
     </motion.div>
   );

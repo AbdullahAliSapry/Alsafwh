@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import {
-  editRate,
   Filter,
   getAllCourses,
   getAllCoursesCount,
+  getCodeDiscount,
   getModernCourses,
   getSingleCourse,
 } from "@store/slices/CourseSlice";
 import { Api } from "@utilities/Api";
 import { ICourse } from "@utilities/interfaces/CourseInterface";
-import { IFeedBackCourse, IFilter } from "@utilities/interfaces/PublicInterfce";
+import { ICoupon, IFilter } from "@utilities/interfaces/PublicInterfce";
 import { toast } from "react-toastify";
 
 const buildQueryString = (params: Record<string, any>) => {
@@ -37,16 +37,12 @@ export const GetAllCoursesApi = (
         `Course/getAll?page=${page}&take=${take}${filterQueryString}`
       );
       if (filter) {
-        console.log("enter");
-
         dispatch(Filter(data));
       } else {
         dispatch(getAllCourses(data));
       }
     } catch (error: any) {
-      toast.error(
-        error.response?.data?.message || "Error in getting all courses"
-      );
+      console.log(error.response?.data);
     }
   };
 };
@@ -58,22 +54,20 @@ export const GetCountCoursesApi = () => {
 
       dispatch(getAllCoursesCount(data.count));
     } catch (error: any) {
-      toast.error(error.response.data.message || "Error in get Count Courses");
+      console.log(error.response?.data);
     }
   };
 };
 
 export const GetSingleCourse = (id: string) => {
-  return async (
-    dispatch: Dispatch<PayloadAction<ICourse | IFeedBackCourse[]>>
-  ) => {
+  return async (dispatch: Dispatch<PayloadAction<ICourse | number>>) => {
     try {
       const { data } = await Api.get(`Course/getById/${id}`);
-
+    
       dispatch(getSingleCourse(data));
-      dispatch(editRate(data.coursesFeedBacks));
+      //dispatch(editRate(data.evalution));
     } catch (error: any) {
-      console.log(error.response);
+      console.log(error.response?.data);
     }
   };
 };
@@ -82,11 +76,26 @@ export const GetCourseModern = () => {
   return async (dispatch: Dispatch<PayloadAction<ICourse[]>>) => {
     try {
       const { data } = await Api.get(
-        `Course/getAll?page=${1}&take=${4}&sort=true`
+        `Course/getAll?sort=true`
       );
       dispatch(getModernCourses(data));
     } catch (error: any) {
-      toast.error(error.response.data.message || "Error in get All Courses");
+      console.log(error.response?.data);
+    }
+  };
+};
+
+export const GetCodeDiscountToCourse = (courseId: string, coupone: string) => {
+  return async (
+    dispatch: Dispatch<PayloadAction<{ active: boolean; coupon: ICoupon }>>
+  ) => {
+    try {
+      const { data } = await Api.get(`Course/getCoupon/${coupone}/${courseId}`);
+      dispatch(getCodeDiscount({ active: data.isActive, coupon: data.coupon }));
+      toast.success("تم تطبيق الكوبون بنجاح");
+    } catch (error: any) {
+      console.log(error.response.data);
+      toast.error(error.response.data.message || "Error in Apply Coupon ");
     }
   };
 };

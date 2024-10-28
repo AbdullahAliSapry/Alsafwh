@@ -2,17 +2,17 @@ import { Box, Container, Text, useComputedColorScheme } from "@mantine/core";
 import imageOne from "@assets/Alsafwa/second-section-one.png";
 import imageTwo from "@assets/Alsafwa/Premium Vector _ Online business training 3d isometric vector concept.png";
 import imageThree from "@assets/Alsafwa/second-section-three.png";
+import imageFour from "@assets/Alsafwa/Security On-bro2.png";
 import classes from "./SecondeSection.module.css";
 import TitleSection from "@shared/titlesction/TitleSection";
 import { useTranslation } from "react-i18next";
-
 export default function SecondeSection() {
   const computedColorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,
   });
 
   const { t, i18n } = useTranslation();
-  
+
   return (
     <>
       <Box mb={50} dir={i18n.language === "ar" ? "rtl" : "ltr"}>
@@ -86,7 +86,7 @@ export default function SecondeSection() {
                   : classes.styleCardDark
               }>
               <Box className={classes.positionImage}>
-                <img src={imageThree} width={"150px"} height={"150px"} />
+                <img src={imageFour} width={"150px"} height={"150px"} />
               </Box>
 
               <Box pt={100} ta={"center"}>

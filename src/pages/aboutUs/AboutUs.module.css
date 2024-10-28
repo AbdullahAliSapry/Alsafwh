@@ -4,6 +4,29 @@
   margin-bottom: 50px;
   object-fit: contain;
 }
+.ContainerData1 {
+  display: flex;
+  gap: 20px;
+
+  flex-direction: column;
+  padding: 10px;
+}
+.ContainerData1 p {
+  max-width: 800px;
+}
+.ContainerData {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContainerData > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
 
 .endSection {
   margin-top: -50px;
@@ -13,11 +36,14 @@
   justify-content: space-between;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .imageLogo {
     width: 450px;
     height: 250px;
     margin-bottom: 50px;
+  }
+  .ContainerData {
+    flex-direction: column;
   }
 }
 
@@ -41,8 +67,22 @@
 
 @media (max-width: 450px) {
   .imageLogo {
-    width: 350px;
+    width: 210px;
     height: 230px;
     margin-bottom: 50px;
+  }
+  .ContainerData {
+    flex-direction: column;
+  }
+  .parent {
+    padding: 10px;
+    margin: auto;
+  }
+  .parent p {
+    font-size: 14px !important;
+    max-width: 310px;
+  }
+  .parent p.title {
+    font-size: 20px !important;
   }
 }

@@ -4,7 +4,10 @@ import { useTranslation } from "react-i18next";
 export const FilterSchema = Yup.object().shape({
   Year: Yup.string().optional(),
   Specialization: Yup.string()
-    .oneOf(["Science", "Mathematical", "Literary"], "التخصص غير مومجود")
+    .oneOf(
+      ["علمي", "علم رياضه", "ادبي", "مشتركه", "لم اختر شعبه بعد", "علم علوم"],
+      "التخصص غير موجود"
+    )
     .optional(),
   Subject: Yup.string().optional(),
 });
@@ -37,14 +40,14 @@ export const ExamSchema = Yup.object().shape({
   description: Yup.string()
     .required("يجب عليك ادخال نص")
     .max(500, "الحد الاقصي 500 حرف")
-    .min(3, "الحد الادني 3 احرف"),
+    .min(10, "الحد الادني 10 احرف"),
   numberQustion: Yup.number()
     .min(1, "عدد الأسئلة يجب أن يكون أكثر من 0")
     .required("عدد الاسئله مطلوب"),
   quizeTime: Yup.number()
     .min(1, "وقت الامتحان يجب أن يكون أكثر من 0 دقيقة")
     .required("وقت الامحتان مطلوب"),
-  Title: Yup.string()
+  title: Yup.string()
     .required("عنوان الامتحان مطلوب")
     .min(10, "العنوان لا يقل عن عشره احرف"),
 });
@@ -97,9 +100,8 @@ export const FeedBackCourseSchema = () => {
     courseId: Yup.string().required(
       t("feedBackCourse.validation.courseIdRequired")
     ),
-    userId: Yup.string().required(
-      t("feedBackCourse.validation.userIdRequired")
-    ),
+    userId: Yup.string(),
+
     description: Yup.string()
       .required(t("feedBackCourse.validation.descriptionRequired"))
       .max(500, t("feedBackCourse.validation.descriptionMax")),

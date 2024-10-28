@@ -41,7 +41,9 @@ export default function AllFeedback() {
   const { isLoading, isSubmitted, feedbacks } = useSelector(
     (state: RootState) => state.FeedBack
   );
-
+ useEffect(() => {
+   window.scrollTo(0, 0);
+ }, []);
   const formik = useFormik({
     initialValues: {
       text: "",
@@ -126,7 +128,7 @@ export default function AllFeedback() {
                 bg={"rgba(69, 79, 255, 1)"}
                 style={{ borderRadius: "15px" }}>
                 <Group></Group>
-                <Text pl={54} pt="sm" size="sm">
+                <Text pl={54} pt="sm" className={classes.StyleFeed} size="sm">
                   {feedback.text}
                 </Text>
               </Box>
@@ -169,7 +171,6 @@ export default function AllFeedback() {
               type="text"
               name="text"
               placeholder="ملاحظاتك"
-              // required
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.text}
@@ -195,7 +196,6 @@ export default function AllFeedback() {
 
           <Box>
             <>
-              {/* {<>{handleSubmit}</>} */}
               <Modal
                 styles={{
                   header: { paddingBottom: "0px", paddingTop: "0px" },

@@ -8,7 +8,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: start;
   margin: 10px 0;
-  height: inherit;
+  padding: 20px 20px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -29,8 +29,9 @@
 }
 
 .description {
-  font-size: 0.9em;
-  margin-bottom: 20px;
+  font-size: 16px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .features {
@@ -58,7 +59,7 @@
 .subscribeButton:hover {
   background-color: #008fcc; /* Darker blue on hover */
 }
-.subscribeButton > a{
+.subscribeButton > a {
   text-decoration: none;
   color: white;
 }
@@ -67,13 +68,8 @@
   font-size: 1.2em;
 }
 
-
-@media (max-width:450px) {
+@media (max-width: 450px) {
   .card {
-    
     width: 350px;
-  
   }
-  
-  
 }

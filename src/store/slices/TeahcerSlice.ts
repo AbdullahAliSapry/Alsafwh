@@ -7,6 +7,7 @@ export interface IStateTeacher {
   teacher: ITeacher | null;
   isLoading: boolean;
   Courses: ICourse[];
+  countSubscriptions: number;
 }
 const storedData = localStorage.getItem("teacher");
 
@@ -15,6 +16,7 @@ const initialState: IStateTeacher = {
   teacher: storedData ? JSON.parse(storedData) : null,
   isLoading: false,
   Courses: [],
+  countSubscriptions: 0,
 };
 
 const TeacherSlice = createSlice({
@@ -35,9 +37,12 @@ const TeacherSlice = createSlice({
         state.teacher.user.fileUploads = action.payload;
       }
     },
-    getCoursesTeacher:(state,action:PayloadAction<ICourse[]>)=>{
+    getCoursesTeacher: (state, action: PayloadAction<ICourse[]>) => {
       state.Courses = action.payload;
-    }
+    },
+    setCountSubscriptions: (state, action: PayloadAction<number>) => {
+      state.countSubscriptions = action.payload;
+    },
   },
 });
 
@@ -47,5 +52,6 @@ export const {
   setLoading,
   updateImg,
   getCoursesTeacher,
+  setCountSubscriptions,
 } = TeacherSlice.actions;
 export default TeacherSlice.reducer;

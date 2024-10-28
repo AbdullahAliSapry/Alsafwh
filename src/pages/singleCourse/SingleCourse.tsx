@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import ReactPlayer from "react-player";
 import classes from "./SingleCourse.module.css";
-import { Box, Text, useComputedColorScheme } from "@mantine/core";
+const { buttonRegisterAreadey } = classes;
+import { Box, Button, Text, useComputedColorScheme } from "@mantine/core";
 import { IconClock, IconPointFilled } from "@tabler/icons-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
 import { GetSingleCourse } from "@store/api/CourseApi";
-import Spinner from "@shared/spineer/Spinner";
+import { GetCoursesToStudentSingleApi } from "@store/api/StudentApi";
+import { toast } from "react-toastify";
+
 export default function SingleCourse() {
   const { id } = useParams();
   const dispatch = useDispatch<AppDispatch>();
   const { course } = useSelector((state: RootState) => state.Course);
+
   useEffect(() => {
     if (id == null || id == "") return;
     dispatch(GetSingleCourse(id));
@@ -20,8 +24,42 @@ export default function SingleCourse() {
   const computedColorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,
   });
-  console.log(course?.description.includes(","));
 
+  const { AuthModel } = useSelector((state: RootState) => state.Auth);
+
+  const { studentCourseSingle, student } = useSelector(
+    (state: RootState) => state.Student
+  );
+
+  const isSubscriped = studentCourseSingle.findIndex(
+    (e) => e.id === course?.id
+  );
+  const navigate = useNavigate();
+  const handlePay = () => {
+    if (AuthModel && course) {
+      navigate(`/single-course-payment/${course.id}/${student?.user.id}`);
+    } else {
+      toast.info("من فضلك قم بتسجيل الدخول اولا");
+    }
+  };
+  useEffect(() => {
+    if (
+      AuthModel?.roles[0] === "Student" &&
+      AuthModel?.userId &&
+      studentCourseSingle.length === 0
+    ) {
+      dispatch(GetCoursesToStudentSingleApi(AuthModel.userId));
+    }
+  }, [
+    AuthModel?.roles,
+    AuthModel?.userId,
+    dispatch,
+    studentCourseSingle.length,
+  ]);
+
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   return (
     <>
       {course ? (
@@ -31,35 +69,36 @@ export default function SingleCourse() {
             c={computedColorScheme == "light" ? "black" : "white"}
             className={classes.parent}>
             <Box className={classes.headerPage}>
-              <Text mb={20} fz={30} c={"white"}>
+              <Box mb={20} fz={30} c={"rgb(34, 166, 241)"} fw={700}>
                 {course?.subject?.name}
-                <span style={{ color: "#003EDD", fontSize: "15px" }}>
+                <span style={{ color: "#000", fontSize: "15px" }}>
                   {" "}
-                  <span style={{ color: "white" }}>( </span> فلسفة فكر بعمق{" "}
+                  <span style={{ color: "white" }}>( </span> {course.title}{" "}
                   <span style={{ color: "white" }}>) </span>
                 </span>
+              </Box>
+
+              <Text mb={20} c={"black"} fw={600}>
+                {course.subTitle}
               </Text>
 
-              <Text mb={20} c={"white"}>
-                {course?.subject?.description}
-              </Text>
-
-              <Text mb={20} c={"white"}>
+              <Text mb={20} c={"rgb(34, 166, 241)"} fw={600}>
                 مقدم الكورس :{" "}
-                <span style={{ color: "#003EDD" }}>
+                <span style={{ color: "black" }}>
                   {course?.teacher.user.firstName +
                     " " +
                     course?.teacher.user.lastName}
                 </span>
               </Text>
 
-              <Text mb={20} c={"white"}>
-                الشعبة الدراسية :<span style={{ color: "#003EDD" }}>ادبي</span>
+              <Text mb={20} c={"rgb(34, 166, 241)"} fw={600}>
+                الشعبة الدراسية :
+                <span style={{ color: "black" }}>{course?.branch}</span>
               </Text>
 
-              <Text mb={20} c={"white"}>
+              <Text mb={20} c={"rgb(34, 166, 241)"} fw={600}>
                 الصف الدراسى :{" "}
-                <span style={{ color: "#003EDD" }}>{course?.year?.name}</span>
+                <span style={{ color: "black" }}>{course?.year?.name}</span>
               </Text>
             </Box>
 
@@ -70,7 +109,7 @@ export default function SingleCourse() {
               className={classes.parentCards}>
               <Box>
                 <Box className={classes.cardDescription}>
-                  <Text fz={30} fw={700}>
+                  <Text fw={700} className={classes.outCome}>
                     الوصف :
                   </Text>
                   {course?.description.length > 250 &&
@@ -90,7 +129,7 @@ export default function SingleCourse() {
                 </Box>
 
                 <Box className={classes.cardDescription}>
-                  <Text fz={30} fw={700}>
+                  <Text fw={700} className={classes.outCome}>
                     ماذا ستتعلم من هذا الكورس :{" "}
                   </Text>
 
@@ -118,7 +157,6 @@ export default function SingleCourse() {
                   <Text fz={25} fw={700} c={"#003EDD"}>
                     مُقدم الكورس{" "}
                   </Text>
-
                   <Box
                     mt={10}
                     display={"flex"}
@@ -187,18 +225,7 @@ export default function SingleCourse() {
                         gap: "1rem",
                         justifyContent: "space-between",
                       }}>
-                      <Box
-                        style={{
-                          borderRadius: "150px",
-                          overflow: "hidden",
-                          backgroundColor: "black",
-                          width: "70px",
-                          height: "70px",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          objectFit: "contain",
-                        }}>
+                      <Box className={classes.styleImgCard}>
                         <img
                           src={course?.teacher.user.fileUploads.url}
                           width={"100px"}
@@ -254,7 +281,7 @@ export default function SingleCourse() {
                       <Box display={"flex"} style={{ alignItems: "center" }}>
                         <IconClock stroke={1.2} style={{ marginLeft: "5px" }} />
                         <Text fz={14} fw={500}>
-                          <Text fz={14}>غير محسوبه</Text>
+                          <span>غير محسوبه</span>
                         </Text>
                       </Box>
                     </Box>
@@ -262,9 +289,29 @@ export default function SingleCourse() {
                     <Box
                       display={"flex"}
                       style={{ justifyContent: "center", gap: "10px" }}>
-                      <Link to={"/"} className={classes.btnSub}>
-                        تسجيل
-                      </Link>
+                      {AuthModel?.roles[0] === "Student" && (
+                        <>
+                          {" "}
+                          {isSubscriped !== -1 ? (
+                            <Button className={buttonRegisterAreadey}>
+                              تم التسجيل
+                            </Button>
+                          ) : (
+                            <Button
+                              className={buttonRegisterAreadey}
+                              onClick={handlePay}>
+                              تسجيل
+                            </Button>
+                          )}
+                        </>
+                      )}
+                      {!AuthModel && (
+                        <Button
+                          className={buttonRegisterAreadey}
+                          onClick={handlePay}>
+                          تسجيل
+                        </Button>
+                      )}
                       <Link
                         to={`/feedback-course/${course.id}`}
                         className={classes.btnSub}>
@@ -280,7 +327,6 @@ export default function SingleCourse() {
       ) : (
         <>
           <h1>لا يوحد محتوي لهذا الكورس</h1>
-          <Spinner />
         </>
       )}
     </>

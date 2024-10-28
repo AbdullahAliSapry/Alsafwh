@@ -15,7 +15,7 @@ export const SendProblemApi = (Data: IProblem) => {
       dispatch(addProblem({ loading: false, added: true }));
       toast.success("تم ارسال المشكلة بنجاح سيتم التواصل معك في اسرع وقت");
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+      toast.error(error?.response?.data?.message || "حدث خطأ اثناء الارسال");
     }
   };
 };

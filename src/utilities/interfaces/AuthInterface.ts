@@ -5,7 +5,7 @@ export interface IStudentRegister {
   Email: string;
   FatherPhone: string;
   Phone: string;
-  Img: File | null;
+  Img?: File | null;
   FirstName: string;
   LastName: string;
   Password: string;

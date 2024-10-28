@@ -41,6 +41,7 @@ export interface ISubject {
   id: string;
   imgId: string;
   name: string;
+  branch: string;
   fileUploads: IFile;
 }
 
@@ -222,7 +223,7 @@ export interface IChangePassword {
   userId: string;
 }
 
-export interface ICoupon{
+export interface ICoupon {
   id: string;
   couponText: string;
   startDate: Date;
@@ -231,5 +232,6 @@ export interface ICoupon{
   isRevoked: boolean;
   couponPercntage: number;
   isActive: boolean;
-  subscriptionPlanId: number;
+  subscriptionPlanId?: number;
+  courseId?: string;
 }

@@ -5,10 +5,13 @@ import "@mantine/carousel/styles.css";
 import { Provider } from "react-redux";
 import { Store } from "@store/Store.ts";
 import "./translate/I18next.ts";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
     <Provider store={Store}>
-      <AppRouter />
+      <GoogleOAuthProvider clientId={import.meta.env.VITE_SEVER_OUthId}>
+        <AppRouter />
+      </GoogleOAuthProvider>
     </Provider>
   </>
 );

@@ -2,7 +2,10 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
-import { HandlerPayMent } from "@store/api/PayMentApi";
+import {
+  HandlerPayMent,
+  HandlerPayMentSingleCourseApi,
+} from "@store/api/PayMentApi";
 import { IPayMentHandlerData } from "@utilities/interfaces/PublicInterfce";
 import { toast } from "react-toastify";
 import styles from "./StatusPayMent.module.css";
@@ -19,7 +22,6 @@ export default function StatusPayMent() {
     const queryParams = new URLSearchParams(location.search);
 
     if (queryParams) {
-      // Concatenate the data in the same order
       const concatenatedData = [
         queryParams.get("amount_cents"),
         queryParams.get("created_at"),
@@ -41,8 +43,12 @@ export default function StatusPayMent() {
         queryParams.get("source_data.sub_type"),
         queryParams.get("source_data.type"),
         queryParams.get("success"),
-      ].join(""); // Join them into a single string
-
+      ].join("");
+      const isSingleCourse = queryParams.get("isSingle")
+        ? queryParams.get("isSingle") == "true"
+          ? true
+          : false
+        : null;
       const paymentData = {
         stringHmac: concatenatedData,
         success: queryParams.get("success") === "true",
@@ -59,25 +65,30 @@ export default function StatusPayMent() {
         paymentData.transactionId
       ) {
         if (status == null)
-          dispatch(HandlerPayMent(paymentData as IPayMentHandlerData));
+          if (isSingleCourse && isSingleCourse == true) {
+            dispatch(
+              HandlerPayMentSingleCourseApi(paymentData as IPayMentHandlerData)
+            );
+          } else {
+            dispatch(HandlerPayMent(paymentData as IPayMentHandlerData));
+          }
       } else {
         navigate("/");
-        toast.error("لم يتم التحقق من البيانات المرسلة");
-        return;
+        throw new Error("Not Found Page");
       }
     } else {
       navigate("/");
-      toast.error("لم يتم التحقق من البيانات المرسلة");
-      return;
+      throw new Error("Not Found Page");
     }
-  }, []);
+  }, [dispatch, location.search, navigate, status]);
 
   useEffect(() => {
     if (status) {
       toast.success(status ? "عملية الدفع نجحت" : "عملية الدفع فشلت");
       navigate("/");
     }
-  }, []);
+  }, [navigate, status]);
+
   return (
     <div>
       {status ? (

@@ -7,7 +7,16 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.numberOfCourses {
+  background-color: #4182f9;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
 
+.numberOfCourses > p {
+  color: white !important;
+  font-size: 16px !important;
+}
 .containerDark {
   background-color: rgb(41, 41, 42);
   color: white;
@@ -15,10 +24,14 @@
   box-shadow: rgba(252, 251, 251, 0.15) 1.95px 1.95px 2.6px;
 }
 
+.headerStyling > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .headerStyling {
   padding: 50px 10px;
 }
-
 .courseHeaderStyle {
   display: flex;
   align-items: center;
@@ -39,4 +52,13 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+@media (max-width: 400px) {
+  .headerStyling > div:first-child {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
 }

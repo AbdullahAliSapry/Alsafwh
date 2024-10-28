@@ -15,7 +15,7 @@ export const GetAllNotificationsApi = (userId: string) => {
       const { data } = await Api.get(`Notification/getAllToUser/${userId}`);
       dispatch(getAllNotifications(data));
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+      console.log(error?.response);
     }
   };
 };
@@ -28,7 +28,7 @@ export const MakeReadingApi = (notificationId: string) => {
       );
       dispatch(makeReading(data));
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+      console.log(error?.response);
     }
   };
 };
@@ -40,7 +40,7 @@ export const DeleteNotificationApi = (notificationId: string) => {
       dispatch(removeNotification(notificationId));
       toast.success("تم حذف التنبيه بنجاح");
     } catch (error: any) {
-      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+      console.log(error?.response);
     }
   };
 };

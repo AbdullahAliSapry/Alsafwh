@@ -20,6 +20,9 @@ export default function SubscriptionCard({
     if (!AuthModel) {
       return toast.info(t("SubscriptionCard.loginPrompt"));
     }
+    if (plan.typeSubscription !== 0) {
+      return toast.info(t("SubscriptionCard.commonSoon"));
+    }
     navigate(`/payment/${plan.id}/${plan.name}`);
   };
 

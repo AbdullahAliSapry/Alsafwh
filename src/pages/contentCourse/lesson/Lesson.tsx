@@ -17,6 +17,7 @@ import { CheckExaminedApi } from "@store/api/ExamApi";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 import { MdGppBad, MdGppGood } from "react-icons/md";
+import { submitExam } from "@store/slices/ExamSlice";
 
 const iconStyle = { width: rem(12), height: rem(12) };
 
@@ -37,17 +38,16 @@ export default function Lesson({
   const dispatch = useDispatch<AppDispatch>();
   const { AuthModel } = useSelector((state: RootState) => state.Auth);
   const { student } = useSelector((state: RootState) => state.Student);
-  const { isAvilable, isCompleted,isLimited } = useSelector(
+  const { isAvilable, isCompleted, isLimited, Count } = useSelector(
     (state: RootState) => state.Lesson
   );
   const { examAttemp } = useSelector((state: RootState) => state.Exam);
-    const { course } = useSelector(
-      (state: RootState) => state.Course
-    );
+  const { course } = useSelector((state: RootState) => state.Course);
+
   useEffect(() => {
-    if (!AuthModel?.userId || isAvilable === null || isLimited) return;
-    dispatch(AddWatchApi(lesson.id, AuthModel?.userId));
-  }, [lesson.id, AuthModel?.userId, dispatch, isLimited]);
+    if (!AuthModel?.userId) return;
+    dispatch(AddWatchApi(lesson.id, AuthModel?.userId as string));
+  }, [lesson.id, AuthModel?.userId, dispatch, isLimited, isAvilable]);
 
   const makeCompleted = () => {
     if (!student || !lesson) return;
@@ -58,9 +58,13 @@ export default function Lesson({
   };
 
   useEffect(() => {
-    if (lesson?.quize?.id && student?.id)
+    if (lesson?.quize?.id && student?.id) {
       dispatch(CheckExaminedApi(lesson.quize?.id, student.id));
-  }, [dispatch, lesson.quize?.id, student?.id]);
+    }
+    else{
+      dispatch(submitExam(null));
+    }
+  }, [dispatch, lesson.quize?.id, student?.id, lesson?.id]);
 
   return (
     <div>
@@ -98,7 +102,10 @@ export default function Lesson({
             الفصل {index}/{length}
           </Box>
         </Box>
-
+        <Box className={classes.ContainerWatching}>
+          <h1>عدد المشاهدات المتاح لك </h1>
+          <span>{Count}/11</span>
+        </Box>
         {isAvilable ? (
           <>
             <Box mb={20}>
@@ -111,8 +118,8 @@ export default function Lesson({
                     border: "0",
                     position: "absolute",
                     top: "0",
-                    height: "100%",
-                    width: "100%",
+                    height: "70%",
+                    width: "80%",
                   }}
                   allow="accelerometer; gyroscope; encrypted-media; picture-in-picture"
                   allowFullScreen
@@ -160,11 +167,15 @@ export default function Lesson({
                 {lesson?.description}
               </Tabs.Panel>
               <Tabs.Panel className={classes.styleTabsPanel} value="messages">
-                <Link
-                  to={`${lesson?.contentPdf}`}
-                  className={classes.styleLinkPdf}>
-                  تحميل pdfs
-                </Link>
+                {lesson?.contentPdf ? (
+                  <Link
+                    to={`${lesson?.contentPdf}`}
+                    className={classes.styleLinkPdf}>
+                    تحميل pdfs
+                  </Link>
+                ) : (
+                  <h1 className={classes.styleLinkPdf}> لا يوجد اي pdf</h1>
+                )}
               </Tabs.Panel>
               <Tabs.Panel className={classes.styleTabsPanel} value="comment">
                 <Comments LessonId={lesson.id} />
@@ -220,12 +231,17 @@ export default function Lesson({
                   </>
                 ) : (
                   <>
-                    {" "}
-                    <Button className={classes.btnSend}>
-                      <Link to={`/exam-lesson/${lesson.id}`}>
-                        الذهاب للامتحان
-                      </Link>
-                    </Button>
+                    {lesson.containQuize && lesson.quize?.isPubliched ? (
+                      <Button className={classes.btnSend}>
+                        <Link to={`/exam-lesson/${lesson.id}`}>
+                          الذهاب للامتحان
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Button className={classes.btnSend}>
+                        لا يوجد امتحان لهذا الدرس
+                      </Button>
+                    )}
                   </>
                 )}
               </Tabs.Panel>
@@ -247,7 +263,12 @@ export default function Lesson({
               display={"flex"}
               style={{ justifyContent: "center", alignItems: "center" }}>
               <Box mt={5} className={classes.containerImageEmail} h={70} w={70}>
-                <img src={course?.teacher.user.fileUploads.url||image} width={"150px"} height={"100%"} alt="" />
+                <img
+                  src={course?.teacher.user.fileUploads.url || image}
+                  width={"150px"}
+                  height={"100%"}
+                  alt=""
+                />
               </Box>
               <Box mr={10}>
                 <Text

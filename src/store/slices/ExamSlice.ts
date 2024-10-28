@@ -30,7 +30,7 @@ const ExamSlice = createSlice({
     GetExamToLesson: (state, action: PayloadAction<IExam>) => {
       state.exam = action.payload;
     },
-    submitExam: (state, action:PayloadAction<IExamAttemp>) => {
+    submitExam: (state, action:PayloadAction<IExamAttemp |null>) => {
       state.isSubmitted = true;
       state.examAttemp = action.payload;
     },

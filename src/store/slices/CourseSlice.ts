@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICourse } from "@utilities/interfaces/CourseInterface";
-import { IFeedBackCourse } from "@utilities/interfaces/PublicInterfce";
+import { ICoupon } from "@utilities/interfaces/PublicInterfce";
 
 export interface IStateCourse {
   courses: ICourse[];
@@ -11,6 +11,8 @@ export interface IStateCourse {
   course: ICourse | null;
   isFiltered: boolean;
   rateToCourse: number;
+  isActiveCode: boolean;
+  coupon: ICoupon | null;
 }
 
 const initialState: IStateCourse = {
@@ -22,6 +24,8 @@ const initialState: IStateCourse = {
   course: null,
   isFiltered: false,
   rateToCourse: 0,
+  isActiveCode: false,
+  coupon: null,
 };
 
 const CourseSlice = createSlice({
@@ -48,10 +52,15 @@ const CourseSlice = createSlice({
     getModernCourses: (state, action: PayloadAction<ICourse[]>) => {
       state.courseModern = action.payload;
     },
-    editRate: (state, action: PayloadAction<IFeedBackCourse[]>) => {      
-      state.rateToCourse =
-        action.payload.reduce((acc, curr) => acc + curr.rate, 0) /
-        action.payload.length;
+    editRate: (state, action: PayloadAction<number>) => {
+      state.rateToCourse = action.payload;
+    },
+    getCodeDiscount: (
+      state,
+      action: PayloadAction<{ active: boolean; coupon: ICoupon }>
+    ) => {
+      state.isActiveCode = action.payload.active;
+      state.coupon = action.payload.coupon;
     },
   },
 });
@@ -64,5 +73,6 @@ export const {
   getSingleCourse,
   getModernCourses,
   editRate,
+  getCodeDiscount,
 } = CourseSlice.actions;
 export default CourseSlice.reducer;

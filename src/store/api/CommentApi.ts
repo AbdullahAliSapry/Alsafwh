@@ -30,9 +30,9 @@ export const AddCommentApi = (comment: IAddComment, user: IUser) => {
       dispatch(addComment(neWcomment));
       toast.success("تم اضافه التعليق بنجاح");
     } catch (error: any) {
-      console.log(error.response.data);
+      console.log(error?.response?.data);
 
-      toast.error(error.response.data.message || "حدث خطا اثناء اضافه الخطأ");
+      toast.error(error.response.data.message || "حدث خطا اثناء اضافه الكوبون");
     }
   };
 };
@@ -43,7 +43,7 @@ export const GetAllCommentsApi = (lessonId: string) => {
       const { data } = await Api.get(`Comment/getAll/${lessonId}`);
       dispatch(getAllComments(data));
     } catch (error: any) {
-      toast.error(error.response.data.message || "حدث خطا اثناء اضافه الخطأ");
+      console.log(error?.response?.data);
     }
   };
 };
@@ -51,15 +51,14 @@ export const GetAllCommentsApi = (lessonId: string) => {
 export const UpdateCommentApi = (comment: IComment) => {
   return async (dispatch: Dispatch<PayloadAction<IComment>>) => {
     try {
-      const { data } = await Api.patch(`Comment/edit`, {
+      await Api.patch(`Comment/edit`, {
         id: comment.id,
         text: comment.text,
       });
       dispatch(updateComment(comment));
       toast.success("تم تحديث التعليق بنجاح");
     } catch (error: any) {
-      console.log(error.response);
-      toast.error(error.response.data.message || "حدث خطا اثناء اضافه الخطأ");
+      console.log(error?.response);
     }
   };
 };
@@ -71,8 +70,8 @@ export const DeleteCommentApi = (commentId: string) => {
       dispatch(deleteComment(commentId));
       toast.success("تم حذف التعليق بنجاح");
     } catch (error: any) {
-      console.log(error.response);
-      toast.error(error.response.data.message || "حدث خطا اثناء اضافه الخطأ");
+      console.log(error?.response);
     }
   };
 };
+

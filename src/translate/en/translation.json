@@ -1,8 +1,9 @@
 {
+  "Logo": "AlSafwa",
   "header": {
     "startHeader": "Want to learn?",
     "headerTitle": "This is the best place.",
-    "SubTitle": "With Al Safwa, distance learning has become easier.",
+    "SubTitle": "With AlSafwa, you are always among the elite.",
     "ButtonHider": "About Us",
     "ButtonJoin": "Join us now"
   },
@@ -19,12 +20,13 @@
     "settings": "Settings",
     "messages": "Messages",
     "photos": "Photos",
-    "courses": "Courses",
+    "courses": "Plans courses",
     "deleteAccount": "Delete Account",
     "logout": "Logout",
     "confirmLogout": "Are you sure you want to log out?",
     "confirmButton": "Logout",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "SingleCourse": "Individual courses"
   },
 
   "SecondeSection": {
@@ -58,7 +60,8 @@
   "Courses": {
     "title": "Courses",
     "noData": "No data available to display",
-    "allCoursesButton": "All Courses"
+    "allCoursesButton": "All Courses",
+    "details": "details"
   },
   "Status": {
     "browse": "Browse",
@@ -80,10 +83,11 @@
     "allTeachersButton": "All Teachers"
   },
   "FeedBack": {
-    "title": "Feedback about the Al Safwa",
+    "title": "Feedback about  Al Safwa",
     "profileAlt": "Profile",
     "noFeedbacks": "No feedbacks have been added.",
-    "allFeedbackButton": "All Feedbacks"
+    "allFeedbackButton": "All Feedbacks",
+    "AddFeedback": "Add Feedback"
   },
   "Footer": {
     "paymopAlt": "Paymob logo",
@@ -116,26 +120,35 @@
     "Coin": "EG",
     "Month": "Monthly",
     "Year": "Yearly",
-    "Mid": "Semi-Annually"
+    "Mid": "Semi-Annually",
+    "commonSoon": "coming soon"
   },
   "subscriptionsPage": {
     "title": "Subscription Information",
     "knowMore": "Please know the following information about subscriptions",
     "amount": "Amount: "
   },
+
   "aboutUs": {
     "whoWeAre": "Who We Are",
-    "description1": "Al-Safwa Educational Platform is an online platform dedicated to high school students.",
-    "description2": "The platform allows users to access lessons and tutorials in all subjects through a monthly subscription.",
-    "description3": "The platform offers multiple features aimed at enhancing the e-learning experience and facilitating exam preparation.",
-    "ourTeachers": "Our Teachers",
-    "teachersDescription1": "We have saved you time and worked on selecting the best teachers after a long evaluation process to ensure the quality of our lessons.",
-    "teachersDescription2": "Our teachers are elite and have strong experience in teaching.",
-    "ourMission": "Our Mission",
-    "missionDescription": "We aim for our academic content to reach the largest number of students in the Arab Republic of Egypt.",
+    "description1": "We are an educational platform specialized in providing comprehensive and integrated educational services for high school and Azhar students. Our mission is to empower students to achieve the best academic results through high-quality and reliable educational content delivered by a distinguished group of top teachers and experts in various subjects.",
+    "whatWeOffer": "Our Services",
+    "description2": "We offer high-quality interactive lessons that cover all curricula, taking into account the needs of students and providing explanations in innovative and easy-to-understand ways. We are committed to providing a stimulating educational environment that allows students to learn at their own pace, enhancing their understanding and grasp of the subject matter.",
     "ourVision": "Our Vision",
-    "visionDescription": "We strive to provide educational content that takes into account the different learning styles of students."
+    "visionDescription": "We aim to be the primary educational partner for students on their journey to achieve excellence by offering constantly updated educational content that meets their aspirations and keeps pace with modern developments.",
+    "privacyPolicy": "Privacy Policy",
+    "privacyPolicyDetails": {
+      "policy1": "Our platform is committed to protecting the privacy of its users and ensuring the confidentiality of their personal information. This policy outlines how we collect and use the personal information you provide when using our services.",
+      "policy2": "We collect the personal information you provide when registering on the platform, such as your name, email address, phone number, and academic data. We may also collect additional information when you use the platform, such as academic records, educational preferences, and usage patterns.",
+      "policy3": "Personal information is used to enhance your educational experience on the platform, provide personalized services, and send notifications related to lessons, exams, and special offers. We may also use the information to analyze usage patterns and develop our services.",
+      "policy4": "We take all necessary security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. Personal information is stored on secure servers protected by modern security protocols.",
+      "policy5": "We are committed to not sell, rent, or share your personal information with any third party without your prior consent, except in cases required by applicable laws or to fulfill contracts for providing educational services.",
+      "policy6": "You have the right to access, update, or modify your personal information at any time through your account settings. You may also request the deletion of your personal data from our records, subject to certain exceptions required by law.",
+      "policy7": "We reserve the right to modify this policy from time to time to meet legal changes or technological developments. You will be notified of any significant changes via email or through announcements within the platform.",
+      "policy8": "If you have any questions or concerns about our privacy policy, you can contact us via the following email: alsafwacompany24@gmail.com."
+    }
   },
+
   "contactUs": {
     "viaWhatsapp": "via WhatsApp",
     "callPhone": "Call via Phone",
@@ -182,9 +195,13 @@
     "literary": "Literary",
     "science": "Science",
     "mathematical": "Mathematical",
+    "shared": "Shared",
+    "noSpecialization": "No Specialization Chosen",
     "subjectLabel": "Subject",
-    "subjectPlaceholder": "Enter subject"
+    "subjectPlaceholder": "Enter subject",
+    "sinceBranch": "Science of sciences"
   },
+
   "login": {
     "title": "Login",
     "emailPlaceholder": "Email",
@@ -223,14 +240,21 @@
     "submitButton": "Create Account",
     "loginLink": "Login",
     "alreadyHaveAccount": "Already have an account?",
+    "registrationPromptTitle": "Account created successfully",
+    "registrationPromptText": "You will be directed to the login page",
+
     "departments": [
       {
         "name": "Not Selected",
-        "value": "لم يتم اختيار الشعبه بعد"
+        "value": "لم اختر شعبه بعد"
       },
       {
         "name": "Literary",
         "value": "ادبي"
+      },
+      {
+        "name": "Scientific",
+        "value": "علمي"
       },
       {
         "name": "Science",
@@ -279,7 +303,7 @@
     "amountDue": "Amount Due",
     "coupon": "Discount Coupon",
     "vodafone": "Vodafone",
-    "transferNumber": "You can transfer to the following number",
+    "transferNumber": "You can transfer to the following numbers",
     "receiptInfo": "Then send a picture of the receipt to technical support to confirm your subscription"
   },
   "student": {

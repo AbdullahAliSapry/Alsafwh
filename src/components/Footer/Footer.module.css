@@ -30,7 +30,27 @@
 .partMore {
   margin-right: -30px;
 }
+.ConToLinksLight {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 34px;
+  gap: 22px;
+}
 
+.ConToLinksLight a {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(21, 131, 187);
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
 @media (max-width: 850px) {
   .footer {
     display: grid;
@@ -55,5 +75,12 @@
   }
   .partMore {
     margin-right: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ImgCon {
+    flex-direction: column;
+    gap: 10px;
   }
 }

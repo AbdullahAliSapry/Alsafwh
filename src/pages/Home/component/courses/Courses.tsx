@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useComputedColorScheme } from "@mantine/core";
+const colors = ["#1ABC9C", "#FF81AE", "#C6D7FF", "#FF725E", "#7654B6"];
 
 export default function Courses() {
   const dispatch = useDispatch<AppDispatch>();
@@ -22,6 +24,14 @@ export default function Courses() {
     dispatch(GetAllCoursesApi(1, 4));
   }, [dispatch]);
 
+  const computedColorScheme = useComputedColorScheme("light", {
+    getInitialValueInEffect: true,
+  });
+
+  function getRandomColor() {
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  }
   return (
     <>
       <Box ml={20} dir={i18n.language === "ar" ? "rtl" : "ltr"}>
@@ -42,11 +52,13 @@ export default function Courses() {
         }}>
         <Container>
           <Box className={classes.styleAllCard}>
-            {courses?.length > 0 ? (
+            {courses?.length > 0 && (
               <>
                 {courses.slice(0, 4).map((course) => (
                   <Box className={classes.styleCard} key={course.id}>
-                    <Box className={classes.positionImage}>
+                    <Box
+                      className={classes.positionImage}
+                      bg={getRandomColor()}>
                       <Box
                         style={{ display: "grid", justifyContent: "center" }}>
                         <Text pb={-100} pt={30} pr={25} fw={600} fz={20}>
@@ -66,7 +78,7 @@ export default function Courses() {
                     </Box>
 
                     <Box pt={0}>
-                      <Text mb={8} mt={3} fw={700} fz={18}>
+                      <Text mb={8} mt={3} fw={600} fz={16}>
                         {course.subject?.name} ({course?.year.name})
                       </Text>
 
@@ -88,26 +100,37 @@ export default function Courses() {
                             " " +
                             course.teacher?.user.lastName}
                         </Text>
-                      </Box>
-                      <Text fz={11} fw={500}>
-                        {course.description}
-                      </Text>
-                      <Box>
                         <button className={classes.StyleBtnFeed}>
-                          <Link to={`/feedback-course/${course?.id}`}>رؤيه الاراء</Link>
+                          {" "}
+                          <Link
+                            to={`/single-course/${course.id}`}
+                            style={
+                              computedColorScheme == "dark"
+                                ? { color: "white" }
+                                : {}
+                            }>
+                            {t("Courses.details")}
+                          </Link>
                         </button>
                       </Box>
                     </Box>
+                    <Button
+                      text={t("Courses.allCoursesButton")}
+                      route="/all-courses"
+                    />
                   </Box>
                 ))}
               </>
-            ) : (
-              <Text>{t("Courses.noData")}</Text>
             )}
           </Box>
+          {courses?.length === 0 && (
+            <h1 className="NotFoundStyle" style={{ textAlign: "center" }}>
+              {" "}
+              {t("Courses.noData")}
+            </h1>
+          )}
         </Container>
       </Box>
-      <Button text={t("Courses.allCoursesButton")} route="/all-courses" />
     </>
   );
 }

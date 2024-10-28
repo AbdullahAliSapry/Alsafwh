@@ -8,14 +8,17 @@ const {
   buttonRegister,
   StyleInfoCourse,
   discussionImage,
+  stylePrice,
   StyleDescription,
+  crdDark,
 } = Styles;
 import teacherImg from "@assets/Alsafwa/teacheravatart.png";
 import CourseImg from "@assets/Alsafwa/avatarImgCourses.png";
-import { Box } from "@mantine/core";
+import { Box, useComputedColorScheme } from "@mantine/core";
 import { ICourse } from "@utilities/interfaces/CourseInterface";
 import { Link } from "react-router-dom";
 import useImageHandler from "@utilities/useImageHandler";
+const colors = ["#1ABC9C", "#FF81AE", "#C6D7FF", "#FF725E", "#7654B6"];
 
 export default function CourseCardTeacher({ course }: { course: ICourse }) {
   const [imageSrc, handleTeacherImageError] = useImageHandler(
@@ -27,10 +30,24 @@ export default function CourseCardTeacher({ course }: { course: ICourse }) {
     course.imgUrl,
     CourseImg
   );
+  const computedColorScheme = useComputedColorScheme("light", {
+    getInitialValueInEffect: true,
+  });
+    function getRandomColor() {
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      return colors[randomIndex];
+    }
+    const randomColor = getRandomColor();
 
   return (
-    <Box c={"black"} className={card}>
-      <div className={discussionImage}>
+    <Box
+      c={"black"}
+      className={`${card} ${computedColorScheme === "dark" ? crdDark : ""}`}>
+      <div className={`${discussionImage}`} style={{ background: randomColor }}>
+        <div className={stylePrice}>
+          <span>{course.price}</span>
+          <span>جم</span>
+        </div>
         <img
           src={ImgCOurse}
           alt="Group Discussion"
@@ -47,19 +64,17 @@ export default function CourseCardTeacher({ course }: { course: ICourse }) {
         <span>
           {course?.teacher.user.firstName + " " + course.teacher.user.lastName}
         </span>
-        <p>معلم مادة الجيولوجيا</p>
+        <p> معلم {course.subject?.name}</p>
       </div>
       <div className={StyleInfoCourse}>
-        <p>{course.title}</p>
         <p>({course?.year?.name})</p>
       </div>
-      <p className={StyleDescription}>
-        لمن يريد أن يتقن مادة الفلسفة
-        <br />
-        ويتفوق بها مع أشطر الأساتذة على مستوى مصر
-      </p>
+      <p className={StyleDescription}>{course.title}</p>
       <div className={buttons}>
-        <Link to={`/single-course/${course.id}`} className={buttonDetails}>
+        <Link
+          to={`/single-course/${course.id}`}
+          className={buttonDetails}
+          style={{ background: randomColor }}>
           تفاصيل
         </Link>
         <Link to={`/lesson-details/${course.id}`} className={buttonRegister}>

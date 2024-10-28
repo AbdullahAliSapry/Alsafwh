@@ -4,8 +4,8 @@ import { CiCirclePlus } from "react-icons/ci";
 import { ILesson } from "@utilities/interfaces/PublicInterfce";
 import { Link } from "react-router-dom";
 import { FaCircleCheck } from "react-icons/fa6";
-import { useDispatch} from "react-redux";
-import { AppDispatch} from "@store/Store";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@store/Store";
 import { MakePublishedApi } from "@store/api/ExamApi";
 import { MdPublishedWithChanges } from "react-icons/md";
 
@@ -16,13 +16,13 @@ export default function AllLessons({ lessons }: { lessons: ILesson[] }) {
     dispatch(MakePublishedApi(id));
   };
 
-
-
   return (
     <Box mt={50} className={styles.parent}>
       {lessons.map((lesson) => (
         <Box mb={10} key={lesson.id} className={styles.lesson}>
-          <h4 className={styles.title}>{lesson.title}</h4>
+          <Link to={`/content-lesson-teacher/${lesson.id}`} className={styles.title}>
+            {lesson.title}
+          </Link>
           {lesson.containQuize ? (
             <>
               {" "}

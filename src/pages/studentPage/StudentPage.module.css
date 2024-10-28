@@ -176,6 +176,7 @@
     background-size: auto 80%;
     flex-direction: column;
     background-position: center bottom;
+    background-size: contain;
   }
   .StyleText {
     width: 100%;
@@ -187,5 +188,9 @@
 
   .title {
     font-size: 14px;
+  }
+  .emailStyle{
+    flex-direction: column;
+    gap: 10px;
   }
 }

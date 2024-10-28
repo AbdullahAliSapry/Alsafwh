@@ -2,9 +2,7 @@ import {
   Box,
   Container,
   Grid,
-  Select,
   Text,
-  useComputedColorScheme,
 } from "@mantine/core";
 import classes from "./AllTeacher.module.css";
 import { motion } from "framer-motion";
@@ -27,9 +25,7 @@ const getRandomColor = () => {
   return backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
 };
 export default function AllTeacher() {
-  const computedColorScheme = useComputedColorScheme("light", {
-    getInitialValueInEffect: true,
-  });
+
 
   const { teachers } = useSelector((state: RootState) => state.Teacher);
   const dispatch = useDispatch<AppDispatch>();
@@ -37,6 +33,9 @@ export default function AllTeacher() {
     if (teachers.length > 0) return;
     dispatch(GetAllTeacherApi());
   }, []);
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -47,7 +46,7 @@ export default function AllTeacher() {
           المعليمن{" "}
         </Text>
 
-        <Text my={20} fz={30} c={"white"}>
+        <Text my={20}  className={classes.Description}>
           هم صناع الاجيال و بناة المستقبل
         </Text>
       </Box>
@@ -56,25 +55,7 @@ export default function AllTeacher() {
         <Container mt={100} mb={50}>
           <Box mb={70} mt={50} className={classes.header_title}>
             <TitleSection title=" جميع المُعلمين" />
-            <Box className={classes.select}>
-              <label
-                htmlFor="subjectSelect"
-                className={
-                  computedColorScheme == "light"
-                    ? classes.card_titleLight
-                    : classes.card_titleDark
-                }>
-                الاختيار بالمادة
-              </label>
-              <br />
-              <Select
-                mt={5}
-                id="subjectSelect"
-                data={["الكل"]}
-                defaultValue="الكل"
-                allowDeselect={false}
-              />
-            </Box>
+
           </Box>
           <Grid gutter={"xl"}>
             {teachers.map((teacher) => (
@@ -85,10 +66,7 @@ export default function AllTeacher() {
               />
             ))}
           </Grid>
-{/* 
-          <Box mt={50} display={"flex"} style={{ justifyContent: "center" }}>
-            <Pagination total={5} siblings={1} defaultValue={1} />
-          </Box> */}
+
         </Container>
       </div>
     </motion.div>

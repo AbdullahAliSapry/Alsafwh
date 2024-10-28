@@ -5,11 +5,18 @@
   margin-right: 50px;
 }
 
-.parent{
+.parent {
   margin-top: 200px;
 }
-
-.titleStatus{
+.titleStatus {
+  color: black;
+  font-weight: 700;
+  font-size: 30px;
+}
+.titleStatus > span:first-child {
+  color: #003edd;
+}
+.titleStatus {
   margin-right: 50px;
 }
 
@@ -98,11 +105,11 @@
     display: grid;
     justify-content: center;
   }
-  .parent{
+  .parent {
     margin-top: 150px;
   }
 
-  .titleStatus{
+  .titleStatus {
     margin-right: 30px;
   }
   .containerBtn {
@@ -168,15 +175,26 @@
     background-color: #862effde;
   }
 }
-
+.ButtonPhone {
+  display: none;
+}
 @media (max-width: 450px) {
+  .ButtonNormal {
+    display: none;
+  }
+  .ButtonPhone {
+    display: block;
+  }
+  .titleStatus {
+    font-size: 20px;
+  }
   .pointOne {
     right: 37%;
     bottom: 75%;
     background-color: #2eff2e;
   }
 
-  .titleStatus{
+  .titleStatus {
     margin-right: 0px;
   }
 

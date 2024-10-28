@@ -12,7 +12,10 @@
 
 .title {
   color: rgb(65, 130, 249);
-  /* margin-bottom: 0px; */
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .lesson button {

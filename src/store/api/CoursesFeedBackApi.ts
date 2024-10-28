@@ -15,10 +15,7 @@ export const AddFeedBackCoursesApi = (
   return async (dispatch: Dispatch<PayloadAction<boolean>>) => {
     try {
       dispatch(setLoading(true));
-      const { data } = await Api.post(
-        "CoursesFeedBack/addFeedBackCourse",
-        FeedBackData
-      );
+      await Api.post("CoursesFeedBack/addFeedBackCourse", FeedBackData);
       dispatch(setLoading(false));
       toast.success(message);
     } catch (error: any) {
@@ -27,6 +24,7 @@ export const AddFeedBackCoursesApi = (
     }
   };
 };
+
 export const GetAllCoursesFeedBackApi = (CourseId: string) => {
   return async (
     dispatch: Dispatch<PayloadAction<IFeedBackCourse[] | boolean>>
@@ -36,7 +34,6 @@ export const GetAllCoursesFeedBackApi = (CourseId: string) => {
       const { data } = await Api.get(
         `CoursesFeedBack/getAllFeedBack/${CourseId}`
       );
-
       dispatch(setLoading(false));
       dispatch(getCoursesFeedBacks(data));
     } catch (error: any) {

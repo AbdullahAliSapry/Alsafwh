@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Container,
   Text,
   useComputedColorScheme,
@@ -62,7 +61,6 @@ export default function FeedBackCard({
             flexWrap: "wrap",
             gap: "1rem",
           }}>
-          <Button type="submit">تعديل التقييم</Button>
         </Box>
       </Container>
     </div>

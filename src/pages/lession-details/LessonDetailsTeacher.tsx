@@ -1,6 +1,6 @@
 import HeaderTeacher from "@pages/teacherpage/components/headerteacher/HeaderTeacher";
 import Styles from "./LessonDetailsTeacher.module.css";
-import imageSubject from "@assets/Alsafwa/Mathematics-bro.png";
+import imageSubject from "@assets/Alsafwa/teacheravatart.png";
 import HeaderLesson from "@shared/HeaderLesson/HeaderLesson";
 import AllLessons from "./components/alllessons/AllLessons";
 import { Box, useComputedColorScheme } from "@mantine/core";
@@ -28,13 +28,12 @@ export default function LessonDetailsTeacher() {
     if (!id) return;
     dispatch(GetLessonsCourseApi(id));
   }, []);
-    console.log("enter");
 
   useEffect(() => {
     if ( !AuthModel?.userId) return;
     dispatch(GetTeacherCoursesApi(AuthModel.userId));
   }, [AuthModel?.userId, dispatch]);
-
+  
   return (
     <Box
       bg={computedColorScheme == "light" ? "" : "rgb(36,36,36)"}
@@ -60,7 +59,7 @@ export default function LessonDetailsTeacher() {
           </div>
         </>
       ) : (
-        <h1>لم يتم اضافه اي دروس لهذا الكورس</h1>
+        <h1 className="NotFoundStyle" style={{textAlign:"center"}}>لم يتم اضافه اي دروس لهذا الكورس</h1>
       )}
     </Box>
   );

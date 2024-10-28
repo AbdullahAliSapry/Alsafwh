@@ -19,9 +19,7 @@ import { useEffect } from "react";
 import { PayMentSchema } from "@schemas/PublicSchema";
 import { IPayMentSendingData } from "@utilities/interfaces/PublicInterfce";
 import { CreatePayMentApi } from "@store/api/PayMentApi";
-import { GetStudentApi } from "@store/api/StudentApi";
 import { toast } from "react-toastify";
-
 export default function PaymentForm() {
   const computedColorScheme = useComputedColorScheme("light", {
     getInitialValueInEffect: true,
@@ -40,7 +38,6 @@ export default function PaymentForm() {
   const { months } = useSelector((state: RootState) => state.Year);
   const { authTokenPayMent } = useSelector((state: RootState) => state.Payment);
   const { student } = useSelector((state: RootState) => state.Student);
-  const { AuthModel } = useSelector((state: RootState) => state.Auth);
 
   useEffect(() => {
     if (id) {
@@ -70,7 +67,7 @@ export default function PaymentForm() {
       const PayMentData: IPayMentSendingData = {
         studentId: student?.id,
         payMent: {
-          AmountCents: values.price ? values.price * 100 : 0,
+          AmountCents: values.price ? values.price as number * 100 : 0,
           City: student.location,
           Email: student.user.email,
           FirstName: student.user.firstName,
@@ -114,7 +111,7 @@ export default function PaymentForm() {
   };
 
   useEffect(() => {
-    if (authTokenPayMent.length > 0) {
+    if (authTokenPayMent) {
       window.location.href = `https://accept.paymob.com/api/acceptance/iframes/856921?payment_token=${authTokenPayMent}`;
     }
   }, [authTokenPayMent, navigate]);

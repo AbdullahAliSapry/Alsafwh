@@ -1,9 +1,9 @@
 import { ExamSchema } from "@schemas/PublicSchema";
 import Styles from "./Exam.module.css";
-import { Box, Text, useComputedColorScheme } from "@mantine/core";
+import { Box, Button, Text, useComputedColorScheme } from "@mantine/core";
 import { IExam } from "@utilities/interfaces/PublicInterfce";
 import { useFormik } from "formik";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
@@ -27,7 +27,7 @@ export default function Exam() {
   useEffect(() => {
     if (!lessonId) return;
     dispatch(GetLessonApi(lessonId || ""));
-  }, [Lesson, dispatch, lessonId]);
+  }, [dispatch, lessonId]);
 
   useEffect(() => {
     if (Lesson?.containQuize) {
@@ -40,7 +40,7 @@ export default function Exam() {
     description: "",
     numberQustion: 0,
     quizeTime: 0,
-    Title: "",
+    title: "",
   };
 
   const formik = useFormik({
@@ -83,6 +83,15 @@ export default function Exam() {
       dispatch(addExam(false));
     }
   }, []);
+
+  const handleNext = (examId: string |undefined) => {
+    if (examId) {
+      navigate(`/add-question/${examId}`);
+    } else {
+      toast.info("يجب اضافه الامتحان اولا");
+      return;
+    }
+  };
   return (
     <Box
       pt={50}
@@ -105,14 +114,14 @@ export default function Exam() {
                 className={Styles.inputExam}
                 type="text"
                 id="nameExam"
-                name="Title"
+                name="title"
                 placeholder="ادخل العنوان"
-                value={formik.values.Title}
+                value={formik.values.title}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
-              {formik.touched.Title && formik.errors.Title && (
-                <div className={Styles.errorText}>{formik.errors.Title}</div>
+              {formik.touched.title && formik.errors.title && (
+                <div className={Styles.errorText}>{formik.errors.title}</div>
               )}
             </div>
             <div>
@@ -186,12 +195,11 @@ export default function Exam() {
               flexWrap: "wrap",
               gap: "1rem",
             }}>
-            <Link className={Styles.linksStud} to={"/"}>
-              الطلاب
-            </Link>
-            <Link className={Styles.linksNext} to={"/add-question"}>
+            <Button className={Styles.linksNext} onClick={()=>{
+              handleNext(exam?.id)
+            }}>
               التالي
-            </Link>
+            </Button>
           </Box>
         </>
       ) : (

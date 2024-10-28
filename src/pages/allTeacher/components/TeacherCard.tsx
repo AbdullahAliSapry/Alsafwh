@@ -1,8 +1,9 @@
 import { Box, Grid, Text, useComputedColorScheme } from "@mantine/core";
 import classes from "../AllTeacher.module.css";
-import teacherImg from "@assets/Alsafwa/Retrato Corporativo _ Foto para LinkedIn _ Perfil Profissional _ São Paulo_BR.png";
+import teacherImg from "@assets/Alsafwa/RetratoTwo.png";
 import { ITeacher } from "@utilities/interfaces/PublicInterfce";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function TeacherCard({
   teacher,
@@ -24,7 +25,11 @@ export default function TeacherCard({
   };
   return (
     <Grid.Col span={{ base: 12, md: 6, lg: 3 }} mb={4}>
-      <div className={classes.card}>
+      <Link
+        to={`/courses-teacher/${teacher?.user?.id}/${
+          teacher.user.firstName + " " + teacher.user.lastName
+        }`}
+        className={classes.card}>
         <Box style={{ borderRadius: "15px" }} bg={bg}>
           <img
             src={imageSrc}
@@ -45,20 +50,8 @@ export default function TeacherCard({
             }>
             {teacher.user.firstName + " " + teacher.user.lastName}
           </Text>
-          <Text
-            fz={14}
-            fw={300}
-            ta={"start"}
-            mt={10}
-            className={
-              computedColorScheme == "light"
-                ? classes.card_textLight
-                : classes.card_textDark
-            }>
-            {teacher.description}
-          </Text>
         </div>
-      </div>
+      </Link>
     </Grid.Col>
   );
 }

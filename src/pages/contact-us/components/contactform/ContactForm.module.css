@@ -34,7 +34,15 @@
   border-radius: var(--mantine-radius-md);
   box-shadow: var(--mantine-shadow-lg);
 }
-
+.formDark {
+  background-color: rgb(36, 36, 36);
+}
+.formDark input {
+  background-color: rgb(36, 36, 36);
+}
+.formDark textarea {
+  background-color: rgb(36, 36, 36);
+}
 .social {
   color: var(--mantine-color-white);
 

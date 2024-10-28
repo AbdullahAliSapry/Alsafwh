@@ -8,7 +8,8 @@ import { IResetPassword } from "@utilities/interfaces/PublicInterfce";
 import { ResetPasswordApi } from "@store/api/AuthApi";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-
+const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@!#$%^&*()_+{}[\]:;"'<>,.?~`/\\|])[A-Za-z\d@!#$%^&*()_+{}[\]:;"'<>,.?~`/\\|]{8,}$/;
 const SchemaResetPassword = Yup.object({
   email: Yup.string()
     .email("ادخل بريد الكتروني صحيح")
@@ -16,6 +17,10 @@ const SchemaResetPassword = Yup.object({
   code: Yup.string().required("الكود المرسل لك مطلوب"),
   password: Yup.string()
     .min(8, "كلمة المرور يجب أن تتكون من 8 أحرف على الأقل")
+    .matches(
+      passwordRegex,
+      "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل، وحرف كبير واحد على الأقل، ورقم واحد على الأقل، ورمز خاص واحد على الأقل."
+    )
     .required("كلمة المرور مطلوبة"),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password")], "يجب أن تتطابق كلمات المرور")

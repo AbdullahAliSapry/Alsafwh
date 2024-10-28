@@ -6,7 +6,6 @@ import { AddQuestionApi } from "@store/api/QustionApi";
 import { AppDispatch, RootState } from "@store/Store";
 import { IAnswer } from "@utilities/interfaces/PublicInterfce";
 import { useFormik } from "formik";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";

@@ -3,18 +3,18 @@ import classes from "./TeaxherSetting.module.css";
 import image from "@assets/Alsafwa/RetratoTwo.png";
 import {
   IconMailFilled,
-  IconPassword,
   IconPhoneFilled,
   IconSchool,
   IconUserFilled,
 } from "@tabler/icons-react";
 import { RiEdit2Fill } from "react-icons/ri";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import HeaderTeacher from "../headerteacher/HeaderTeacher";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@store/Store";
 import { useEffect } from "react";
-import { GetTeacherApi } from "@store/api/TeacherApi";
+import { GetTeacherApi, GetTeacherCoursesApi } from "@store/api/TeacherApi";
+import ChangePasswordCom from "@pages/studentPage/ChangePasswordCom";
 const color = "rgb(34,166,241)";
 
 export default function TeacherSetting() {
@@ -22,14 +22,28 @@ export default function TeacherSetting() {
     getInitialValueInEffect: true,
   });
 
-  const { teacher } = useSelector((state: RootState) => state.Teacher);
+  const { teacher, Courses } = useSelector((state: RootState) => state.Teacher);
+  const { AuthModel } = useSelector((state: RootState) => state.Auth);
   const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!id) return;
     dispatch(GetTeacherApi(id));
   }, []);
+
+  useEffect(() => {
+    if (Courses.length === 0) {
+      dispatch(GetTeacherCoursesApi(teacher?.user?.id || ""));
+    }
+  }, [Courses.length, dispatch, teacher?.user?.id]);
+
+  useEffect(() => {
+    if (AuthModel?.userId !== teacher?.user?.id && teacher?.user?.id !== id) {
+      navigate("/");
+    }
+  }, [AuthModel?.userId, id, navigate, teacher?.user?.id]);
+
   return (
     <Box mb={100} className={classes.parent}>
       {teacher ? (
@@ -56,7 +70,9 @@ export default function TeacherSetting() {
                   userId={teacher?.user?.id || ""}
                   image={teacher?.user?.fileUploads.url || image}
                   name={teacher?.user.firstName + " " + teacher?.user.lastName}
-                  subject={"ldlld"}
+                  subject={
+                    Courses?.[0]?.subject?.name || "لم يتم اضاافه اي كورسات"
+                  }
                 />
                 <Box
                   className={classes.numberOfCourses}
@@ -76,10 +92,21 @@ export default function TeacherSetting() {
                     className={classes.LinkCourses}>
                     الكورسات المقدمه
                   </Link>
-                  <Text mr={10}>6</Text>
+                  <Text mr={10}>{Courses.length}</Text>
                 </Box>
               </Box>
-              <p className={classes.description}>{teacher?.description}</p>
+              <Box>
+                <div className={classes.descriptionStyle}>
+                  <h5>نبذه مختصره عن المعلم: </h5>
+                  <p className={classes.description}>{teacher?.description}</p>
+                </div>
+                <div className={classes.descriptionStyle}>
+                  <h5>نبذة عن سنوات الخبره : </h5>
+                  <p className={classes.description}>
+                    {teacher?.yearsofExperience}
+                  </p>
+                </div>
+              </Box>
             </div>
 
             <Box
@@ -105,6 +132,7 @@ export default function TeacherSetting() {
                   type="text"
                   id="firstName"
                   name="firstName"
+                  readOnly
                   value={teacher?.user.firstName}
                   placeholder="اسمك الاول"
                   className={classes.inputFiled}
@@ -130,63 +158,13 @@ export default function TeacherSetting() {
                   id="secondName"
                   name="secondName"
                   value={teacher?.user.lastName}
+                  readOnly
                   placeholder="اسمك الثاني"
                   className={classes.inputFiled}
                 />
               </Box>
             </Box>
-
-            <Box
-              display={"flex"}
-              mt={20}
-              style={{ gap: "2rem" }}
-              className={classes.containerFiled}>
-              <Box w={"100%"}>
-                <Box display={"flex"} style={{ alignItems: "center" }}>
-                  <IconPassword
-                    style={{
-                      color: color,
-                      width: "20px",
-                      height: "20px",
-                      marginLeft: "5px",
-                    }}
-                  />
-                  <label htmlFor="changePassword" style={{ fontSize: "15px" }}>
-                    تغيير كلمة المرور
-                  </label>
-                </Box>
-                <input
-                  type="password"
-                  id="changePassword"
-                  name="changePassword"
-                  placeholder="كلمة المرور الجديدة "
-                  className={classes.inputFiled}
-                />
-              </Box>
-
-              <Box w={"100%"}>
-                <Box display={"flex"} style={{ alignItems: "center" }}>
-                  <IconPassword
-                    style={{
-                      color: color,
-                      width: "20px",
-                      height: "20px",
-                      marginLeft: "5px",
-                    }}
-                  />
-                  <label htmlFor="confirmChange" style={{ fontSize: "15px" }}>
-                    تأكيد تغيير كلمة المرور
-                  </label>
-                </Box>
-                <input
-                  type="password"
-                  id="confirmChange"
-                  name="confirmChange"
-                  placeholder="كلمة المرور الجديدة "
-                  className={classes.inputFiled}
-                />
-              </Box>
-            </Box>
+            <ChangePasswordCom />
 
             <Box
               display={"flex"}
@@ -245,15 +223,6 @@ export default function TeacherSetting() {
                   </Box>
                 </Box>
               </Box>
-            </Box>
-            <Box
-              mt={50}
-              mb={30}
-              ml={30}
-              display={"flex"}
-              style={{ justifyContent: "space-between" }}>
-              <button className={classes.btnSave}>تعديل</button>
-              <button className={classes.btnSave}>حفظ</button>
             </Box>
           </Container>
         </>

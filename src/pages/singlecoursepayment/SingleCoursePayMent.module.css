@@ -1,0 +1,102 @@
+.formStyle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+.formStyle input{
+
+    width: 300px;
+}
+.StyleDiscount {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.styleVodafone{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.StyleDiscount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+.StyleDiscount  input{
+  width: 300px;
+}
+.StyleDiscount >button{
+    width: 100%;
+}
+.StyleTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px;
+}
+.StyleTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: rgb(0, 129, 249);
+}
+.inputFiledSelect {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.inputFiled {
+  outline: none;
+  border: 0px;
+  border-radius: 7px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.labelFelid {
+  font-weight: 700;
+}
+.imageHandel {
+  width: 400px;
+}
+
+@media (max-width: 901px) {
+  .firstFiled {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 751px) {
+  .handelFlex {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 551px) {
+  .imageHandel {
+    width: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .firstFiled {
+    width: fit-content;
+    justify-content: center;
+  }
+  .inputFiled {
+    width: auto;
+  }
+  .imageHandel {
+    width: 275px;
+  }
+}

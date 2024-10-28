@@ -21,7 +21,7 @@ export const AddQuestionApi = (dataSending: FormData) => {
       toast.success("تم اضافه السؤال بنجاح");
     } catch (error: any) {
       console.log(error?.response);
-      toast.error(error?.response?.data?.message || "حدث خطأ اثناء التحميل");
+      toast.error(error?.response?.data?.message || "حدث خطأ اثناء اضافة السؤال");
     }
   };
 };

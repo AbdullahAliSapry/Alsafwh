@@ -19,12 +19,13 @@ const resources = {
 };
 
 i18n
-  .use(Backend) 
+  .use(Backend)
   .use(LocalStorageBackend)
-  .use(LanguageDetector) 
-  .use(initReactI18next) 
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     resources,
+    lng: localStorage.getItem("i18nextLng") ||"ar",
     fallbackLng: "ar",
     debug: false,
     interpolation: {

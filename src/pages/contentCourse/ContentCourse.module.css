@@ -3,7 +3,19 @@
   grid-template-columns: 330px auto;
   /* justify-content: space-between; */
 }
+.ContainerWatching {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ContainerWatching > h1 {
+  font-size: 18px;
+}
 
+.StyleTitle {
+  max-width: 180px;
+  word-wrap: break-word;
+}
 .StyleNotFound,
 .StyleNotFound2 {
   padding: 20px;
@@ -29,18 +41,19 @@
   color: rgb(34, 139, 230);
   width: 100%;
 }
-.styleBad, .styleGood {
+.styleBad,
+.styleGood {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.styleGood >svg{
+.styleGood > svg {
   color: green;
-  font-size: 50px;  
+  font-size: 50px;
 }
-.styleBad >svg {
+.styleBad > svg {
   color: red;
   font-size: 50px;
 }
@@ -198,6 +211,12 @@
     grid-template-rows: auto auto;
     gap: 2rem;
     /* justify-content: space-between; */
+  }
+}
+@media (max-width: 1000px) {
+  .styleTabsPanel {
+    max-width: 500px;
+    word-break: break-all;
   }
 }
 .btnSend a {

@@ -30,22 +30,28 @@ export default function AllMaterials() {
     if (subjects.length > 0) return;
     dispatch(GetAllSubjectApi());
   }, [subjects, dispatch]);
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <Box>
       <Box mb={50} className={classes.headerPageTeacher}>
-        <Text my={20} fz={30} c={"#003EDD"}>
-          المعليمن{" "}
-        </Text>
+        <div className={classes.Titile}>
+          <Text my={20} fz={30} c={"#003EDD"}>
+            انطلق في رحلتك التعليمية:
+          </Text>
 
-        <Text my={20} fz={30} c={"white"}>
-          هم صناع الاجيال و بناة المستقبل
-        </Text>
+          <Text my={20} fz={30} c={"white"}>
+            اكتشف المواد المصممة لإلهامك
+          </Text>
+        </div>
       </Box>
 
       <Box mb={50}>
         <Container>
           <Text my={50} fw={700} fz={25} c={"#003EDD"}>
-            المواد المتاحة على المنصة
+            اكتشف المواد المصممة لإلهامك
           </Text>
           <Grid gutter={"xl"}>
             {subjects.map((ele) => {
@@ -63,9 +69,6 @@ export default function AllMaterials() {
                           justifyContent: "center",
                           borderRadius: "10px",
                         }}>
-                        <Text ta={"center"} c={"black"} mr={0} mt={10}>
-                          {ele.description}
-                        </Text>
                         <img
                           src={ele.fileUploads.url}
                           width={"100%"}
@@ -74,7 +77,7 @@ export default function AllMaterials() {
                         />
                       </Box>
 
-                      <Box mt={20}>
+                      <Box mt={20} style={{ fontSize: "25px" }}>
                         <Text c={col()} ta={"center"}>
                           {ele.name}
                         </Text>
